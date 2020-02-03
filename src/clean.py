@@ -82,7 +82,7 @@ def read_clean_write(source, dest, verbose=True):
     dummies = pd.get_dummies(df['type'])
     dummies = dummies.iloc[:, [1, 2, 3]]
     df = df.join(dummies)
-    df['target'] = 2*df['I'] + 3*df['F']
+    df['target'] = df['I'] + 2*df['F']
 
     df['type'] =  df['type'].map(type_dict)
 

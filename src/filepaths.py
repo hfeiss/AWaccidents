@@ -1,54 +1,46 @@
 import os
+from addict import Dict
 
-# for root, dirs, file in os.walk(sourcepath):
-#     list_years.extend(file)
 
-# mappath = os.path.split(os.path.abspath(''))[0]
-# srcpath = os.path.split(mappath)[0]
-# rootpath = os.path.split(srcpath)[0]
-# datapath = os.path.join(rootpath, 'data/')
-# cleanpath = os.path.join(datapath, 'cleaned/')
-# imagepath = os.path.join(rootpath, 'images/')
+def rerc(path, ignore_hidden=True):
+    result = Dict()
+    root = [x for x in os.walk(path)][0][0]
+    dirs = [x for x in os.walk(path)][0][1]
+    all_files = [x for x in os.walk(path)][0][2]
+    
+    if ignore_hidden:
+        files = [f for f in all_files if f[0] != '.' and f[0] != '_']
+        dirs[:] = [d for d in dirs if d[0] != '.' and d[0] != '_']
+    else:
+        files = all_files
 
-# os.listdir()
+    result['files'] = files
+    result['path'] = root
+    result['dirs'] = dirs
+    for folder in dirs:
+        result[folder] = rerc(os.path.join(root, folder))
+    
+    return result
 
 class FilePaths():
 
-    def __init__(self, depth=1, git=False):
+    def __init__(self, depth=1, ignore_hidden=True):
         self.depth = depth
-        self.refresh()
+        self.ignore_hidden = ignore_hidden
+        self.set_basepath()
 
-    def refresh(self):
+    def set_basepath(self):
         if self.depth:
-            for level in range(self.depth):
+            for _ in range(self.depth):
                 os.chdir('..')
         
         self.basepath = os.path.abspath('')
 
-        for root, dirs, files in os.walk(self.basepath):
-            files = [f for f in files if not f[0] == '.']
-            dirs[:] = [d for d in dirs if not d[0] == '.']
-            print(root, dirs, files)
-            print('\n')
-            for folder in dirs:
-                if folder not in dir(self):
-                    setattr(self, folder, os.path.join(root, folder))
-
-    def files(self, path):
-        return [f for r, d, f in os.walk(path)][0]
-
-    def dir_rerc(self):
-        r, d, f = [_ for _ in os.walk(self.basepath)][0]
-        if len(d):
-            for folder in d:
-                return self.dir_rerc()
+    def return_dict(self):
+        return rerc(self.basepath, self.ignore_hidden)
 
 
 if __name__ == "__main__":
-    root = FilePaths(depth=1)
-    print(root.dir_rerc())
-    # print(root.notebooks)
-    # print(dir(root))
-    # for attr in dir(root):
-        # print(attr, root.__getattribute__(attr))
-    # print(root.clean.files())
+    root = FilePaths(depth=1).return_dict()
+    print(root['files'])
+
