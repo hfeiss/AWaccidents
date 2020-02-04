@@ -21,7 +21,7 @@ my_stops =  ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
              'year', '1', '2', '3', 'rescue', 'true', 'paddle', 'w',
              'lock', 'priority', 'accent' 'semihidden', 'unhidewhenused',
              'table', 'list', 'lock', 'semihidden', 'amp', 'bt', 'grid',
-             'layout', 'mode']
+             'layout', 'mode', 'narrative']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<']
 

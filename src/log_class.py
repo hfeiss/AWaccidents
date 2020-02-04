@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tools import add_constant
 from statsmodels.discrete.discrete_model import Logit
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
@@ -12,6 +13,10 @@ df.dropna(inplace=True)
 
 X = df[['rellevel', 'age', 'kayak', 'commercial']].values
 y = df['F'].values
+
+vif = variance_inflation_factor
+for i in range(X.shape[1]):
+    print(vif(X, i))
 
 model = Logit(y, X).fit()
 print(model.summary())

@@ -7,15 +7,16 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from tokenator import tokenize_and_lemmatize
 from sklearn.ensemble import BaggingClassifier
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import joblib
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
-df.dropna(inplace=True)
 
-docs = df['description']
-y = df['F'].values
+df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+df.dropna(how='any', inplace=True)
+
+X = df[['rellevel', 'age', 'kayak', 'commercial']].to_numpy()
+docs = df['description'].to_numpy()
+y = df['F'].to_numpy()
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
@@ -23,7 +24,6 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
-vectorizer.fit(docs)
 def vector(data):
     return vectorizer.transform(data)
 
@@ -39,40 +39,57 @@ bc = BaggingClassifier(base_estimator=None,
                        random_state=42,
                        verbose=1)
 
-bc.fit(vector(docs), y)
+def sm_summary(X, docs, y):
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
+    vectorizer.fit(docs)
+    bc.fit(vector(docs), y)
+    # bc_predict = bc.predict_proba(vector(docs))[:, 1:]
+    bc_predict = np.reshape(bc.predict(vector(docs)), (-1, 1))
+    X = np.append(X, bc_predict, axis=1)
+    # X = ss.fit_transform(X)
+    X = add_constant(X)
 
-df['bagging_guess'] = bc.predict(vector(docs))
-print(df['bagging_guess'][0:10])
-
-X = df[['rellevel', 'age', 'kayak', 'commercial', 'bagging_guess']].values
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
-
-model = Logit(y, X).fit()
-print(model.summary())
+    model = Logit(y, X).fit()
+    print(model.summary())
 
 
-kfold = KFold(n_splits=10)
+def k_fold():
+    kfold = KFold(n_splits=10)
 
-accuracies = []
-precisions = []
-recalls = []
+    accuracies = []
+    precisions = []
+    recalls = []
 
-X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-for train_index, test_index in kfold.split(X_train):
-    model = LogisticRegression(solver="lbfgs")
-    model.fit(X[train_index], y[train_index])
-    y_predict = model.predict(X[test_index])
-    y_true = y[test_index]
-    accuracies.append(accuracy_score(y_true, y_predict))
-    precisions.append(precision_score(y_true, y_predict))
-    recalls.append(recall_score(y_true, y_predict))
+    for train_index, test_index in kfold.split(X):
+        train_docs =  docs[train_index]
+        test_docs = docs[test_index]
+        X_train = X[train_index]
+        X_test = X[test_index]
+        y_train = y[train_index]
+        y_test = y[test_index]
 
-print("Accuracy:", np.average(accuracies))
-print("Precision:", np.average(precisions))
-print("Recall:", np.average(recalls))
+        vectorizer.fit(train_docs)
+        bc.fit(vector(train_docs), y_train)
+        bc_predict = bc.predict(vector(train_docs))
+        X_train = np.append(X_train, np.reshape(bc_predict, (-1, 1)), axis=1)
+
+        model = LogisticRegression(solver="lbfgs")
+        model.fit(X_train, y_train)
+
+        bc_predict = bc.predict(vector(test_docs))
+        X_test = np.append(X_test, np.reshape(bc_predict, (-1, 1)), axis=1)
+        y_predict = model.predict(X_test)
+        y_true = y_test
+
+        accuracies.append(accuracy_score(y_true, y_predict))
+        precisions.append(precision_score(y_true, y_predict))
+        recalls.append(recall_score(y_true, y_predict))
+
+    print("Accuracy:", np.average(accuracies))
+    print("Precision:", np.average(precisions))
+    print("Recall:", np.average(recalls))
 
 
 if __name__ == "__main__":
-    pass
+    sm_summary(X, docs, y)

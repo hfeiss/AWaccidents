@@ -1,3 +1,7 @@
+'id', 'accidentdate', 'countryabbr', 'state', 'rellevel', 'difficulty',
+       'age', 'description', 'type', 'kayak', 'commercial', 'experienced', 'F',
+       'I', 'M', 'target'
+
 RANDOM FOREST FEATAURE
 narrative
 drown
@@ -109,6 +113,12 @@ Accuracy: 0.8031613123718386
 Precision: 0.8414991931542499
 Recall: 0.9477434257864367
 Variables: ['rellevel', 'age', 'kayak', 'commercial']
+VIFs:
+2.3202328365362948
+2.085001388143055
+1.4255378095854587
+1.2940913270684964
+
 
 LDA
 [2389  894  376 1569 1368 2215 1682 1885 1410   18]
@@ -128,3 +138,467 @@ load on to
  ['man' 'run' 'dam' 'drown' 'kayak' 'kayaker' 'pull' 'downstream'
   'accident' 'swim']
  ['accent' 'semihidden' 'grid' '4' '5' '6' 'medium' 'leave' 'rock' 'be']]
+
+ Tennessee’s Class III+
+Ocoee River is one of the most popular runs in the East. Hundreds of thousands
+of rafters and kayakers make the trip annually. On November 1, 1997 Mike
+Reisman died while paddling the river. Here is an account of the accident by
+Tom Parson, who accompanied him
+Mike Reisman at flight school and became friends. Kayaking became the sport of
+choice for me around ’74, and Mike became interested in paddling, too. He was a
+physically capable person who learned fast. He boated the Colorado through the Grand
+Canyon, and the Arkansas in Colorado. The first years passed swiftly and Mike
+slowly moved away from kayaking. But recently, as Mike’s son became an active
+and capable kayaker, he decided to return to the rivers after a long period of&nbsp; inactivity
+the week of November 1, 1997 and wanted to paddle. I said O.K., maybe. Mike
+also called two other paddling friends and said that if I didn’t go he would
+have two other kayakers with him. I did go, and with Mike’s friends along we had
+a group of four . I had not met Mike’s two friends prior to this day, but Mike
+was confident in their abilities. One was a doctor who had previous experience
+on the Ocoee as a river raft guide
+The trip got off to a slow start because Mike flipped and had to swim coming out of the put-in eddy.
+He swam most of the first series of rapids down river right, letting his paddle
+get away in the process. The paddle was delivered back upriver to Mike by
+another boater and we were off again. As we moved down the river I sometimes
+became separated from the group by some distance, but we were keeping in sight
+of each other. When they stopped, I would catch up. At “Slice ‘n’ Dice” Mike
+and I sat side by side talking, and he told me how cold he was. I asked if he had
+something to put on and Mike said he had a paddling jacket, which he might put
+on later
+“Double Suck” I was left behind again as Mike headed toward “Double Trouble”.
+As I drifted towards “Double Trouble” I could see Mike and the doctor on the
+river right bank about 400 feet downstream where Mike was draining water from
+his boat after another swim. I passed Mike and the doctor with a grin, and Mike
+answered with a rueful smile of his ownPulling in downstream
+of Mike with the other member of our group, I watched and waited while he got
+back into his boat and put on his spray skirt. He was having trouble stretching
+his skirt onto the boat and the doctor was leaning across to help. The skirt
+was new and was definitely a tight fit. The skirt had been a problem for Mike
+each time he entered his boat, but this time it seemed to take even longer.
+Mike was cold from being in the water, and the weather had gone back to
+overcast and rainy“Finally we were ready
+to go again. The doctor led off, with Mike floating behind him. I peeled out as
+Mike passed me and settled about 80 feet behind him. We were floating with the
+current and I watched as he set up for entry to “Double Trouble”. Mike turned
+slowly over on his left side. He almost saved himself with a brace before going
+over. I watched him bring his paddle up into position for a right hand roll,
+but he did not finish the attempt. As he passed through the rapid I watched for
+him to appear after exiting the boat, but it quickly became apparent that he
+was having trouble bailing out 
+I sprinted ahead
+through the rapid to catch up with Mike. I could see that the doctor was out of
+his boat, swimming near Mike’s boat in an attempt to help him. There was
+another boater also moving into position for rescue. I was shouting to them to
+give me clearance so I could arrive on the side of Mike’s boat where he had
+raised his arm. As I closed the distance between Mike and myself, at a distance
+of about ten feet, I saw Mike raise his head out of the water and get a breath
+of air and I yelled “boat”. Mike went back under and then quickly raised his
+right arm out of the water signaling for a boat assisted rescue.&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“I rapidly pulled in
+close to, and parallel to Mike on his inverted left side. As I reached for him
+with my right hand he grabbed my boat he raised his head and shoulders onto my
+forward deck. He came up out of the water with a large sucking intake of air,
+making eye contact with me at the same time. He was at the extreme end of his
+endurance, but had the strength to help himself up, and hold on. As I had held
+Mike tightly with both hands, the other boater came up on my left side and
+reached across my boat to grab Mike’s PFD. Mike was gasping for breath, and we
+were drifting with the current in a very stable condition. I looked at Mike’s
+skirt for the grab loop but it was not visible; apparently it had been
+inadvertently folded under the spray skirt where Mike could not reach it.&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“The rescue should have
+been over now, since the boats were rafted together, Mike was hanging onto my
+boat and catching his breath, and I had a strong grip on him. But the worst was
+yet to come. During the boat rescue the doctor had been in the water floating
+near Mike’s boat. As we were drifting side by side, the doctor swam between our
+two boats, pulled his river knife, and slashed into Mike’s spray skirt in the
+area of his legs. This knife action cut into Mike’s right thigh, causing a deep
+and ugly laceration which (may have) severed Mike’s femoral artery. Mike
+screamed, “My God, you’ve cut me”, and writhed in his boat from his pain. He
+wrenched himself from my grip, and I had to let go to exit my boat to get to
+Mike’s leg, which was pumping large, pulsing streams of blood onto me, the boat
+and t</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><br></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">.&nbsp; </span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“Mike was incapacitated
+from his wound almost immediately. Attempting to stop the blood flow, hold his
+head clear of the water, and gain purchase on the slippery rocks we were
+drifting past was very difficult. As the doctor held Mike’s head we pulled Mike
+from his boat up onto some mid-stream rocks. I used my fist to put pressure
+directly on his wound. My fist and then hands continued to be displaced from
+Mike’s wound as we lifted him out of the water, and he was losing quantities of
+blood. As we got Mike placed higher on the rocks I was still holding his thigh
+with both hands. Mike was still talking, but more and more slowly. The doctor
+moved towards me and stated that he was a doctor, and said “let me in there”,
+meaning for me to give my position on Mike’s leg to him, which I did.&nbsp;</span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Emergency
+help was called, but it was 20 to 30 minutes before Mike was finally placed
+into the ambulance. We administered CPR to Mike on the river, and during
+transport to the ambulance. A drive-by M.D. attended to Mike in the
+ambulance..”&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Here is an account of
+the rescue by Greatful Ed, posting to rec.boats.paddle&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: Arial, sans-serif; color: black;"><b>“I wanted to write to
+you about the Mike's death for a couple of&nbsp;
+reasons.&nbsp; For good or for ill, I
+helped work on him out there on the&nbsp;
+middle of the river. My concern here is to set the record straight about
+this tragic situation.&nbsp; I've also find
+writing very therapeutic.&nbsp;&nbsp;</b></span></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“The closing weekend of
+the 1997 season on the Ocoee was November 1st and 2nd,&nbsp; and I had planned to paddle it on Saturday.
+When I arrived, at around&nbsp;</span></b><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">2:00 p.m.</span></b><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">, the weather was
+still&nbsp; sunny&nbsp; and warm.&nbsp;
+I made a quick run because of increasing clouds and dropping&nbsp; temperatures, and I was off the river at
+about&nbsp;</span></b><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">3:30 p.m.&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><br></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I hitched a ride up to
+the put-in, but as our car passed the shoals about 1/4&nbsp; mile below Double Trouble a guy ran out into
+the road and flagged down our car. He said that someone was hurt in the middle
+of the river, and asked to use a cell phone. I used to be a volunteer
+firefighter and First Responder for a department outside Chattanooga, so I
+jumped out of the car, scrambled&nbsp; down to
+the riverside, borrowed a boat, and ferried out to a rock ledge in the middle
+of the shoals.&nbsp; When I got there a&nbsp; couple of&nbsp;
+rescuers were beginning to work on Mike. One of them, thank God, was a
+doctor.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">When I got there three
+or&nbsp; four people were dragging him out of
+the water and onto a small rock ledge. They were trying to control the
+bleeding. Mike, although confused and in pain, was responsive when I got there,.
+The doctor was holding compression on Mike's leg wound, which was generally
+keeping the bleeding under control. At his direction we made Mike as
+comfortable as possible with our PFDs and improvised a tourniquet. I wound up
+holding pressure on Mike's femoral artery at his&nbsp; groin while someone else cut webbing for the
+tourniquet.&nbsp; We applied the tourniquet
+and continued the femoral pressure and the direct pressure on the wound.&nbsp; Although the blood was mixed with water, it
+didn't seem to be&nbsp; arterial. It&nbsp; was pretty dark in color, mixed with a lot of
+fluid, typical of deep tissue injury. The doctor said he didn't think the
+femoral artery had been hit. As I held pressure and later held tension on the
+tourniquet, I checked out Mike's head wound, and it looked like he had slammed
+his head. He had a lump on his left temple the size of a fifty-cent piece which
+projected perhaps a half-inch. It was an ugly shade of purple.&nbsp; It was just&nbsp;
+exactly in the spot exposed if you're letting your chin strap get loose
+and your helmet ride back.&nbsp; I checked his
+pupil dilation, and while his&nbsp; pupils
+seemed wide to me, they also seemed equally dilated.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“While we were working
+on Mike we kept talking to him. We were telling him that he'd be OK, saying his
+name, trying to get him to talk back to us. At first&nbsp; he was responsive: he answered questions,
+reached out to hold our hands, and complained of discomfort.&nbsp; But as time wore on he began slipping. He
+complained of the cold, his tight clothing, and his inability to breathe.
+"I can't see," he kept saying. We tried to sit him up in order to
+make his breathing easier. I was sitting on the rock with my arms around him
+and his head laid back on my&nbsp; shoulder.
+But he only got worse. He eventually quit talking and became mostly unresponsive.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“It was clear to us that
+we might save Mike from blood loss only to lose him to shock, so at the
+doctor's direction we moved him from the small rock ledge to a larger one
+nearby.&nbsp; Some of us had to wade through
+water to get there, and we had to careful not to drop Mike. He was a pretty big
+guy, all wet and slippery. Park rangers arrived at the road across the river
+from. We got Mike laid out flat with legs elevated. While the doctor continued
+to maintain pressure on&nbsp; the leg wound we
+began to demand blankets, fleece, jackets, and anything else we could get to
+try to keep Mike warm. There wasn't much available except PFDs. Everyone was
+soaked and a cold rain had begun to fall.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“Right about this time a
+paramedic who had been out paddling joined&nbsp;
+us on the rock.&nbsp; He was a big
+help. He and the doctor&nbsp; kept&nbsp; checking Mike's breathing and pulse. Finally,
+someone arrived with a spine board and a cervical collar, and we got Mike
+strapped onto the board. As Mike lapsed into unconsciousness, the doctor quickly
+turned management of&nbsp; the wound over to a
+bystander and crouched by Mike's head. "Don't do this, Mike, Don't do
+this." he repeated. Mike's breathing slowed, then&nbsp; stopped. The doctor and the paramedic began
+CPR. A man with a bullhorn on the shore told us that a raft at Double Suck
+would paddle down to us and ferry Mike across.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Mike began to vomit, and
+they had to stop CPR to clear his airway. Since he was on the backboard, it
+wasn't difficult to turn him onto his side so that the doctor could sweep his
+airway clear. We had to do this two or three times. Someone arrived with a rescue
+basket, which is like a really long, shallow, plastic bathtub. We lifted Mike
+into the rescue basket and strapped him in while the doctor and the paramedic
+continued to administer CPR. The raft arrived, and we lifted Mike in. The
+doctor&nbsp; jumped in and continued chest
+compressions.&nbsp; I watched from the rock as
+the raft ferried him across the river and he was lifted up the rockpile onto
+the road. Paramedics rushed Mike into the back of the ambulance and began
+working to stabilize him.&nbsp;&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">“The raft came back over
+to the rock, and I hitched a ride back over to the shore. I noticed that the
+ambulance was rocking back and forth, which meant that the paramedics were
+administering chest compressions. And although I didn't check my watch, they
+must have worked on him for twenty or more minutes before they took off. They
+reported on the news that Mike Reisman died of blood loss. I don't believe
+that, although we'll never know for sure.&nbsp;
+The family has declined to have an autopsy conducted. I think only one
+thing killed Mike: an utter lack of proper equipment to treat shock at an&nbsp; isolated scene. We had the training, we had
+the people, but that wasn’t enough.”&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">SOURCE: Tom Parson and
+Greatful Ed, posting to rec.boats.paddle</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">ANALYSIS: (Walbridge)
+There were six factors leading up to the accident. The absence of one of them
+might have prevented the fatality. They are:&nbsp;</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">1. Lack of practice by
+Reisman, which resulted in too many strength-sapping swims. If you know you are
+going to swim a lot, carry and wear extra protective gear and be ready to exit
+the river if necessary.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">2. Hypothermia, which
+impairs physical strength, balance and reflexes, contributed to the final
+capsizing. It also may have impaired judgement; perhaps a more aware person
+would have put on the paddle jacket or left the river. A wetsuit or even a
+paddle jacket could have kept Reisman warm enough to avoid trouble. In the off
+season you should carry one extra layer to use if the weather changes.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">3. A blow to the head,
+which, even if it was not serious in a long-term way, stunned Reisman and made
+him less able to exit his boat. It is possible he sustained a fatal head
+injury. Helmet fit was probably poor; this is something that can be checked
+regularly.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">4. A tight sprayskirt,
+improperly attached to the boat, which trapped Reisman and made a wet exit
+almost impossible. I recommend that paddlers practice releasing their
+sprayskirt by grabbing a handful of deck and pulling, just in case. Gear should
+be tested before it is used. A too-tight sprayskirt can be loosened by putting
+it on the boat and leaving it in place for 2-7 days.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">5. An ill-considered
+decision to use a knife without checking the position of Reisman’s body. This
+action caused serious injury, and violated a basic rule of rescue: that no
+unnecessary harm be done to your victim. When using a knife in an emergency, do
+not cut blindly. Instead, use your free hand to feel ahead of the cutting
+edge.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">6. Severe shock, caused
+by a combination of items 2, 3, and 5. I suspect this was the true cause of
+death.&nbsp;</span></b><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">7. Reisman received
+excellent first aid, but his body had been through more trauma than it could
+stand.</span></b><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">&nbsp;</span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">This is the story of the
+death of Mike Reisman just below Double Trouble on the Ocoee on November 1,
+1997.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: Arial, sans-serif; color: black;"><b>I wanted to write to you
+about the death of Mike's death for a couple of reasons. For good or for ill, I
+helped work on Mike out there on the middle of the river, and my main concern
+here is setting the record straight about what was a very wierd and tragic
+situation. I've also found writing to be a very theraputic pastime... and given
+the fact that I'm still a little bit freaked out about the whole thing, I need
+this.</b></span></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Closing weekend of the
+1997 season on the Ocoee was November first and second, and I had planned to
+paddle it for the last time this season on November first. When I arrived, at
+something like 2:00, the weather was still sunny and warm. I made a fairly
+quick run because of increasing clouds and dropping temperatures, and I was off
+the river at approximately 3:30.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I hitched a ride up to
+the putin, but as our car passed the shoals about 1/4 mile below Double Trouble
+(if memory serves...I don't know the name of the shoals and things were a
+little fast and strange for me to be giving too much thought to landmarks), a
+guy ran out into the road and flagged down our car. He said that a guy was hurt
+in the middle of the river, and asked for a cell phone.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I used to be a volunteer
+firefighter and First Responder for a department right outside Chattanooga, and
+while I've let my certifications lapse, sometimes small help is better than
+none. So I jumped out of the car, scrambled down the rockpile to the riverside,
+borrowed a boat, and ferried out into to the rock ledge in the middle of the
+shoals. When I got there, a couple of rescuers were just beginning to work on
+Mike. One of them, thank God, was a doctor...and I'll write more about him in
+just a second.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">They said that Mike had
+been ferrying across the shoals and had gotten flipped...and that while he was
+underwater he had taken a blow to the head which either knocked him unconscious
+or rendered him otherwise helpless. If I remember right, they said he was
+underwater for sixty seconds or so. The doctor reached Mike's boat and tried to
+flip it upright but was unable to, and was also unable to pop Mike's spray
+skirt. He said that Mike had left the grab loop tucked inside.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">So the doctor did the
+next thing he could think of, which was to unsheath his PFD knife and to cut
+across the lap of the spray skirt. By doing so he was able to pop the skirt and
+get Mike out of the boat, but this was when things went wildly wrong...because
+the doctor cut too deeply and opened a long, deep gash high up on the inside of
+Mike's right thigh.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="color: rgb(81, 90, 90); font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">And that was pretty much
+the situation when I first got there...three or four people were dragging him
+out of the water and onto a small rock ledge, and they were trying to control
+the bleeding.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Mike was responsive when
+I got there, although it was obvious that he was confused and in pain. The
+doctor was holding compression on Mike's leg wound, which was generally keeping
+the bleeding under control, and at his direction we made Mike as comfortable as
+possible with our PFDs and began to improvise a tourniquet. I wound up holding
+pressure on Mike's femoral artery at his groin while someone else cut webbing
+for the tourniquet. We applied the tourniquet and continued the femoral
+pressure and the direct pressure on the wound. Although the blood was mixed
+with water, it didn't seem to be arterial...it was pretty dark in color and was
+mixed with a lot of fluid that looked typical of deep tissue injury. The doctor
+said he didn't think the femoral artery had been hit.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">As I held pressure (and
+then held tension on the tourniquet), I checked out Mike's head wound, and it
+looked like he had slammed his head pretty well...he had a lump on his left
+temple the size of a fifty-cent piece which projected perhaps a half-inch and
+was an ugly shade of purple. It was just exactly in that spot which is all too
+easy to expose if you're letting your chin strap ride a little loosely. I
+checked his pupil dilation, and while his pupils seemed wide to me, they also
+seemed equally dilated.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">While we were working on
+Mike we kept talking to him...we were telling him that he'd be OK, we were
+saying his name, and we were trying to get him to talk back to us. He would
+occasionally screw up his face in pain. At first he was responsive to us...he
+answered questions, he reached out to hold our hands, and he complained of
+discomfort. But as time wore on (and the numbers of paddlers surround us grew),
+he began slipping. He complained of the cold, his tight clothing, and his
+inability to breathe. "I can't see," he kept saying. We tried to sit
+him up in order to make his breathing easier...I was sitting on the rock with
+my arms around him and his head laid back on my shoulder...but he only got
+worse...he quit talking and became mostly unresponsive to us.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">It was clear to us that
+we might save Mike from blood loss only to lose him to shock, so at the
+doctor's direction we moved him from the small rock ledge to a larger one which
+was close by. Some of us had to wade through water to get there, and we had to
+be painstakingly careful not to drop Mike, because he was a pretty big guy and he
+was wet and slippery.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Park rangers were
+arriving at the road across the river from us as we were moving Mike. We got
+him laid out flat (with legs elevated...I was holding up his left one), and
+while the doctor continued to maintain pressure on the leg wound we began to
+demand blankets, fleece, jackets, and anything else we could get to try to keep
+Mike warm. There wasn't much of anything to use except PFDs...everyone was
+soaked and a cold rain had begun to fall.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Right about this time a
+paramedic named Tiger who had been out paddling joined us on the rock and went
+to work. He was a big help. He and the doctor kept checking Mike's breathing
+and pulse. Finally, someone arrived with a spine board and a cervical collar,
+and we got Mike strapped onto the board. Tiger put the c-collar on him.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Mike lapsed into
+unconsciousness, and the doctor quickly turned management of the wound over to
+a bystander and crouched by Mike's head. "Don't do this, Mike...Don't do
+this..." he repeated. Mike's breathing slowed, and then stopped, and the
+doctor and Tiger began artifical respiration and chest compressions.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">At this point, somebody
+with a bullhorn on the shore told us that a raft was at Double Suck, and that
+the raft had been directed to hurry to where we were and ferry Mike across.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Mike began to vomit, and
+the doctor and Tiger were having to stop CPR. Since he was on the backboard, it
+wasn't too difficult to turn him onto his side so that the doctor could sweep
+his airway clear. We had to do this two or three times.<o:p></o:p></span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Someone arrived with a
+rescue basket, which is like a really long, shallow, plastic bathtub. We lifted
+Mike into the rescue basket and strapped him in while the doctor and Tiger
+continued to administer CPR. Right about then the raft arrived. As they lined
+up by the rock, we lifted Mike in, and the doctor jumped in and continued chest
+compressions. I watched from the rock as the raft ferried him across the river
+and as the spectators helped lift the rescue basket up the rockpile to the
+road. Paramedics rushed Mike into the the back of the ambulance and immediately
+began working to try to stabilize him.</span></b><br></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: Arial, sans-serif; color: black;"><b>The raft came back
+across to the rock, and I hitched a ride back over to the shore. After I
+climbed the rockpile, I asked one of the responding firemen for some alcohol
+foam to sterilize my hands with, and then I waited by the ambulance. I noticed
+that the ambulance was rocking back and forth, which meant that the paramedics
+were administering chest compressions inside. And although I didn't check my
+watch, they must have worked on him for twenty or more minutes before they took
+off.\</b></span></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">We stood around on the
+scene for a while. Lance, some of the other park rangers, the state troopers,
+and couple of the paramedics collected some information. I gave them my name,
+number, and address.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">The doctor felt like
+shit. He told me he was mad at himself, and although the normal cliches like
+"You did the best you could", "You did everything right",
+and "That was a terrible scene" were all close at hand, all I could do
+was squeeze his shoulder and shake my head. I watched as he rode away with one
+of the park rangers.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">And so now they're
+reporting on the news that Mike Reisman died of blood loss resulting from a
+severed femoral artery.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I don't believe that,
+although we'll never know for sure. I'm told the family has apparently declined
+to have an autopsy conducted. I think only one thing killed Mike...the utter
+lack of proper equipment to treat shock on an isolated scene. We had the
+training, we had the people, we had (barely) enough room to work. But none of
+that was enough.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I've seen a lot of
+people in shock, and they always react differently. Some act crazy, some mumble
+to themselves, some shake, some wander around like zombies. Some simply go to
+sleep.<o:p></o:p></span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b><b style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; color: rgb(29, 33, 41);"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Like Mike.</span></b><b style="font-family: inherit; font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; color: rgb(29, 33, 41);"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><br></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">That's the end of this
+story.&nbsp;</span></b><b style="font-family: inherit; font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I'm sorry.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&q
+
+
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1017
+Model:                          Logit   Df Residuals:                     1011
+Method:                           MLE   Df Model:                            5
+Date:                Tue, 04 Feb 2020   Pseudo R-squ.:                     inf
+Time:                        09:36:39   Log-Likelihood:                   -inf
+converged:                      False   LL-Null:                        0.0000
+Covariance Type:            nonrobust   LLR p-value:                     1.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       -176.3447   8.79e+04     -0.002      0.998   -1.72e+05    1.72e+05
+x1             0.3129      1.366      0.229      0.819      -2.364       2.990
+x2             1.9876   1064.547      0.002      0.999   -2084.486    2088.461
+x3           -22.8584   8.97e+04     -0.000      1.000   -1.76e+05    1.76e+05
+x4            21.2788   5.05e+04      0.000      1.000   -9.89e+04    9.89e+04
+x5           202.8145   1.26e+05      0.002      0.999   -2.46e+05    2.46e+05
+==============================================================================
+
+Possibly complete quasi-separation: A fraction 0.95 of observations can be
+perfectly predicted. This might indicate that there is complete
+quasi-separation. In this case some parameters will not be identified.
+
+Stacked models:
+Accuracy: 0.8750630945447486
+Precision: 0.8993500037701919
+Recall: 0.9527692048198391
