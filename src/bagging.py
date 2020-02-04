@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import numpy as np
 import pandas as pd
 from tokenator import tokenize_and_lemmatize
+import joblib
 
 
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
@@ -22,6 +23,7 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
 vectorizer.fit(X_train)
 def vector(data):
     return vectorizer.transform(data)
+
 features = vectorizer.get_feature_names()
 
 bc = BaggingClassifier(base_estimator=None,
@@ -38,10 +40,16 @@ bc = BaggingClassifier(base_estimator=None,
 
 bc.fit(vector(X_train), y_train)
 
-print(bc.score(vector(X_test), y_test))
 
-importances = np.mean([tree.feature_importances_ for tree in bc.estimators_], axis=0)
+def print_important():
+    importances = np.mean([tree.feature_importances_ for tree in bc.estimators_], axis=0)
 
-short_list = importances.argsort()[-1:-42:-1]
-for feat in short_list:
-    print(features[feat])
+    short_list = importances.argsort()[-1:-42:-1]
+    for feat in short_list:
+        print(features[feat])
+
+if __name__ == "__main__":
+    print_important()
+    score = bc.score(vector(X_test), y_test)
+    print(f'Saving model with score: {score}')
+    joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')

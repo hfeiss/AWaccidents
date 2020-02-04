@@ -1,3 +1,4 @@
+RANDOM FOREST FEATAURE
 narrative
 drown
 body
@@ -39,3 +40,91 @@ look
 flow
 life
 head
+
+
+LDA
+[['run' 'rock' 'group' 'victim' 'foot' 'pull' 'pin' 'go' 'drop' 'rope']
+ ['leave' 'kayaker' 'fall' 'right' 'vertical baseline' 'baseline'
+  'vertical' 'day' 'body' 'rock']
+ ['initial' 'initial initial' 'position' 'attachment' 'image initial'
+  'repeat' 'origin initial' 'initial clip' 'clip initial'
+  'initial origin']
+ ['dam' 'rope' 'run' 'fall' 'rock' 'victim' '5' '4' 'drown' 'leave']
+ ['run' 'amp' 'trip' 'day' 'rock' 'leave' 'get' 'group' 'know' 'right']
+ ['leave' 'right' 'rock' 'run' 'group' 'body' 'fall' 'time' 'kayaker'
+  'go']
+ ['run' 'rock' 'drop' 'go' 'get' 'group' 'right' 'pull' 'day' 'time']
+ ['man' 'county' 'drown' 'dam' 'sheriff' 'strong' 'life' 'accident'
+  'people' 'pull']
+ ['man' 'county' 'search' 'kayaker' 'body' 'leave' 'weight' 'be'
+  'sheriff' 'drown']
+ ['lock' 'priority' 'lock priority' 'accent' 'semihidden'
+  'unhidewhenused' 'semihidden unhidewhenused' 'table' 'list'
+  'lock semihidden']]
+
+
+                             Logit Regression Results
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1017
+Model:                          Logit   Df Residuals:                     1010
+Method:                           MLE   Df Model:                            6
+Date:                Mon, 03 Feb 2020   Pseudo R-squ.:                     inf
+Time:                        17:23:14   Log-Likelihood:                -2950.0
+converged:                       True   LL-Null:                        0.0000
+Covariance Type:            nonrobust   LLR p-value:                     1.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.3163      0.326     -0.970      0.332      -0.956       0.323
+x1             0.3466      0.124      2.806      0.005       0.105       0.589
+x2             0.1271      0.082      1.556      0.120      -0.033       0.287
+x3             0.0552      0.005     10.316      0.000       0.045       0.066
+x4            -0.5119      0.226     -2.263      0.024      -0.955      -0.069
+x5             0.5592      0.289      1.932      0.053      -0.008       1.126
+x6            -0.0969      0.233     -0.415      0.678      -0.554       0.360
+==============================================================================
+Accuracy: 0.8018284347231714
+Precision: 0.8404015453563429
+Recall: 0.9475966188375745
+Variables:['rellevel', 'difficulty', 'age', 'kayak', 'commercial', 'experienced']
+
+                           Logit Regression Results
+==============================================================================
+Dep. Variable:                      y   No. Observations:                 1017
+Model:                          Logit   Df Residuals:                     1013
+Method:                           MLE   Df Model:                            3
+Date:                Mon, 03 Feb 2020   Pseudo R-squ.:                     inf
+Time:                        17:40:47   Log-Likelihood:                -3058.8
+converged:                       True   LL-Null:                        0.0000
+Covariance Type:            nonrobust   LLR p-value:                     1.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1             0.3607      0.084      4.294      0.000       0.196       0.525
+x2             0.0556      0.005     10.998      0.000       0.046       0.065
+x3            -0.4404      0.159     -2.766      0.006      -0.752      -0.128
+x4             0.6445      0.267      2.415      0.016       0.122       1.168
+==============================================================================
+Accuracy: 0.8031613123718386
+Precision: 0.8414991931542499
+Recall: 0.9477434257864367
+Variables: ['rellevel', 'age', 'kayak', 'commercial']
+
+LDA
+[2389  894  376 1569 1368 2215 1682 1885 1410   18]
+load on to
+[['initial' 'new' 'leave' 'right' 'rock' 'position' 'run'
+  'initial initial' 'image' 'repeat']
+ ['amp' 'bt' 'amp bt' 'layout' 'layout grid' 'grid mode' 'mode' 'grid'
+  'drown' 'mode black']
+ ['run' 'leave' 'rock' 'drop' 'group' 'man' 'time' 'get' 'right' 'go']
+ ['man' 'county' 'strong' 'body' 'dam' 'drown' 'run' 'fall' 'rock'
+  'leave']
+ ['search' 'county' 'man' 'body' 'fall' 'go' 'run' 'group' 'rock' 'be']
+ ['kayaker' 'county' 'body' 'run' 'leave' 'man' 'go' 'be' '6' 'search']
+ ['county' 'man' 'run' 'body' 'kayaker' 'search' 'fall' 'sheriff' 'amp'
+  'rock']
+ ['amp' 'datum' 'canoe' 'man' 'dam' 'go' 'body' 'leave' 'kayaker' 'drown']
+ ['man' 'run' 'dam' 'drown' 'kayak' 'kayaker' 'pull' 'downstream'
+  'accident' 'swim']
+ ['accent' 'semihidden' 'grid' '4' '5' '6' 'medium' 'leave' 'rock' 'be']]

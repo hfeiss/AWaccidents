@@ -21,14 +21,17 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
 def vector(data):
     return vectorizer.transform(data)
 
-vectorizer.fit(X)
+def center_X():
+    vectorizer.fit(X)
 
-features = vectorizer.get_feature_names()
+    features = vectorizer.get_feature_names()
 
-X_vector = vector(X).todense()
+    X_vector = vector(X).todense()
 
-ss = preprocessing.StandardScaler()
-X_centered = ss.fit_transform(X_vector)
+    ss = preprocessing.StandardScaler()
+    X_centered = ss.fit_transform(X_vector)
+
+    return X_centered
 
 
 def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):
@@ -38,8 +41,8 @@ def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):
     num_components = pca.n_components_
     ind = np.arange(num_components)
     vals = pca.explained_variance_ratio_
-    ax.plot(ind, vals, color='#014d4e')
-    ax.scatter(ind, vals, color='#014d4e', s=50)
+    ax.plot(ind, vals, color='#047495')
+    ax.scatter(ind, vals, color='#047495', s=50)
 
     for i in range(num_components):
         ax.annotate(r"{:2.2f}%".format(vals[i]), 
@@ -56,11 +59,12 @@ def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):
     if title:
         ax.set_title(title, fontsize=16)
 
-    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/scree_dl.png')
+    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/scree.png')
 
 
 def plot_pca_target(X_pca, y, title):
     labels = ['M', 'I', 'F']
+    colors = ['#047495','#d2bd0a', '#f10c45']
 
     fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -69,15 +73,21 @@ def plot_pca_target(X_pca, y, title):
     ax.axis('off')
     ax.patch.set_visible(False)
     for i in range(X.shape[0]):
-        plt.text(X[i, 0], X[i, 1], 
+        plt.text(X[i, 0], X[i, 1],
                  str(labels[y[i]]), 
-                 color=plt.cm.Set1(y[i] / 10.), 
-                 fontdict={'weight': 'bold', 'size': 12})
+                 color=colors[y[i]], 
+                 fontdict={'weight': 'bold', 'size': 12,
+                           'alpha': 0.5})
+
+    ax.scatter(1, 1, c='#f10c45', label='Fatality', alpha=.6)
+    ax.scatter(1, 1, c='#d2bd0a', label='Injury', alpha=.6)
+    ax.scatter(1, 1, c='#047495', label='Medical', alpha=.6)
 
     ax.set_xticks([]), 
     ax.set_yticks([])
-    ax.set_ylim([-0.1, 0.3])
-    ax.set_xlim([0.01, 0.02])
+    ax.set_ylim([0.025, 0.1])
+    ax.set_xlim([0.0003, 0.0013])
+    ax.legend(frameon=False)
 
     plt.savefig(f'/Users/hfeiss/dsi/capstone-2/images/{title}.png')
 
@@ -87,16 +97,19 @@ def plot_pca_target(X_pca, y, title):
 
 
 if __name__ == "__main__":
+    # X_centered = center_X():
 
-    pca = PCA(n_components=10)
-    joblib.dump(pca.fit(X_centered), '/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
-    X_pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
-    scree_plot(pca, X_pca, title="Scree Plot for Description Principal Components")
+    # pca = PCA(n_components=10)
+    # joblib.dump(pca.fit(X_centered), '/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
+    # pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
+    # joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
+    # X_pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
+    # scree_plot(pca, X_pca, title="Scree Plot for Description Principal Components")
     
-    pca = PCA(n_components=2)
-    joblib.dump(pca.fit(X_centered), '/Users/hfeiss/dsi/capstone-2/models/pca_2.joblib')
-    pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    X_pca = joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_2.joblib')
-    plot_pca_target(X_pca, y, 'pca_targets_idf_dl')  
+    # pca = PCA(n_components=2)
+    # pca.fit(X_centered)
+    # joblib.dump(pca, '/Users/hfeiss/dsi/capstone-2/models/pca_2.joblib')
+    # pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
+    # joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_2.joblib')
+    X_pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/X_pca_2.joblib')
+    plot_pca_target(X_pca, y, 'pca_targets_idf')  

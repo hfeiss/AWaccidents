@@ -39,12 +39,20 @@ lda = LatentDirichletAllocation(n_components=10,
                                 verbose=1,
                                 random_state=42)
 
-lda.fit(vector(X))
+probs = lda.fit_transform(vector(X))
+probs = np.array(probs)
 
 features = np.array(vectorizer.get_feature_names())
 
 sorted_topics = lda.components_.argsort(axis=1)[:, ::-1][:, :10]
 
-top_topics = features[sorted_topics]
+for i, topic in enumerate(sorted_topics):
+    print(f'Topic: {i}')
+    print(features[topic])
 
-print(top_topics)
+
+top_doc_idx = probs.argsort(axis=0)[-1:-11:-1, :]
+
+for i, doc in enumerate(top_doc_idx):
+    print(f'Topic {i} top doc')
+    print(X[doc])
