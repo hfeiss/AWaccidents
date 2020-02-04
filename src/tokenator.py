@@ -54,3 +54,7 @@ if __name__ == "__main__":
     entry = df['description'][20]
     print(entry)
     print(tokenize_and_lemmatize(entry))
+    
+    df = df[df['F'] == 1]
+    df['description'] = df['description'].apply(tokenize_and_lemmatize)
+    pd.to_pickle(df['description'], '/Users/hfeiss/dsi/capstone-2/data/clean/death_lemmas.pkl')

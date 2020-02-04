@@ -29,6 +29,13 @@ level_dict = {
               'F': 3
               }
 
+exper_dict = {
+              'X': 3,
+              'E': 2,
+              'S': 1,
+              'I': 0
+              }
+
 causes = pd.read_csv('/Users/hfeiss/dsi/capstone-2/data/raw/causes.csv')
 cause_dict = pd.Series(causes['cause'].values, index=causes['id']).to_dict()
 
@@ -57,9 +64,12 @@ def read_clean_write(source, dest, verbose=True):
     del df['privcomm']
 
     # experience expert or experienced
-    df['experienced'] = ((df['experience'] == 'E') |
-                         (df['experience'] == 'X')).astype(int)
-    del df['experience']
+    # df['experienced'] = ((df['experience'] == 'E') |
+    #                      (df['experience'] == 'X')).astype(int)
+    # del df['experience']
+
+    # better to just map to linear scale
+    df['experience'] = df['experience'].map(exper_dict)
 
     # map water level to linear scale
     df['rellevel'] = df['rellevel'].map(level_dict)
