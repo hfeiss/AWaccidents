@@ -19,10 +19,15 @@ def print_top_words():
         print("%d: %s" % (num, ", ".join(features[i] for i in centroid)))
 
 if __name__ == "__main__":
-    kmeans = KMeans()
-    kmeans.fit(X)
+    K = [k for k in range(1, 11)]
+    intertias = []
+    for k in K:
+        kmeans = KMeans(n_clusters=k)
+        kmeans.fit(X)
+        intertias.append(kmeans.inertia_)
+        print(intertias)
     
-    joblib.dump(kmeans, '/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
-    kmeans = joblib.load('/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
+    # joblib.dump(kmeans, '/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
+    # kmeans = joblib.load('/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
 
-    print_top_words()
+    # print_top_words()

@@ -22,16 +22,17 @@ pipeline = Pipeline([('vect', CountVectorizer(token_pattern=None,
                                               max_df=0.55,
                                               max_features=100000,
                                               min_df=1)),
-                     ('bag', BaggingClassifier())])
+                     ('bag', BaggingClassifier(n_estimators=90,
+                                               n_jobs=-1))])
 
 parameters = {
             #   'vect__ngram_range': ((1, 1), (1, 2), (1, 3)),
             #   'vect__max_df': (0.40, 0.45, 0.50, 0.55, 0.60, 0.65),
             #   'vect__min_df': (1, 5, 10, 50),
             #   'vect__max_features': (1000, 10000, 50000, 100000, None)
-                'bag__n_estimators': (60, 75, 90),
-                'bag__max_samples': (0.60, 0.75, 0.90),
-                'bag__max_features': (0.60, 0.75, 0.90)
+                # 'bag__n_estimators': (70, 80),
+                # 'bag__max_samples': (0.85, 0.90, 0.95),
+                'bag__max_features': (0.95, 1)
               }
 
 grid_search = GridSearchCV(pipeline,

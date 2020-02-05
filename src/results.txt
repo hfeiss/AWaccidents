@@ -45,7 +45,13 @@ flow
 life
 head
 
-
+0: strainer, pin, 2009, attachment, okay, witness, cheat, 08, susquehanna, nisqually, 11, 06, york, 12, pa
+1: run, rock, drop, rope, group, new, eddy, pin, hole, paddler, foot, swim, pull, know, victim
+2: dam, hydraulic, low, catch, head, man, canoe, run, near, state, drown, kayak, kayaker, city, strong
+3: man, county, sheriff, search, body, drown, woman, kayaker, creek, fall, park, office, strong, kayak, accident
+4: canoe, man, capsize, wear, delaware, drown, life, search, near, body, pfd, county, victim, new, shore
+5: fall, cr, strainer, creek, bridge, youghiogheny, drown, pin, upper, rock, witness, attachment, middle, ocoee, near
+6: gorge, city, state, date, stockticker, watauga, run, day, new, trans, black, month, 1993, source, analysis
 kmeans: colorado!
 7: arkansas, chaffee, salida, pine, number, county, colorado, buena, vista, brown, royal, commercial, man, canyon, guide
 
@@ -583,3 +589,84 @@ Stacked models:
 Accuracy: 0.8750630945447486
 Precision: 0.8993500037701919
 Recall: 0.9527692048198391
+
+Performing grid search...
+pipeline: ['vect', 'bag']
+parameters:
+{'bag__max_features': (0.25, 0.5, 0.75, 1.0),
+ 'bag__max_samples': (0.25, 0.5, 0.75, 1.0),
+ 'bag__n_estimators': (1, 3, 6, 10, 20, 50)}
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed: 12.3min
+[Parallel(n_jobs=-1)]: Done 184 tasks      | elapsed: 59.7min
+[Parallel(n_jobs=-1)]: Done 434 tasks      | elapsed: 124.5min
+[Parallel(n_jobs=-1)]: Done 480 out of 480 | elapsed: 134.9min finished
+done in 8142.110s
+
+Best score: 0.773
+Best parameters set:
+        bag__max_features: 0.75
+        bag__max_samples: 0.75
+        bag__n_estimators: 50
+
+
+Top words for Medical:
+['new', 'rock', 'get', 'go', 'run', 'pull', 'rope', 'know', 'victim', 'kayaker', 'help', 'time', 'group', 'swim', '5']
+
+
+Top words for Injury:
+['fall', 'rock', 'run', 'go', 'pin', 'foot', 'group', 'get', 'kayaker', 'time', 'new', 'witness', 'strainer', 'accident', 'man']
+
+
+Top words for Death:
+['run', 'man', 'body', 'county', 'search', 'drown', 'rock', 'fall', 'group', 'go', 'day', 'time', 'kayaker', 'be', 'accident']
+
+
+Top anti-words for Medical:
+['gully', 'large kayak', 'large jam', 'large iii+', 'large house', 'tip victim', 'tip wear', 'large large', 'large general', 'tipline', 'tipline 928', 'tira', 'large fan', 'large fall', 'tira group', 'large flow']
+
+
+Top anti-words for Injury:
+['john wetsuit', 'march 6', 'march 5', 'march 31', 'march 30', 'march 29th', 'march 28th', 'march 28', 'march 26', 'march 23rd', 'march 22', 'march 21', 'march 20th', 'march 2018', 'march 2016', 'march 2015']
+
+
+Top anti-words for Death:
+['verlen capsize', 'feel responsibility', 'bowel niyhwk', 'accelerate paddler', 'feel probably', 'bowel', 'spot stop', 'feel pressure', 'respond individually', 'bowel zyrtec', 'accept sea', 'peer pressure', 'life putt', 'nancypin', 'feel motion', 'feel mile']
+
+
+Top words for Medical:
+['new', 'rock', 'get', 'go', 'run', 'pull', 'rope', 'know', 'victim', 'kayaker', 'help', 'time', 'group', 'swim', '5']
+
+
+Top words for Injury:
+['fall', 'rock', 'run', 'go', 'pin', 'foot', 'group', 'get', 'kayaker', 'time', 'new', 'witness', 'strainer', 'accident', 'man']
+
+
+Top words for Death:
+['run', 'man', 'body', 'county', 'search', 'drown', 'rock', 'fall', 'group', 'go', 'day', 'time', 'kayaker', 'be', 'accident']
+
+
+Top anti-words for Medical:
+['jim juneau', 'moment accident', 'mom dad', 'molnar', 'molly superchi', 'molly shoal', 'molly head', 'molly', 'molai navy', 'molai', 'moisture', 'moist slot', 'moist', 'moines accord', 'mohn', 'mohican state']
+
+
+Top anti-words for Injury:
+['jim juneau', 'near dupage', 'near dryden', 'near drowning', 'near downtown', 'near dornan', 'near depot', 'near death', 'near eagle', 'near dead', 'near dangerous', 'near creede', 'near county', 'near conant', 'near community', 'near columbus']
+
+
+Top anti-words for Death:
+['competent group', 'altoona fire', 'kayak dave', 'alvestad', 'grade section', 'lucas run', 'grade accident', 'chute enter', 'tcenter posr', 'tcenter', 'grada', 'grad georgia', 'risk try', 'lucas roy', 'lucas life', 'amaze end']
+kayaker nervous, kayaker overdose, 
+
+Fitting 5 folds for each of 18 candidates, totalling 90 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed: 13.5min
+[Parallel(n_jobs=-1)]: Done  90 out of  90 | elapsed: 31.5min finished
+done in 1959.952s
+
+Best score: 0.770
+Best parameters set:
+        bag__max_features: 0.95
+        bag__max_samples: 0.9
+        bag__n_estimators: 80

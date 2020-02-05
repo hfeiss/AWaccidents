@@ -1,4 +1,4 @@
-from sklearn.ensemble import BaggingClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import numpy as np
@@ -27,25 +27,13 @@ def vector(data):
 
 features = vectorizer.get_feature_names()
 
-bc = BaggingClassifier(base_estimator=None,
-                       n_estimators=10,
-                       max_samples=1.0,
-                       max_features=1.0,
-                       bootstrap=True,
-                       bootstrap_features=False,
-                       oob_score=False,
-                       warm_start=False,
-                       n_jobs=-1,
-                       random_state=42,
-                       verbose=1)
+ada = AdaBoostClassifier(n_estimators=100)
 
-bc.fit(vector(X_train), y_train)
-importances = np.mean([tree.feature_importances_ for tree in bc.estimators_], axis=0)
-std = np.std([tree.feature_importances_ for tree in bc.estimators_], axis=0)
+ada.fit(vector(X_train), y_train)
+importances = np.mean([tree.feature_importances_ for tree in ada.estimators_], axis=0)
 
 important_idx = importances.argsort()[-1:-16:-1]
 important_val = importances[important_idx]
-important_std = std[important_idx]
 important_wrd = []
 
 for feat in important_idx:
@@ -60,7 +48,7 @@ def plot_important_features():
     ax.set_title('Top Words for Predicting Fatality', fontsize=16)
     ax.bar(range(len(important_val)),
             important_val,
-            yerr=important_std,
+            # yerr=important_std,
             align='center',
             color='#047495')
     ax.set_xticks(np.array(range(len(important_val))) - 0.15)
@@ -75,14 +63,18 @@ def plot_important_features():
     ax.spines['left'].set_visible(False)
 
     plt.tight_layout()
-    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/bagging_features.png')
+    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
 
 def horiz_plot():
     fig, ax = plt.subplots(figsize=(10, 6))
 
     ax.set_title('Top Words for Predicting Fatality', fontsize=16)
     y_pos = np.arange(len(important_wrd))
-    ax.barh(y_pos, important_val, xerr=important_std, align='center', color='#047495')
+    ax.barh(y_pos,
+            important_val,
+            # xerr=important_std,
+            align='center',
+            color='#047495')
     ax.set_yticks(y_pos)
     ax.set_yticklabels(important_wrd)
     ax.invert_yaxis()
@@ -96,12 +88,30 @@ def horiz_plot():
     ax.spines['left'].set_visible(False)
 
     plt.tight_layout()
-    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/bagging_features_horiz.png')
+    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
+
+def errors_vs_n():
+    test_erros = []
+    train_errors = []
+    for n in range(1, 111, 5):
+        ada = AdaBoostClassifier(n_estimators=n)
+        ada.fit(vector(X_train), y_train)
+        train = ada.score(X_train, y_train)
+        test = ada.score(X_test, y_test)
+        train_errors.append(train)
+        test_errors.append(test)
+    print(test_errors)
+    print(train_errors)
+    plt.plot(test_erros)
+    plt.plot(train_errors)
+    plt.show()
 
 if __name__ == "__main__":
     # print_important()
     # plot_important_features()
-    horiz_plot()
-    # score = bc.score(vector(X_test), y_test)
+    # horiz_plot()
+    # score = ada.score(vector(X_test), y_test)
     # print(f'Saving model with score: {score}')
-    # joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')
+    # joblib.dump(ada, '/Users/hfeiss/dsi/capstone-2/models/ada.joblib')
+
+    errors_vs_n()

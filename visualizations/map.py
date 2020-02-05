@@ -7,26 +7,26 @@ import selenium.webdriver
 from filepaths import paths
 
 paths = paths(1)
-
 clean = paths.data.clean.path + '/clean.pkl'
-
 df = pd.read_pickle(clean)
 
+# get counts
 states = df['state'].value_counts()
 states.sort_index(inplace=True)
 
-
+# make it a dataframe for the index
 states = pd.DataFrame(states)
 states.reset_index(inplace=True)
 
+# group abbrevs that are uppers/lowers
 states['state_upper'] = states['index'].str.upper()
-
 states = pd.DataFrame(states.groupby('state_upper').sum())
 
+# final df for the map
 states = pd.DataFrame(states)
 states.reset_index(inplace=True)
 
-
+# source geojson
 url = 'https://raw.githubusercontent.com/'\
       'python-visualization/folium/master/examples/data'
 state_geo = f'{url}/us-states.json'
@@ -54,24 +54,16 @@ def make_maps():
         m.save(paths.images.path + '/map.html')
 
 
-def make_images():
-    list_years = []
-    for root, dirs, file in os.walk('./maphtmls'):
-        list_years.extend(file)
-    list_years.sort()
+def make_images(source, dest):
 
     delay = 2
-    for year in list_years:
-        tmpurl = f'file://{srcpath}/visualizations/'\
-                 f'maps/maphtmls/CustomerState/{year}'
-        print(tmpurl)
-        browser = selenium.webdriver.Safari()
-        browser.set_window_size(1200, 800)
-        browser.get(tmpurl)
-        time.sleep(delay)
-        browser.save_screenshot(f'{imagepath}/maps/CustomerState/'
-                                f'{str(year[:-5])}.png')
-        browser.quit()
+    tmpurl = f'file://{source}'
+    browser = selenium.webdriver.Safari()
+    browser.set_window_size(1200, 800)
+    browser.get(tmpurl)
+    time.sleep(delay)
+    browser.save_screenshot(dest)
+    browser.quit()
 
 
 if __name__ == '__main__':

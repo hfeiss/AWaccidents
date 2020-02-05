@@ -28,7 +28,7 @@ my_stops =  ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
              'large', 'march', 'tira', 'niyhwk', 'tcenter', 'posr', 'jim',
              'georgia', 'lucas', 'posr', 'mark', 'get', 'rock', 'be', 'kayker',
              'time', 'ndn', 'thumbtitle', 'thumbnail', 'sliderthumbnailoverlay',
-             'neacato', '07', 'witness']
+             'neacato']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_']
 
