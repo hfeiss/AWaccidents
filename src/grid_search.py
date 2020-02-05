@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import BaggingClassifier
 from sklearn.pipeline import Pipeline
 
 
@@ -16,14 +17,21 @@ X = df['description'].str.join(' ')
 y = np.array(df['target'])
 
 pipeline = Pipeline([('vect', CountVectorizer(token_pattern=None,
-                                              tokenizer=tokenize_and_lemmatize)),
-                     ('bayes', MultinomialNB())])
+                                              tokenizer=tokenize_and_lemmatize,
+                                              ngram_range=(1, 2),
+                                              max_df=0.55,
+                                              max_features=100000,
+                                              min_df=1)),
+                     ('bag', BaggingClassifier())])
 
 parameters = {
-              'vect__ngram_range': ((1, 1), (1, 2), (1, 3)),
-              'vect__max_df': (0.40, 0.45, 0.50, 0.55, 0.60, 0.65),
-              'vect__min_df': (1, 5, 10, 50),
-              'vect__max_features': (1000, 10000, 50000, 100000, None)
+            #   'vect__ngram_range': ((1, 1), (1, 2), (1, 3)),
+            #   'vect__max_df': (0.40, 0.45, 0.50, 0.55, 0.60, 0.65),
+            #   'vect__min_df': (1, 5, 10, 50),
+            #   'vect__max_features': (1000, 10000, 50000, 100000, None)
+                'bag__n_estimators': (1, 3, 6, 10, 20, 50),
+                'bag__max_samples': (0.25, 0.5, 0.75, 1.0),
+                'bag__max_features': (0.25, 0.5, 0.75, 1.0)
               }
 
 grid_search = GridSearchCV(pipeline,
