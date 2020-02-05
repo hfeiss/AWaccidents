@@ -16,7 +16,7 @@ X = df['description'].str.join(' ')
 y = np.array(df['target'])
 
 pipeline = Pipeline([('vect', CountVectorizer(token_pattern=None,
-                                              tokenizer=tokenize_and_lemmatizeç)),
+                                              tokenizer=tokenize_and_lemmatize)),
                      ('bayes', MultinomialNB())])
 
 parameters = {

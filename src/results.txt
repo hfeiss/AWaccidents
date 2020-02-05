@@ -46,6 +46,9 @@ life
 head
 
 
+kmeans: colorado!
+7: arkansas, chaffee, salida, pine, number, county, colorado, buena, vista, brown, royal, commercial, man, canyon, guide
+
 LDA
 [['run' 'rock' 'group' 'victim' 'foot' 'pull' 'pin' 'go' 'drop' 'rope']
  ['leave' 'kayaker' 'fall' 'right' 'vertical baseline' 'baseline'
@@ -513,13 +516,10 @@ doctor and Tiger began artifical respiration and chest compressions.</span></b><
 mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
 mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">At this point, somebody
 with a bullhorn on the shore told us that a raft was at Double Suck, and that
-the raft had been directed to hurry to where we were and ferry Mike across.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Mike began to vomit, and
+the raft had been directed to hurry to where we were and ferry Mike across.Mike began to vomit, and
 the doctor and Tiger were having to stop CPR. Since he was on the backboard, it
 wasn't too difficult to turn him onto his side so that the doctor could sweep
-his airway clear. We had to do this two or three times.<o:p></o:p></span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Someone arrived with a
+his airway clear. We had to do this two or three times. Someone arrived with a
 rescue basket, which is like a really long, shallow, plastic bathtub. We lifted
 Mike into the rescue basket and strapped him in while the doctor and Tiger
 continued to administer CPR. Right about then the raft arrived. As they lined
@@ -527,51 +527,32 @@ up by the rock, we lifted Mike in, and the doctor jumped in and continued chest
 compressions. I watched from the rock as the raft ferried him across the river
 and as the spectators helped lift the rescue basket up the rockpile to the
 road. Paramedics rushed Mike into the the back of the ambulance and immediately
-began working to try to stabilize him.</span></b><br></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 12pt; font-family: Arial, sans-serif; color: black;"><b>The raft came back
+began working to try to stabilize him.The raft came back
 across to the rock, and I hitched a ride back over to the shore. After I
 climbed the rockpile, I asked one of the responding firemen for some alcohol
 foam to sterilize my hands with, and then I waited by the ambulance. I noticed
 that the ambulance was rocking back and forth, which meant that the paramedics
 were administering chest compressions inside. And although I didn't check my
 watch, they must have worked on him for twenty or more minutes before they took
-off.\</b></span></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">We stood around on the
+off. We stood around on the
 scene for a while. Lance, some of the other park rangers, the state troopers,
 and couple of the paramedics collected some information. I gave them my name,
-number, and address.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">The doctor felt like
+number, and address. The doctor felt like
 shit. He told me he was mad at himself, and although the normal cliches like
 "You did the best you could", "You did everything right",
 and "That was a terrible scene" were all close at hand, all I could do
 was squeeze his shoulder and shake my head. I watched as he rode away with one
-of the park rangers.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">And so now they're
+of the park rangers. And so now they're
 reporting on the news that Mike Reisman died of blood loss resulting from a
-severed femoral artery.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I don't believe that,
+severed femoral artery. I don't believe that,
 although we'll never know for sure. I'm told the family has apparently declined
 to have an autopsy conducted. I think only one thing killed Mike...the utter
 lack of proper equipment to treat shock on an isolated scene. We had the
 training, we had the people, we had (barely) enough room to work. But none of
-that was enough.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b style="font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I've seen a lot of
+that was enough. I've seen a lot of
 people in shock, and they always react differently. Some act crazy, some mumble
 to themselves, some shake, some wander around like zombies. Some simply go to
-sleep.<o:p></o:p></span></b></p><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b><b style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; color: rgb(29, 33, 41);"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">Like Mike.</span></b><b style="font-family: inherit; font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; color: rgb(29, 33, 41);"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><br></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">That's the end of this
-story.&nbsp;</span></b><b style="font-family: inherit; font-size: 1rem; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;"><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black">I'm sorry.</span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></div><div style="margin-bottom: 0.0001pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;
-mso-fareast-font-family:&quot;Times New Roman&q
+sleep.
 
 
                            Logit Regression Results                           

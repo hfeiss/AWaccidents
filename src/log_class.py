@@ -21,7 +21,6 @@ for i in range(X.shape[1]):
 model = Logit(y, X).fit()
 print(model.summary())
 
-
 kfold = KFold(n_splits=10)
 
 accuracies = []

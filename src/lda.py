@@ -9,7 +9,6 @@ from tokenator import tokenize_and_lemmatize
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 
 X = df['description']
-# y = np.array(df['target'])
 
 vectorizer = CountVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
@@ -17,10 +16,8 @@ vectorizer = CountVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
-vectorizer.fit(X)
 def vector(data):
     return vectorizer.transform(data)
-features = vectorizer.get_feature_names()
 
 lda = LatentDirichletAllocation(n_components=10,
                                 doc_topic_prior=None,
@@ -39,20 +36,27 @@ lda = LatentDirichletAllocation(n_components=10,
                                 verbose=1,
                                 random_state=42)
 
-probs = lda.fit_transform(vector(X))
-probs = np.array(probs)
-
-features = np.array(vectorizer.get_feature_names())
-
-sorted_topics = lda.components_.argsort(axis=1)[:, ::-1][:, :10]
-
-for i, topic in enumerate(sorted_topics):
-    print(f'Topic: {i}')
-    print(features[topic])
 
 
-top_doc_idx = probs.argsort(axis=0)[-1:-11:-1, :]
+if __name__ == "__main__":
+    
+    vectorizer.fit(X)
+    features = vectorizer.get_feature_names()
 
-for i, doc in enumerate(top_doc_idx):
-    print(f'Topic {i} top doc')
-    print(X[doc])
+    probs = lda.fit_transform(vector(X))
+    joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/lda.joblib')
+    probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/lda.joblib')
+    probs = np.array(probs)
+
+    features = np.array(vectorizer.get_feature_names())
+    sorted_topics = lda.components_.argsort(axis=1)[:, ::-1][:, :10]
+
+    top_doc_idx = probs.argsort(axis=0)[-1, :]
+
+    for i, topic in enumerate(sorted_topics):
+        print(f'Topic: {i} with best article {top_doc_idx[i]}')
+        print(features[topic])
+
+    # for i, doc in enumerate(top_doc_idx):
+        # print(f'Topic {i} top doc')
+        # print(X[doc])
