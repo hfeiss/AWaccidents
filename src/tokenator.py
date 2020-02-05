@@ -24,7 +24,8 @@ my_stops =  ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
              'layout', 'mode', 'narrative', 'initial', 'variant', 'weight',
              'outline', 'baseline', 'datum', 'vertical', 'leave', 'image',
              'max', 'position', 'display', '68', 'https', 'right', 'ligature',
-             'stockticker', '08', '11', '06', '12', 'pa', 'source', 'stockticker']
+             'stockticker', '08', '11', '06', '12', 'pa', 'source', 'stockticker',
+             'large', 'march', 'tira', 'niyhwk']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<']
 

@@ -29,9 +29,9 @@ parameters = {
             #   'vect__max_df': (0.40, 0.45, 0.50, 0.55, 0.60, 0.65),
             #   'vect__min_df': (1, 5, 10, 50),
             #   'vect__max_features': (1000, 10000, 50000, 100000, None)
-                'bag__n_estimators': (1, 3, 6, 10, 20, 50),
-                'bag__max_samples': (0.25, 0.5, 0.75, 1.0),
-                'bag__max_features': (0.25, 0.5, 0.75, 1.0)
+                'bag__n_estimators': (60, 75, 90),
+                'bag__max_samples': (0.60, 0.75, 0.90),
+                'bag__max_features': (0.60, 0.75, 0.90)
               }
 
 grid_search = GridSearchCV(pipeline,

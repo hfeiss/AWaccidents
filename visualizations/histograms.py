@@ -58,20 +58,27 @@ def histogram(ax, data, saveas, title, colors,
 
 if __name__ == "__main__":
 
+    # start = pd.to_datetime(2020, format='%Y')
+    # end = pd.to_datetime(1960, format='%Y')
+    # data = df['accidentdate'][(df['accidentdate'] < start)
+    #                           & (df['accidentdate'] > end)]
+    
     start = pd.to_datetime(2020, format='%Y')
     end = pd.to_datetime(1960, format='%Y')
-    data = df['accidentdate'][(df['accidentdate'] < start)
-                              & (df['accidentdate'] > end)]
-    
+    data = df[(df['accidentdate'] < start)
+               & (df['accidentdate'] > end)]
+    data = data['accidentdate'].groupby([data['accidentdate'].dt.year, data['accidentdate'].dt.month]).agg('count')
+
     fig, ax = plt.subplots(1, 1, figsize=(10, 6))
     ax.plot(data)
+    ax.fill_between(0, data, alpha=0.3)
     plt.show()
 
-    data.dropna(inplace=True)
-    labels = ['1960', '1970', '1980', '1990', '2000', '2010', '2020']
-    fig, ax = plt.subplots(figsize=(10, 6))
-    histogram(ax, data, 'dates', 'Accidents Over Time', colors='#047495',
-              labels=labels, bins=15, remove_spines=True)
+    # data.dropna(inplace=True)
+    # labels = ['1960', '1970', '1980', '1990', '2000', '2010', '2020']
+    # fig, ax = plt.subplots(figsize=(10, 6))
+    # histogram(ax, data, 'dates', 'Accidents Over Time', colors='#047495',
+    #           labels=labels, bins=15, remove_spines=True)
 
     # level = df['rellevel']
     # level.dropna(inplace=True)

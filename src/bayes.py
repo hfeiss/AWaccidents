@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_s
 
 vectorizer = CountVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
-                             max_features=None,
+                             max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
@@ -36,6 +36,15 @@ def print_important_words():
         print([features[coef] for coef in coefs_sorted])
         print('\n')
 
+def print_anti_important_words():
+    labels = ['Medical', 'Injury', 'Death']
+    coefs = bayes.coef_
+    for i, outcome in enumerate(coefs):
+        coefs_sorted = np.argsort(outcome)[0:16]
+        print(f'Top anti-words for {labels[i]}:')
+        print([features[coef] for coef in coefs_sorted])
+        print('\n')
+
 
 bayes = MultinomialNB()
 bayes.fit(vector(X_train), y_train)
@@ -43,5 +52,6 @@ bayes.fit(vector(X_train), y_train)
 
 if __name__ == "__main__":
     print_important_words()
+    print_anti_important_words()
     score = bayes.score(vector(X_test), y_test)
     print(f'Model score: {score}')
