@@ -20,7 +20,7 @@ y = np.array(df['target'])
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
-                             max_features=None,
+                             max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 

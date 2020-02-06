@@ -1,18 +1,21 @@
+import numpy as np
+import pandas as pd
+import joblib
+from pprint import pprint
+import matplotlib.pyplot as plt
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics import accuracy_score, precision_score, recall_score
-import numpy as np
-import pandas as pd
+from sklearn.metrics import classification_report
 from tokenator import tokenize_and_lemmatize
-import joblib
-import matplotlib.pyplot as plt
 
 
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 
 X = df['description']
 y = np.array(df['target'])
+# y = np.array(df['F'])
 
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
@@ -35,7 +38,7 @@ def vector(data):
 
 features = vectorizer.get_feature_names()
 
-ada = AdaBoostClassifier(n_estimators=100)
+ada = AdaBoostClassifier(n_estimators=20)
 
 ada.fit(vector(X_train), y_train)
 importances = np.mean([tree.feature_importances_ for tree in ada.estimators_],
@@ -125,4 +128,11 @@ if __name__ == "__main__":
     # print(f'Saving model with score: {score}')
     # joblib.dump(ada, '/Users/hfeiss/dsi/capstone-2/models/ada.joblib')
 
-    errors_vs_n()
+    labels = ['Medical', 'Injury', 'Fatality']
+    predict = ada.predict(vector(X_test))
+    results = classification_report(y_test,
+                                    predict,
+                                    target_names=labels)
+    pprint(results)
+
+    # errors_vs_n()

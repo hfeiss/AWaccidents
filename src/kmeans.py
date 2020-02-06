@@ -11,14 +11,17 @@ paths = Root(1).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
-data = df['description'].apply(tokenize_and_lemmatize).str.join(' ')
 
-vectorizer = TfidfVectorizer(stop_words='english',
-                             min_df=3,
-                             max_features=4000,
-                             max_df=.7)
+data = df['description']
+
+vectorizer = TfidfVectorizer(ngram_range=(1, 2),
+                             max_df=0.55,
+                             max_features=100000,
+                             token_pattern=None,
+                             tokenizer=tokenize_and_lemmatize)
 
 X = vectorizer.fit_transform(data)
+
 features = vectorizer.get_feature_names()
 
 

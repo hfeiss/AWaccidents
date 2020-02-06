@@ -27,13 +27,21 @@ silhouette = [0.021031147139082912,
               0.01673858640961575,
               0.017921311429581137]
 
+silhouette_2 = [0.012350957951900533,
+                0.00781858377484346,
+                0.008483841502261651,
+                0.009262873575787358,
+                0.009541112171262496,
+                0.010146434809065342,
+                0.010636419349471717]
+
 x = np.arange(0, 10, 1) + 1
 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.set_title('Silhouette Score vs. Number of Estimators',
              fontsize=16)
 
-ax.plot(range_n_clusters, silhouette)
+ax.plot(range_n_clusters, silhouette_2)
 
 ax.set_xlabel('Number of Clusters', fontsize=12)
 ax.set_xticks(x)
@@ -46,4 +54,4 @@ ax.spines['right'].set_visible(False)
 
 
 plt.tight_layout()
-plt.savefig(images + '/silh_km.png')
+plt.savefig(images + '/silh_km_2.png')

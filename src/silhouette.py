@@ -7,18 +7,18 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
 
-paths = Root().paths()
+paths = Root(1).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
+
+data = df['description']
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
                              max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
-
-data = df['description']
 
 X = vectorizer.fit_transform(data)
 

@@ -8,7 +8,7 @@ from sklearn.naive_bayes import MultinomialNB
 from tokenator import tokenize_and_lemmatize
 
 
-paths = paths(1)
+paths = paths(0)
 clean = paths.data.clean.path
 models = paths.models.path
 

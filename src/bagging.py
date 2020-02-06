@@ -9,14 +9,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
 
-paths = paths(1)
+paths = paths(0)
 clean = paths.data.clean.path
 images = paths.images.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
 
 X = df['description']
-y = np.array(df['target'])
+# y = np.array(df['target'])
+y = np.array(df['F'])
+
 
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
@@ -120,7 +122,7 @@ def horiz_plot():
 if __name__ == "__main__":
     # print_important()
     # plot_important_features()
-    horiz_plot()
-    # score = bc.score(vector(X_test), y_test)
-    # print(f'Saving model with score: {score}')
-    # joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')
+    # horiz_plot()
+    score = bc.score(vector(X_test), y_test)
+    print(f'Saving model with score: {score}')
+    joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')

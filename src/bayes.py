@@ -1,13 +1,15 @@
 import numpy as np
 import pandas as pd
+from pprint import pprint
 from filepaths import Root
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import classification_report
 from tokenator import tokenize_and_lemmatize
 
 
-paths = Root(1).paths()
+paths = Root(0).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
@@ -61,5 +63,9 @@ bayes.fit(vector(X_train), y_train)
 if __name__ == "__main__":
     print_important_words()
     print_anti_important_words()
-    score = bayes.score(vector(X_test), y_test)
-    print(f'Model score: {score}')
+    labels = ['Medical', 'Injury', 'Fatality']
+    predict = bayes.predict(vector(X_test))
+    results = classification_report(y_test,
+                                    predict,
+                                    target_names=labels)
+    pprint(results)

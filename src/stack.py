@@ -12,11 +12,11 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-paths = Root().paths()
+paths = Root(0).paths()
 clean = paths.data.clean.path
 models = paths.models.path
 
-df = pd.read_pickle(clean + 'clean.pkl')
+df = pd.read_pickle(clean + '/clean.pkl')
 df.dropna(how='any', inplace=True)
 
 X = df[['rellevel', 'age', 'kayak', 'commercial']].to_numpy()
@@ -59,7 +59,7 @@ def sm_summary(X, docs, y):
 
 
 def k_fold():
-    kfold = KFold(n_splits=10)
+    kfold = KFold(n_splits=5)
 
     accuracies = []
     precisions = []
@@ -96,4 +96,5 @@ def k_fold():
 
 
 if __name__ == "__main__":
-    sm_summary(X, docs, y)
+    # sm_summary(X, docs, y)
+    k_fold()
