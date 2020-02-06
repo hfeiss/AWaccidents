@@ -26,7 +26,7 @@ def histogram(ax, data, saveas, title, colors,
         ax.set_xticks(pd.to_datetime(labels))
     if labels:
         ax.set_xticklabels(labels, fontsize=12)
-    # ax.set_xticklabels(rotation=30)
+        # ax.set_xticklabels(rotation=30)
     ax.set_yticks([])
     ax.set_yticklabels([])
 
@@ -58,16 +58,13 @@ def histogram(ax, data, saveas, title, colors,
 
 if __name__ == "__main__":
 
-    # start = pd.to_datetime(2020, format='%Y')
-    # end = pd.to_datetime(1960, format='%Y')
-    # data = df['accidentdate'][(df['accidentdate'] < start)
-    #                           & (df['accidentdate'] > end)]
-    
     start = pd.to_datetime(2020, format='%Y')
     end = pd.to_datetime(1960, format='%Y')
     data = df[(df['accidentdate'] < start)
                & (df['accidentdate'] > end)]
-    data = data['accidentdate'].groupby([data['accidentdate'].dt.year, data['accidentdate'].dt.month]).agg('count')
+    data = data['accidentdate'].groupby([data['accidentdate'].dt.year,
+                                         data['accidentdate'].dt.month]).\
+                                         agg('count')
 
     fig, ax = plt.subplots(1, 1, figsize=(10, 6))
     ax.plot(data)

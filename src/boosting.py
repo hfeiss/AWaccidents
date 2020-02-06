@@ -1,6 +1,7 @@
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 import numpy as np
 import pandas as pd
 from tokenator import tokenize_and_lemmatize
@@ -91,18 +92,19 @@ def horiz_plot():
     plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
 
 def errors_vs_n():
-    test_erros = []
+    test_errors = []
     train_errors = []
-    for n in range(1, 111, 5):
+    for n in range(1, 111, 10):
+        print(n)
         ada = AdaBoostClassifier(n_estimators=n)
         ada.fit(vector(X_train), y_train)
-        train = ada.score(X_train, y_train)
-        test = ada.score(X_test, y_test)
+        train = ada.score(vector(X_train), y_train)
+        test = ada.score(vector(X_test), y_test)
         train_errors.append(train)
         test_errors.append(test)
     print(test_errors)
     print(train_errors)
-    plt.plot(test_erros)
+    plt.plot(test_errors)
     plt.plot(train_errors)
     plt.show()
 
