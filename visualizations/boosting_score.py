@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from filepaths import Root
 
+
+paths = Root().paths()
+images = paths.images.path
 
 test_scores = [0.6242138364779874,
                0.7845911949685535,
@@ -45,11 +49,11 @@ ax.set_yticklabels([str(num) + ' %' for num in range(0, 110, 10)],
 
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
-        
+
 plt.legend(bbox_to_anchor=(.7, .4, .25, .6), ncol=2,
            mode='expand', loc='center',
            borderaxespad=0., fontsize=12)
 
 
 plt.tight_layout()
-plt.savefig('/Users/hfeiss/dsi/capstone-2/images/boosting_n_score.png')
+plt.savefig(images + '/boosting_n_score.png')

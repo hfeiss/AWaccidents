@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from filepaths import Root
+
+
+paths = Root().paths()
+images = paths.images.path
 
 inertia = [2422.489275321806,
            2401.0146509817514,
@@ -25,7 +30,8 @@ silhouette = [0.021031147139082912,
 x = np.arange(0, 10, 1) + 1
 
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.set_title('Silhouette Score vs. Number of Estimators', fontsize=16)
+ax.set_title('Silhouette Score vs. Number of Estimators',
+             fontsize=16)
 
 ax.plot(range_n_clusters, silhouette)
 
@@ -35,13 +41,9 @@ ax.set_xticklabels(x, fontsize=12)
 
 ax.set_ylim(bottom=0)
 
-# ax.set_yticks(y)
-# ax.set_yticklabels([str(num) + ' %' for num in range(0, 110, 10)],
-                #    fontsize=12)
-
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 
 
 plt.tight_layout()
-plt.savefig('/Users/hfeiss/dsi/capstone-2/images/silh_km.png')
+plt.savefig(images + '/silh_km.png')

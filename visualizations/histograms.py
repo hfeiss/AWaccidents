@@ -43,12 +43,12 @@ def histogram(ax, data, saveas, title, colors,
         plt.legend(bbox_to_anchor=(-1, -.15, 1.92, 0), ncol=2,
                    mode='expand', loc='center',
                    borderaxespad=0., fontsize=12)
-        
+
         # for other bottom legend
         # plt.legend(bbox_to_anchor=(0, -.15, 1, 0), ncol=2,
         #            mode='expand', loc='center',
         #            borderaxespad=0., fontsize=12)
-        
+
         # for normal legend
         # plt.legend(fontsize=12)
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     start = pd.to_datetime(2020, format='%Y')
     end = pd.to_datetime(1960, format='%Y')
     data = df[(df['accidentdate'] < start)
-               & (df['accidentdate'] > end)]
+              & (df['accidentdate'] > end)]
 
     data.dropna(inplace=True)
     labels = ['1960', '1970', '1980', '1990', '2000', '2010', '2020']
