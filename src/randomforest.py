@@ -1,17 +1,25 @@
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import numpy as np
 import pandas as pd
+from filepaths import Root
 from tokenator import tokenize_and_lemmatize
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+paths = Root(1).paths()
+clean = paths.data.clean.path
+
+df = pd.read_pickle(clean + '/clean.pkl')
 
 X = df['description']
 y = np.array(df['target'])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    shuffle=True,
+                                                    random_state=42
+                                                    )
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
@@ -21,8 +29,11 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
 
 vectorizer.fit(X_train)
 
+
 def vector(data):
     return vectorizer.transform(data)
+
+
 features = vectorizer.get_feature_names()
 
 rf = RandomForestClassifier(n_estimators=1000,
@@ -53,6 +64,3 @@ importances = rf.feature_importances_
 short_list = importances.argsort()[-1:-16:-1]
 for feat in short_list:
     print(features[feat])
-
-
-

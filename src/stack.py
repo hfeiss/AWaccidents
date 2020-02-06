@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import joblib
+from filepaths import Root
 from statsmodels.tools import add_constant
 from statsmodels.discrete.discrete_model import Logit
 from sklearn.model_selection import train_test_split, KFold
@@ -7,11 +9,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from tokenator import tokenize_and_lemmatize
 from sklearn.ensemble import BaggingClassifier
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-import joblib
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+paths = Root().paths()
+clean = paths.data.clean.path
+models = paths.models.path
+
+df = pd.read_pickle(clean + 'clean.pkl')
 df.dropna(how='any', inplace=True)
 
 X = df[['rellevel', 'age', 'kayak', 'commercial']].to_numpy()
@@ -20,12 +25,14 @@ y = df['F'].to_numpy()
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
-                             max_features=None,
+                             max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
+
 def vector(data):
     return vectorizer.transform(data)
+
 
 bc = BaggingClassifier(base_estimator=None,
                        n_estimators=10,
@@ -39,14 +46,12 @@ bc = BaggingClassifier(base_estimator=None,
                        random_state=42,
                        verbose=1)
 
+
 def sm_summary(X, docs, y):
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
     vectorizer.fit(docs)
     bc.fit(vector(docs), y)
-    # bc_predict = bc.predict_proba(vector(docs))[:, 1:]
     bc_predict = np.reshape(bc.predict(vector(docs)), (-1, 1))
     X = np.append(X, bc_predict, axis=1)
-    # X = ss.fit_transform(X)
     X = add_constant(X)
 
     model = Logit(y, X).fit()
@@ -60,9 +65,8 @@ def k_fold():
     precisions = []
     recalls = []
 
-
     for train_index, test_index in kfold.split(X):
-        train_docs =  docs[train_index]
+        train_docs = docs[train_index]
         test_docs = docs[test_index]
         X_train = X[train_index]
         X_test = X[test_index]

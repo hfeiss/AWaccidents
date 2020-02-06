@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from filepaths import Root
 from statsmodels.tools import add_constant
 from statsmodels.discrete.discrete_model import Logit
 from statsmodels.stats.outliers_influence import variance_inflation_factor
@@ -8,13 +9,17 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+paths = Root(1).paths()
+clean = paths.data.clean.path
+
+df = pd.read_pickle(clean + '/clean.pkl')
 df.dropna(inplace=True)
 
 X = df[['rellevel', 'age', 'kayak', 'commercial']].values
 y = df['F'].values
 
 vif = variance_inflation_factor
+print('VIF: ')
 for i in range(X.shape[1]):
     print(vif(X, i))
 
@@ -41,7 +46,3 @@ for train_index, test_index in kfold.split(X_train):
 print("Accuracy:", np.average(accuracies))
 print("Precision:", np.average(precisions))
 print("Recall:", np.average(recalls))
-
-
-if __name__ == "__main__":
-    pass

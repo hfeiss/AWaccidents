@@ -1,13 +1,15 @@
 import numpy as np
 import pandas as pd
-from sklearn.decomposition import LatentDirichletAllocation
 import joblib
+from filepaths import Root
+from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
+paths = Root(1).paths()
+clean = paths.data.clean.path
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
-
+df = pd.read_pickle(clean + '/clean.pkl')
 X = df['description']
 
 vectorizer = CountVectorizer(ngram_range=(1, 2),
@@ -16,8 +18,10 @@ vectorizer = CountVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
+
 def vector(data):
     return vectorizer.transform(data)
+
 
 lda = LatentDirichletAllocation(n_components=10,
                                 doc_topic_prior=None,
@@ -37,9 +41,8 @@ lda = LatentDirichletAllocation(n_components=10,
                                 random_state=42)
 
 
-
 if __name__ == "__main__":
-    
+
     vectorizer.fit(X)
     features = vectorizer.get_feature_names()
 

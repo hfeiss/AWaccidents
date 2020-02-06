@@ -1,19 +1,27 @@
-from sklearn.ensemble import BaggingClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import numpy as np
 import pandas as pd
-from tokenator import tokenize_and_lemmatize
 import joblib
 import matplotlib.pyplot as plt
+from filepaths import paths
+from sklearn.ensemble import BaggingClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from tokenator import tokenize_and_lemmatize
 
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+paths = paths(1)
+clean = paths.data.clean.path
+images = paths.images.path
+
+df = pd.read_pickle(clean + '/clean.pkl')
 
 X = df['description']
 y = np.array(df['target'])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    shuffle=True,
+                                                    random_state=42)
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
@@ -22,8 +30,11 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 vectorizer.fit(X_train)
+
+
 def vector(data):
     return vectorizer.transform(data)
+
 
 features = vectorizer.get_feature_names()
 
@@ -40,7 +51,8 @@ bc = BaggingClassifier(base_estimator=None,
                        verbose=1)
 
 bc.fit(vector(X_train), y_train)
-importances = np.mean([tree.feature_importances_ for tree in bc.estimators_], axis=0)
+importances = np.mean([tree.feature_importances_ for tree in bc.estimators_],
+                      axis=0)
 std = np.std([tree.feature_importances_ for tree in bc.estimators_], axis=0)
 
 important_idx = importances.argsort()[-1:-16:-1]
@@ -51,6 +63,7 @@ important_wrd = []
 for feat in important_idx:
     important_wrd.append(features[feat])
 
+
 def print_important():
     print(important_wrd)
 
@@ -59,10 +72,10 @@ def plot_important_features():
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.set_title('Top Words for Predicting Fatality', fontsize=16)
     ax.bar(range(len(important_val)),
-            important_val,
-            yerr=important_std,
-            align='center',
-            color='#047495')
+           important_val,
+           yerr=important_std,
+           align='center',
+           color='#047495')
     ax.set_xticks(np.array(range(len(important_val))) - 0.15)
     ax.set_xticklabels(important_wrd, rotation=30, fontsize=12)
     ax.set_yticks([])
@@ -77,12 +90,17 @@ def plot_important_features():
     plt.tight_layout()
     plt.savefig('/Users/hfeiss/dsi/capstone-2/images/bagging_features.png')
 
+
 def horiz_plot():
     fig, ax = plt.subplots(figsize=(10, 6))
 
     ax.set_title('Top Words for Predicting Fatality', fontsize=16)
     y_pos = np.arange(len(important_wrd))
-    ax.barh(y_pos, important_val, xerr=important_std, align='center', color='#047495')
+    ax.barh(y_pos,
+            important_val,
+            xerr=important_std,
+            align='center',
+            color='#047495')
     ax.set_yticks(y_pos)
     ax.set_yticklabels(important_wrd)
     ax.invert_yaxis()
@@ -96,7 +114,8 @@ def horiz_plot():
     ax.spines['left'].set_visible(False)
 
     plt.tight_layout()
-    plt.savefig('/Users/hfeiss/dsi/capstone-2/images/bagging_features_horiz.png')
+    plt.savefig(images + '/bagging_features_horiz.png')
+
 
 if __name__ == "__main__":
     # print_important()

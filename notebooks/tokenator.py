@@ -1,34 +1,38 @@
 import pandas as pd
+from filepaths import Root
 from spacy.lang.en import English
 
 
+paths = Root().paths()
+clean = paths.data.clean.path
+
 pd.set_option('display.max_columns', 100)
 
-my_stops =  ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
-             '0pt', '1pt', '2pt', '4pt', '10pt', '12pt', '14pt', '15pt', 
-             '0px', '1px', '2px', '4px', '10px', '12px', '14px', '15px',
-             'rgb', '255', '0', 'li', 'div', 'u', 'b', '0001pt', '39', '51'
-             'meta', 'font', 'size', 'arial', 'nbsp', 'align', 'justify',
-             'href', 'style', 'quot', 'msonormal', 'serif', 'text', 'ldquo',
-             'rdquo', 'height', 'text', 'mso', 'san', 'margin', 'class', 'tab',
-             'roman', 'times', 'http', 'www', 'html', 'background', 'pad',
-             'bidi', 'color', 'bidi', 'san', 'rsquo', 'br', 'spin', 'letter',
-             'spacing', 'space', 'hyphenate', 'place', 'line', 'placename',
-             'placetype', 'border', 'box', 'normal', 'com', 'url', 'link',
-             'publish', 'lsdexception', '00', '000', '000000', 'river',
-             'family', 'water', 'boat', 'stay', 'helvetica', 'st', 'inherit',
-             'width', 'false', 'face', 'non', '51', 'say', 'raft', 'rapid',
-             'year', '1', '2', '3', 'rescue', 'true', 'paddle', 'w',
-             'lock', 'priority', 'accent', 'semihidden', 'unhidewhenused',
-             'table', 'list', 'lock', 'semihidden', 'amp', 'bt', 'grid',
-             'layout', 'mode', 'narrative', 'initial', 'variant', 'weight',
-             'outline', 'baseline', 'datum', 'vertical', 'leave', 'image',
-             'max', 'position', 'display', '68', 'https', 'right', 'ligature',
-             'stockticker', '08', '11', '06', '12', 'pa', 'source', 'stockticker',
-             'large', 'march', 'tira', 'niyhwk', 'tcenter', 'posr', 'jim',
-             'georgia', 'lucas', 'posr', 'mark', 'get', 'rock', 'be', 'kayker',
-             'time', 'ndn', 'thumbtitle', 'thumbnail', 'sliderthumbnailoverlay',
-             'neacato']
+my_stops = ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
+            '0pt', '1pt', '2pt', '4pt', '10pt', '12pt', '14pt', '15pt',
+            '0px', '1px', '2px', '4px', '10px', '12px', '14px', '15px',
+            'rgb', '255', '0', 'li', 'div', 'u', 'b', '0001pt', '39', '51'
+            'meta', 'font', 'size', 'arial', 'nbsp', 'align', 'justify',
+            'href', 'style', 'quot', 'msonormal', 'serif', 'text', 'ldquo',
+            'rdquo', 'height', 'text', 'mso', 'san', 'margin', 'class', 'tab',
+            'roman', 'times', 'http', 'www', 'html', 'background', 'pad',
+            'bidi', 'color', 'bidi', 'san', 'rsquo', 'br', 'spin', 'letter',
+            'spacing', 'space', 'hyphenate', 'place', 'line', 'placename',
+            'placetype', 'border', 'box', 'normal', 'com', 'url', 'link',
+            'publish', 'lsdexception', '00', '000', '000000', 'river',
+            'family', 'water', 'boat', 'stay', 'helvetica', 'st', 'inherit',
+            'width', 'false', 'face', 'non', '51', 'say', 'raft', 'rapid',
+            'year', '1', '2', '3', 'rescue', 'true', 'paddle', 'w',
+            'lock', 'priority', 'accent', 'semihidden', 'unhidewhenused',
+            'table', 'list', 'lock', 'semihidden', 'amp', 'bt', 'grid',
+            'layout', 'mode', 'narrative', 'initial', 'variant', 'weight',
+            'outline', 'baseline', 'datum', 'vertical', 'leave', 'image',
+            'max', 'position', 'display', '68', 'https', 'right', 'ligature',
+            'stockticker', '08', '11', '06', '12', 'pa', 'source', '11pt',
+            'large', 'march', 'tira', 'niyhwk', 'tcenter', 'posr', 'jim',
+            'georgia', 'lucas', 'posr', 'mark', 'get', 'rock', 'be', 'kayker',
+            'time', 'ndn', 'thumbtitle', 'thumbnail', 'sliderthumbnailoverlay',
+            'neacato', '07', 'witness', 'stockticker', '4', '5', '6', '7']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_']
 
@@ -38,6 +42,7 @@ spaces = [' '*i for i in range(1, 6)]
 
 nlp = English()
 nlp.Defaults.stop_words |= set(my_stops)
+
 
 def tokenize_and_lemmatize(text):
     text = str(text).lower()
@@ -57,11 +62,11 @@ def tokenize_and_lemmatize(text):
 
 
 if __name__ == "__main__":
-    df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+    df = pd.read_pickle(clean + '/clean.pkl')
     entry = df['description'][20]
     print(entry)
     print(tokenize_and_lemmatize(entry))
-    
+
     df = df[df['F'] == 1]
     df['description'] = df['description'].apply(tokenize_and_lemmatize)
-    pd.to_pickle(df['description'], '/Users/hfeiss/dsi/capstone-2/data/clean/death_lemmas.pkl')
+    pd.to_pickle(df['description'], clean + '/death_lemmas.pkl')

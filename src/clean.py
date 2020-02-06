@@ -1,11 +1,17 @@
 import pandas as pd
 import numpy as np
+from filepaths import Root
 from spacy.lang.en import English
 
 
+paths = Root(1).paths()
+raw = paths.data.raw.path
+clean = paths.data.clean.path
+
 pd.set_option('display.max_columns', 100)
 
-difficulty_dict = {'I': 1.0,
+difficulty_dict = {
+                   'I': 1.0,
                    'I+': 1.5,
                    'II-': 1.5,
                    'II': 2.0,
@@ -16,11 +22,14 @@ difficulty_dict = {'I': 1.0,
                    'IV-': 3.5,
                    'IV': 4.0,
                    'IV+': 4.5,
-                   'V': 5.0}
+                   'V': 5.0
+                   }
 
-type_dict = {'F': 'Fatal',
+type_dict = {
+             'F': 'Fatal',
              'I': 'Injury',
-             'M': 'Medical'}
+             'M': 'Medical'
+             }
 
 level_dict = {
               'L': 0,
@@ -36,7 +45,7 @@ exper_dict = {
               'I': 0
               }
 
-causes = pd.read_csv('/Users/hfeiss/dsi/capstone-2/data/raw/causes.csv')
+causes = pd.read_csv(raw + '/causes.csv')
 cause_dict = pd.Series(causes['cause'].values, index=causes['id']).to_dict()
 
 
@@ -62,11 +71,6 @@ def read_clean_write(source, dest, verbose=True):
     # private or comm trip
     df['commercial'] = (df['privcomm'] == 'C').astype(int)
     del df['privcomm']
-
-    # experience expert or experienced
-    # df['experienced'] = ((df['experience'] == 'E') |
-    #                      (df['experience'] == 'X')).astype(int)
-    # del df['experience']
 
     # better to just map to linear scale
     df['experience'] = df['experience'].map(exper_dict)
@@ -94,7 +98,7 @@ def read_clean_write(source, dest, verbose=True):
     df = df.join(dummies)
     df['target'] = df['I'] + 2*df['F']
 
-    df['type'] =  df['type'].map(type_dict)
+    df['type'] = df['type'].map(type_dict)
 
     if verbose:
         print('Featurized')
@@ -106,8 +110,8 @@ def read_clean_write(source, dest, verbose=True):
 
 
 if __name__ == "__main__":
-    source = '/Users/hfeiss/dsi/capstone-2/data/raw/accidents.csv'
-    dest = '/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl'
+    source = raw + '/accidents.csv'
+    dest = clean + '/clean.pkl'
     read_clean_write(source, dest)
     df = pd.read_pickle(dest)
     dropped = df.dropna()

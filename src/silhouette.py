@@ -1,17 +1,25 @@
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_samples, silhouette_score
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import numpy as np
 import pandas as pd
+from filepaths import Root
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
-vectorizer = TfidfVectorizer(stop_words='english', min_df=3, max_features=4000, max_df=.7)
+paths = Root().paths()
+clean = paths.data.clean.path
 
-data = df['description'].apply(tokenize_and_lemmatize).str.join(' ')
+df = pd.read_pickle(clean + '/clean.pkl')
+
+vectorizer = TfidfVectorizer(ngram_range=(1, 2),
+                             max_df=0.55,
+                             max_features=100000,
+                             token_pattern=None,
+                             tokenizer=tokenize_and_lemmatize)
+
+data = df['description']
+
 X = vectorizer.fit_transform(data)
 
 range_n_clusters = [2, 3, 4, 5, 6, 8, 10]

@@ -1,11 +1,17 @@
-from sklearn import preprocessing
-from sklearn.decomposition import PCA
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from tokenator import tokenize_and_lemmatize
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import joblib
+import matplotlib.pyplot as plt
+from filepaths import Root
+from sklearn import preprocessing
+from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
+from tokenator import tokenize_and_lemmatize
+
+
+paths = Root(1).paths()
+clean = paths.data.clean.path
+models = paths.models.path
 
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 
@@ -18,8 +24,10 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
+
 def vector(data):
     return vectorizer.transform(data)
+
 
 def center_X():
     vectorizer.fit(X)
@@ -45,11 +53,11 @@ def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):
     ax.scatter(ind, vals, color='#047495', s=50)
 
     for i in range(num_components):
-        ax.annotate(r"{:2.2f}%".format(vals[i]), 
-                   (ind[i]+0.2, vals[i]+0.005), 
-                   va="bottom", 
-                   ha="center", 
-                   fontsize=12)
+        ax.annotate(r"{:2.2f}%".format(vals[i]),
+                    (ind[i]+0.2, vals[i]+0.005),
+                    va="bottom",
+                    ha="center",
+                    fontsize=12)
 
     ax.set_xticklabels(ind, fontsize=14)
     ax.set_ylim(0, max(vals) + 0.05)
@@ -63,8 +71,9 @@ def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):
 
 
 def plot_pca_target(X_pca, y, title):
+
     labels = ['M', 'I', 'F']
-    colors = ['#047495','#d2bd0a', '#f10c45']
+    colors = ['#047495', '#d2bd0a', '#f10c45']
 
     fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -74,8 +83,8 @@ def plot_pca_target(X_pca, y, title):
     ax.patch.set_visible(False)
     for i in range(X.shape[0]):
         plt.text(X[i, 0], X[i, 1],
-                 str(labels[y[i]]), 
-                 color=colors[y[i]], 
+                 str(labels[y[i]]),
+                 color=colors[y[i]],
                  fontdict={'weight': 'bold', 'size': 12,
                            'alpha': 0.5})
 
@@ -83,7 +92,7 @@ def plot_pca_target(X_pca, y, title):
     ax.scatter(1, 1, c='#d2bd0a', label='Injury', alpha=.6)
     ax.scatter(1, 1, c='#047495', label='Medical', alpha=.6)
 
-    ax.set_xticks([]), 
+    ax.set_xticks([])
     ax.set_yticks([])
     ax.set_ylim([0.025, 0.1])
     ax.set_xlim([0.0003, 0.0013])
@@ -95,21 +104,24 @@ def plot_pca_target(X_pca, y, title):
         ax.set_title(title, fontsize=16)
 
 
-
 if __name__ == "__main__":
-    # X_centered = center_X():
 
-    # pca = PCA(n_components=10)
-    # joblib.dump(pca.fit(X_centered), '/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    # pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    # joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
-    # X_pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/X_pca_10.joblib')
-    # scree_plot(pca, X_pca, title="Scree Plot for Description Principal Components")
-    
-    # pca = PCA(n_components=2)
-    # pca.fit(X_centered)
-    # joblib.dump(pca, '/Users/hfeiss/dsi/capstone-2/models/pca_2.joblib')
-    # pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/pca_10.joblib')
-    # joblib.dump(pca.transform(X_centered), '/Users/hfeiss/dsi/capstone-2/models/X_pca_2.joblib')
-    X_pca = joblib.load('/Users/hfeiss/dsi/capstone-2/models/X_pca_2.joblib')
-    plot_pca_target(X_pca, y, 'pca_targets_idf')  
+    X_centered = center_X()
+
+    pca = PCA(n_components=10)
+    joblib.dump(pca.fit(X_centered), models + '/pca_10.joblib')
+    pca = joblib.load(models + '/pca_10.joblib')
+    joblib.dump(pca.transform(X_centered), models + '/X_pca_10.joblib')
+    X_pca = joblib.load(models + '/X_pca_10.joblib')
+    scree_plot(pca,
+               X_pca,
+               title="Scree Plot for Description Principal Components")
+
+    pca = PCA(n_components=2)
+    pca.fit(X_centered)
+    joblib.dump(pca, models + '/pca_2.joblib')
+    pca = joblib.load(models + '/pca_10.joblib')
+    joblib.dump(pca.transform(X_centered), models + '/X_pca_2.joblib')
+
+    X_pca = joblib.load(models + '/X_pca_2.joblib')
+    plot_pca_target(X_pca, y, 'pca_targets_idf')

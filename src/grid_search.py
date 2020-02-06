@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from pprint import pprint
 from time import time
+from filepaths import Root
 from tokenator import tokenize_and_lemmatize
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
@@ -10,8 +11,10 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import BaggingClassifier
 from sklearn.pipeline import Pipeline
 
+paths = Root(1).paths()
+clean = paths.data.clean.path
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+df = pd.read_pickle(clean + '/clean.pkl')
 
 X = df['description'].str.join(' ')
 y = np.array(df['target'])
@@ -30,9 +33,9 @@ parameters = {
             #   'vect__max_df': (0.40, 0.45, 0.50, 0.55, 0.60, 0.65),
             #   'vect__min_df': (1, 5, 10, 50),
             #   'vect__max_features': (1000, 10000, 50000, 100000, None)
-                # 'bag__n_estimators': (70, 80),
-                # 'bag__max_samples': (0.85, 0.90, 0.95),
-                'bag__max_features': (0.95, 1)
+            #   'bag__n_estimators': (70, 80),
+            #   'bag__max_samples': (0.85, 0.90, 0.95),
+              'bag__max_features': (0.95, 1)
               }
 
 grid_search = GridSearchCV(pipeline,

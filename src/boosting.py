@@ -14,7 +14,11 @@ df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 X = df['description']
 y = np.array(df['target'])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    shuffle=True,
+                                                    random_state=42
+                                                    )
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
@@ -23,15 +27,19 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 vectorizer.fit(X_train)
+
+
 def vector(data):
     return vectorizer.transform(data)
+
 
 features = vectorizer.get_feature_names()
 
 ada = AdaBoostClassifier(n_estimators=100)
 
 ada.fit(vector(X_train), y_train)
-importances = np.mean([tree.feature_importances_ for tree in ada.estimators_], axis=0)
+importances = np.mean([tree.feature_importances_ for tree in ada.estimators_],
+                      axis=0)
 
 important_idx = importances.argsort()[-1:-16:-1]
 important_val = importances[important_idx]
@@ -39,6 +47,7 @@ important_wrd = []
 
 for feat in important_idx:
     important_wrd.append(features[feat])
+
 
 def print_important():
     print(important_wrd)
@@ -48,10 +57,10 @@ def plot_important_features():
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.set_title('Top Words for Predicting Fatality', fontsize=16)
     ax.bar(range(len(important_val)),
-            important_val,
-            # yerr=important_std,
-            align='center',
-            color='#047495')
+           important_val,
+           # yerr=important_std,
+           align='center',
+           color='#047495')
     ax.set_xticks(np.array(range(len(important_val))) - 0.15)
     ax.set_xticklabels(important_wrd, rotation=30, fontsize=12)
     ax.set_yticks([])
@@ -65,6 +74,7 @@ def plot_important_features():
 
     plt.tight_layout()
     plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
+
 
 def horiz_plot():
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -90,6 +100,7 @@ def horiz_plot():
 
     plt.tight_layout()
     plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
+
 
 def errors_vs_n():
     test_scores = []
