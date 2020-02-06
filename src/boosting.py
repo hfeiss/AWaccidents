@@ -92,21 +92,19 @@ def horiz_plot():
     plt.savefig('/Users/hfeiss/dsi/capstone-2/images/ada.png')
 
 def errors_vs_n():
-    test_errors = []
-    train_errors = []
+    test_scores = []
+    train_scores = []
     for n in range(1, 111, 10):
         print(n)
         ada = AdaBoostClassifier(n_estimators=n)
         ada.fit(vector(X_train), y_train)
         train = ada.score(vector(X_train), y_train)
         test = ada.score(vector(X_test), y_test)
-        train_errors.append(train)
-        test_errors.append(test)
-    print(test_errors)
-    print(train_errors)
-    plt.plot(test_errors)
-    plt.plot(train_errors)
-    plt.show()
+        train_scores.append(train)
+        test_scores.append(test)
+    print(test_scores)
+    print(train_scores)
+
 
 if __name__ == "__main__":
     # print_important()

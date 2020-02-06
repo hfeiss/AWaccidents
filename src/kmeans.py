@@ -4,6 +4,7 @@ import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from tokenator import tokenize_and_lemmatize
+from sklearn.metrics import silhouette_score
 
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 vectorizer = TfidfVectorizer(stop_words='english', min_df=3, max_features=4000, max_df=.7)
@@ -20,12 +21,12 @@ def print_top_words():
 
 if __name__ == "__main__":
     K = [k for k in range(1, 11)]
-    intertias = []
+    scores = []
     for k in K:
         kmeans = KMeans(n_clusters=k)
         kmeans.fit(X)
-        intertias.append(kmeans.inertia_)
-        print(intertias)
+        scores.append(kmeans.score(X))
+        print(scores)
     
     # joblib.dump(kmeans, '/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
     # kmeans = joblib.load('/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
