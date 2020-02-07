@@ -1,11 +1,8 @@
 
 import numpy as np
 import pandas as pd
-import joblib
 from pprint import pprint
-# import matplotlib.pyplot as plt
 from filepaths import paths
-# from sklearn.ensemble import BaggingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.metrics import accuracy_score, precision_score, recall_score
