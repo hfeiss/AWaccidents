@@ -3,7 +3,7 @@ import numpy as np
 from filepaths import Root
 
 
-paths = Root().paths()
+paths = Root(0).paths()
 images = paths.images.path
 
 inertia = [2422.489275321806,
@@ -38,10 +38,10 @@ silhouette_2 = [0.012350957951900533,
 x = np.arange(0, 10, 1) + 1
 
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.set_title('Silhouette Score vs. Number of Estimators',
+ax.set_title('Silhouette Score vs. Number of Clusters',
              fontsize=16)
 
-ax.plot(range_n_clusters, silhouette_2)
+ax.plot(range_n_clusters, silhouette)
 
 ax.set_xlabel('Number of Clusters', fontsize=12)
 ax.set_xticks(x)
@@ -54,4 +54,4 @@ ax.spines['right'].set_visible(False)
 
 
 plt.tight_layout()
-plt.savefig(images + '/silh_km_2.png')
+plt.savefig(images + '/silh_km.png')

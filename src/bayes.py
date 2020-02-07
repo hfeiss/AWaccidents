@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 from tokenator import tokenize_and_lemmatize
 
 
@@ -14,7 +15,9 @@ clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
 X = df['description']
-y = np.array(df['target'])
+# y = np.array(df['target'])
+y = np.array(df['F'])
+
 
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
@@ -36,8 +39,11 @@ def vector(data):
     return vectorizer.transform(data)
 
 
-def print_important_words():
-    labels = ['Medical', 'Injury', 'Death']
+def print_important_words(binary=True):
+    if binary:
+        labels = ['Not Fatal', 'Fatal']
+    else:
+        labels = ['Medical', 'Injury', 'Death']
     coefs = bayes.coef_
     for i, outcome in enumerate(coefs):
         coefs_sorted = np.argsort(outcome)[-1:-16:-1]
@@ -46,8 +52,11 @@ def print_important_words():
         print('\n')
 
 
-def print_anti_important_words():
-    labels = ['Medical', 'Injury', 'Death']
+def print_anti_important_words(binary=True):
+    if binary:
+        labels = ['Not Fatal', 'Fatal']
+    else:
+        labels = ['Medical', 'Injury', 'Death']
     coefs = bayes.coef_
     for i, outcome in enumerate(coefs):
         coefs_sorted = np.argsort(outcome)[0:16]
@@ -60,12 +69,29 @@ bayes = MultinomialNB()
 bayes.fit(vector(X_train), y_train)
 
 
-if __name__ == "__main__":
-    print_important_words()
-    print_anti_important_words()
+def binary(model):
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
+    acc = accuracy_score(y_test, predict)
+    rec = recall_score(y_test, predict)
+    pre = precision_score(y_test, predict)
+    print(f'Accuracy:  {acc}')
+    print(f'Recall:    {rec}')
+    print(f'Precision: {pre}')
+
+
+def categorical(model):
     labels = ['Medical', 'Injury', 'Fatality']
-    predict = bayes.predict(vector(X_test))
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
     results = classification_report(y_test,
                                     predict,
                                     target_names=labels)
     pprint(results)
+
+
+if __name__ == "__main__":
+    # binary(bayes)
+    # categorical(bayes)
+    print_important_words()
+    print_anti_important_words()

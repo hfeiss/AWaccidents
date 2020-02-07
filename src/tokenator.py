@@ -3,7 +3,7 @@ from filepaths import Root
 from spacy.lang.en import English
 
 
-paths = Root().paths()
+paths = Root(0).paths()
 clean = paths.data.clean.path
 
 pd.set_option('display.max_columns', 100)
@@ -36,7 +36,8 @@ my_stops = ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
             'jpg', '300w', 'neue', 'lucida', 'header', 'segoe', 'byline',
             'at4', '75em', '400', '1rem', 'and']
 
-seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_']
+seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_',
+              '{', '}']
 
 htmls = ['\\', '\r', '\n', '\t']
 

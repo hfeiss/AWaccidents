@@ -13,6 +13,9 @@ The goal of this repository is to identify factors that can turn a near miss int
 Foot Entrapment
 ![](images/screenshots/foot_entrapment.jpg)
 
+Pin / Wrap
+![](images/screenshots/pin.jpg)
+
 
 # Data
 
@@ -31,7 +34,7 @@ After deleting personal information, all text features were combined into the `d
 * Text description of the incident
 * kayak
 * commercial
-* experienced
+* experience
 * Type of accident
     * Fatality
     * Medical (near miss)
@@ -43,24 +46,26 @@ After deleting personal information, all text features were combined into the `d
 
 Because the descriptions of accidents are aggregated from both external websites and user submitted forms, the documents have very inconsistent structure. 
 
-All have some level of `html` embedded in them, and some are actually `json`. The first step in the text analysis was to convert each document into one string. The strings were then tokenized with a purpose-built function. [Spacy's](https://spacy.io) english stop words were used as base to start. Beacuse of inconsistent description tense,  the documents were lemmatized into their root words before being vectorized into a tf-idf matrix.
-
+All have some level of `html` embedded in them, and some are actually in `json`. The first step in the text analysis was to convert each document into one long string. The strings were then tokenized with a purpose-built function. [Spacy's](https://spacy.io) english stop words were used as base to start. Beacuse of inconsistent description tense,  the documents were lemmatized into their root words before being vectorized into a tf-idf matrix.
 
 ### K-means
-Hard clustering of the tf-idf matrix was used to find underlying structure. Typically, some clusters identified more `html` words to add to the custom tokenization script.
+Hard clustering of the tf-idf matrix was used to find underlying structure.
 
 ![](/images/screenshots/topics_w_html.png)
 
-After many itterations, the clustering still identified more stop words, but salient topics emmerged.
+Typically, some clusters identified more `html` words to add to the custom tokenization script.
 
 ![](/images/screenshots/drugs.png)
 
-    0) more stopwords
-    1) more stopwords
-    4) some stopwords, accidents clustered on drugs
-    5) descriptions of rivers
-    6) emergency response
-    7) descriptions of location
+After many itterations, the clustering still identified more stop words, but salient topics emmerged.
+
+![](/images/screenshots/good_topics.png)
+
+    1) some stopwords, accidents clustered on drugs
+    3) man-made hazards
+    4) east coast boating
+    5) Idaho rivers
+    7) more stopwords
 
 ### PCA
 
@@ -82,29 +87,83 @@ As the descriptions become longer, a higher proportion of the accidents are fata
 
 ![](/images/description_len_death.png)
 
-## non-text features
+## Non-text Features
 
-The number of accidents is likely proportional to the amount of whitewater recreation in a given state. 
+The number of accidents is likely proportional to the amount of whitewater recreation in a given state.
 
 ![](/images/screenshots/map.png)
 
-
+The raw number of accidents has increased over time, but this is unadjusted for population and sport popularity.
 
 ![](/images/dates.png)
 
 
-
-
 # Pipeline
-## Map Values
+## Text
+Text from the river, section, location, waterlevel, and cause features were added into the description column.
 
+The description column was tokenized, lemmatized, and vectorized before analysis.
+
+## Categorical
+River level (Low, Medium, High, and Flood), river difficulty (I, II, III, IV, V), and victim skill (Inexperienced, Some experience, Experienced, Expert) were mapped linearly to integers.
+
+Type of watercraft was mapped to kayak (1) or not.
+
+Trip type was mapped to commerical (1) or not.
+
+Given an unreasonable number of 0 year olds with contradicory description entries, ages equal to 0 were dropped.
 
 # Models
-## Naive Bayes
-## Boosting
-## Random forest
-## Stacked
+Sklearn grid searching was used to find the best hyperparameters. Models were tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Not Fatal. For simplicity and interpitability, only the binary classification results are shown.
+
+
+## Text Classification
+ Tf-idf and tf matricies were compared.  Models were trained with k-folds crossvalidation and performence was judged on a holdout data set.
+
+|          Model 	| Precision 	| Recall 	| Accuracy 	|
+|---------------:	|-----------	|--------	|----------	|
+| Random Forest  	| 77%       	| 98%    	| 81%      	|
+| AdaBoost       	| 86%       	| 92%    	| 86%      	|
+| Bagging        	| 87%       	| 92%    	| 87%      	|
+| Naive Bayes    	| 76%       	| 95%    	| 79%      	|
+
+### Boosting
+![](/images/boosting_n_score.png)
+
+
+### Bagging
+![](/images/bagging_features_horiz.png)
+
+### Naive Bayes
+
+#### Medical
+    There was a diabetic on our trip. He forgot his insulin. He ended up in DKA, so we pulled off of the the riveLuckily we had cell service, so we called 911. He got rushed the ER, but the docs said hed be okay even though he had been near death earlier that day. Another person on the trip was doing a bunch of drugs like xanax, accutane, tramado and propecia. What a combo! They ended up falling in the river.
+
+|                       	| Medical 	| Injury 	| Fatality 	|
+|----------------------:	|---------	|--------	|----------	|
+| Predicted Probability 	| 99.9%   	| 0.0%   	| 0.0%     	|
+#### Injury
+
+#### Fatality
+    It could have been a good day of kayaking. The water levels were very high, but everyone was stoked. On the first rapid Jack capsized and swam into a strainer. Meanwhile, Jill got pinned in a sieve. Both spent about 10 minutes underwater before we could get to them. We performed CPR, but they we both blue. We called the sherrif, the ambuance came, and we cried a bunch.
+|                       	| Medical 	| Injury 	| Fatality 	|
+|----------------------:	|---------	|--------	|----------	|
+| Predicted Probability 	| 0.25%   	| 0.15%  	| 99.6%    	|
+
+## Non-text regression
+
 ## Logistic Regression
+
+|          Model 	        | Precision 	| Recall 	| Accuracy 	|
+|---------------:	        |-----------	|--------	|----------	|
+| Logistic Classification 	| 92%       	| 100%   	| 92%      	|
+| NB, AB Stacked 	        | 88%       	| 92%    	| 84%      	|
+
+## Stacked
+
+|          Model 	        | Precision 	| Recall 	| Accuracy 	|
+|---------------:	        |-----------	|--------	|----------	|
+| NB, AB Stacked 	        | 88%       	| 92%    	| 84%      	|
 
 # Conclusions
 dont do drugs
@@ -112,9 +171,17 @@ age
 commercial
 kayaking
 
-words to avoid
-
 competent group
+
+#### Good words
+'large kayak' 'large flow''john wetsuit' feel emotion, spot stop, feel pressure, respond 'competent group',
+
+ 'thank thank', 'thank tell', 'thank support', 'cruikshank woman', 'thank shayne', 'thankful train', 'thank share', 
+
+#### Bad words
+'new', 'rock', 'rope', 'victim', 'kayaker', 'help', 'time', 'swim',
+'fall', 'pin', 'foot','strainer', 'accident', 'chute enter'
+'body', 'county', 'search', 'drown', 'rock', 'time', 'kayaker', 'be', 'accident march kayaker overdose, dam
 
 # Future
 
@@ -124,11 +191,9 @@ competent group
 
 
 ![](/images/screenshots/lochsa.jpg)
-![](/images/screenshots/good_topics.png)
 ![](/images/screenshots/grid_vector.png)
 ![](/images/screenshots/log_mod.png)
 ![](/images/bagging_features_horiz.png)
-![](/images/boosting_n_score.png)
 ![](/images/elbow_km.png)
 ![](/images/scree.png)
 ![](/images/silh_km.png)

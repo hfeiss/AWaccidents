@@ -1,11 +1,14 @@
 import numpy as np
 import pandas as pd
 import joblib
+from pprint import pprint
 import matplotlib.pyplot as plt
 from filepaths import paths
 from sklearn.ensemble import BaggingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import classification_report
 from tokenator import tokenize_and_lemmatize
 
 
@@ -52,18 +55,18 @@ bc = BaggingClassifier(base_estimator=None,
                        random_state=42,
                        verbose=1)
 
-bc.fit(vector(X_train), y_train)
-importances = np.mean([tree.feature_importances_ for tree in bc.estimators_],
-                      axis=0)
-std = np.std([tree.feature_importances_ for tree in bc.estimators_], axis=0)
+# bc.fit(vector(X_train), y_train)
+# importances = np.mean([tree.feature_importances_ for tree in bc.estimators_],
+#                       axis=0)
+# std = np.std([tree.feature_importances_ for tree in bc.estimators_], axis=0)
 
-important_idx = importances.argsort()[-1:-16:-1]
-important_val = importances[important_idx]
-important_std = std[important_idx]
-important_wrd = []
+# important_idx = importances.argsort()[-1:-16:-1]
+# important_val = importances[important_idx]
+# important_std = std[important_idx]
+# important_wrd = []
 
-for feat in important_idx:
-    important_wrd.append(features[feat])
+# for feat in important_idx:
+#     important_wrd.append(features[feat])
 
 
 def print_important():
@@ -119,10 +122,30 @@ def horiz_plot():
     plt.savefig(images + '/bagging_features_horiz.png')
 
 
+def binary(model):
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
+    acc = accuracy_score(y_test, predict)
+    rec = recall_score(y_test, predict)
+    pre = precision_score(y_test, predict)
+    print(f'Accuracy:  {acc}')
+    print(f'Recall:    {rec}')
+    print(f'Precision: {pre}')
+
+
+def categorical(model):
+    labels = ['Medical', 'Injury', 'Fatality']
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
+    results = classification_report(y_test,
+                                    predict,
+                                    target_names=labels)
+    pprint(results)
+
+
 if __name__ == "__main__":
     # print_important()
     # plot_important_features()
     # horiz_plot()
-    score = bc.score(vector(X_test), y_test)
-    print(f'Saving model with score: {score}')
-    joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')
+    # joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')
+    binary(bc)

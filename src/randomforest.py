@@ -1,19 +1,23 @@
 import numpy as np
 import pandas as pd
+from pprint import pprint
 from filepaths import Root
 from tokenator import tokenize_and_lemmatize
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import classification_report
 
-
-paths = Root(1).paths()
+paths = Root(0).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
 
 X = df['description']
 y = np.array(df['target'])
+# y = np.array(df['F'])
+
 
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
@@ -56,11 +60,35 @@ rf = RandomForestClassifier(n_estimators=1000,
                             ccp_alpha=0.0,
                             max_samples=None)
 
-rf.fit(vector(X_train), y_train)
 
-print(rf.score(vector(X_test), y_test))
+def binary():
+    rf.fit(vector(X_train), y_train)
+    predict = rf.predict(vector(X_test))
+    acc = accuracy_score(y_test, predict)
+    rec = recall_score(y_test, predict)
+    pre = precision_score(y_test, predict)
+    print(f'Accuracy:  {acc}')
+    print(f'Recall:    {rec}')
+    print(f'Precision: {pre}')
 
-importances = rf.feature_importances_
-short_list = importances.argsort()[-1:-16:-1]
-for feat in short_list:
-    print(features[feat])
+
+def categorical():
+    labels = ['Medical', 'Injury', 'Fatality']
+    rf.fit(vector(X_train), y_train)
+    predict = rf.predict(vector(X_test))
+    results = classification_report(y_test,
+                                    predict,
+                                    target_names=labels)
+    pprint(results)
+
+
+def print_features():
+    importances = rf.feature_importances_
+    short_list = importances.argsort()[-1:-16:-1]
+    for feat in short_list:
+        print(features[feat])
+
+
+if __name__ == "__main__":
+    # binary()
+    categorical()

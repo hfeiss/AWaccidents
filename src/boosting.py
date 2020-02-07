@@ -14,8 +14,8 @@ from tokenator import tokenize_and_lemmatize
 df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
 
 X = df['description']
-y = np.array(df['target'])
-# y = np.array(df['F'])
+# y = np.array(df['target'])
+y = np.array(df['F'])
 
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
@@ -38,7 +38,7 @@ def vector(data):
 
 features = vectorizer.get_feature_names()
 
-ada = AdaBoostClassifier(n_estimators=20)
+ada = AdaBoostClassifier(n_estimators=50)
 
 ada.fit(vector(X_train), y_train)
 importances = np.mean([tree.feature_importances_ for tree in ada.estimators_],
@@ -120,6 +120,27 @@ def errors_vs_n():
     print(train_scores)
 
 
+def binary(model):
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
+    acc = accuracy_score(y_test, predict)
+    rec = recall_score(y_test, predict)
+    pre = precision_score(y_test, predict)
+    print(f'Accuracy:  {acc}')
+    print(f'Recall:    {rec}')
+    print(f'Precision: {pre}')
+
+
+def categorical(model):
+    labels = ['Medical', 'Injury', 'Fatality']
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
+    results = classification_report(y_test,
+                                    predict,
+                                    target_names=labels)
+    pprint(results)
+
+
 if __name__ == "__main__":
     # print_important()
     # plot_important_features()
@@ -127,12 +148,6 @@ if __name__ == "__main__":
     # score = ada.score(vector(X_test), y_test)
     # print(f'Saving model with score: {score}')
     # joblib.dump(ada, '/Users/hfeiss/dsi/capstone-2/models/ada.joblib')
-
-    labels = ['Medical', 'Injury', 'Fatality']
-    predict = ada.predict(vector(X_test))
-    results = classification_report(y_test,
-                                    predict,
-                                    target_names=labels)
-    pprint(results)
-
-    # errors_vs_n()
+    errors_vs_n()
+    # categorical(ada)
+    # binary(ada)
