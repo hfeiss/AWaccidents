@@ -236,7 +236,7 @@ Combining the information from clustering, topic modeling, natural language proc
 
 * Age (above 10 years old), type of watercraft, and being on a commercial trip do not change the prediction of a fatality
 
-* 80% of accidents where the victim is less than 18 years old are fatal
+* 84% of the reported accidents where the victim is less than 18 years old are fatal
  
 # Further
 * Further modification of the tokenization, lemmatization, and vectorization could improve the models.
