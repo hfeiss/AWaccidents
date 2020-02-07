@@ -11,9 +11,11 @@ The goal of this repository is to identify factors that can turn a near miss int
  
 # Vocabulary
 Foot Entrapment
+
 ![](images/screenshots/foot_entrapment.jpg)
  
 Pin / Wrap
+
 ![](images/screenshots/pin.jpg)
  
  
@@ -152,25 +154,26 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 | Predicted Probability     | 0.1%      | 0.1%      | 99.8%     |
 #### Fatality
    It could have been a good day of kayaking. The water levels were very high, but everyone was stoked. On the first rapid Jack capsized and swam into a strainer. Meanwhile, Jill got pinned in a sieve. Both spent about 10 minutes underwater before we could get to them. We performed CPR, but they we both blue. We called the sheriff, the ambulance came, and we cried a bunch.
+
 |                           | Medical   | Injury    | Fatality  |
 |----------------------:    |---------  |--------   |---------- |
 | Predicted Probability     | 0.25%     | 0.15%     | 99.6%     |
  
 Finally, for each category of incident, the top 100 words that made each category more and less likely were generated. Below is a curated subset of those lists.
 #### Words that made Medical more likely:
-   kayaker overdose, new, head, alcohol, xanax, accutane, tramadol, fall, rope
+    kayaker overdose, new, head, alcohol, xanax, accutane, tramadol, fall, rope
  
 #### Words that made Fatality more likely:
-   rock, dam, drown, pin, get help, search, rescue, time, large flow
+    rock, dam, drown, pin, get help, search, rescue, time, large flow
  
 #### Words that made Injury more likely:
-   man, pin, foot, strainer, group, kayaker, march
+    man, pin, foot, strainer, group, kayaker, march
  
 #### Words that made Fatality less likely:
-   competent group, thank, support, train, feel emotion, professional sar, respond
+    competent group, thank, support, train, feel emotion, professional sar, respond
  
 #### Words that made Injury less likely:
-   farmer wetsuit, near drowning, new york, large kayak
+    farmer wetsuit, near drowning, new york, large kayak
  
 ## Logistic Regression
  
@@ -199,6 +202,9 @@ Adding the Naive Bayes prediction as a feature in the logistic model, oddly, dec
  
 Combining the information from clustering, topic modeling, natural language processing, and logistic modeling, a few conclusions can be made. However, mostly the data supports existing knowledge in the whitewater community.
  
+![](/images/level_diff_death_2.png)
+![](/images/exper_age_death.png)
+
 * Competent group - more than any other, this phrase decreased the likelihood of a prediction for death. Always make sure that your whole group is skilled enough and prepared for the river.
 * Rivers tend to become more lethal as the water level increases
 * Rivers tend to become more lethal as their difficulty increases
@@ -208,9 +214,6 @@ Combining the information from clustering, topic modeling, natural language proc
    * type of watercraft
    * commercial vs. private trip
 * accidents with victims younger than 10 are much likely to be fatal
- 
-![](/images/level_diff_death_2.png)
-![](/images/exper_age_death.png)
  
 # Further
 * Further modification of the tokenization, lemmatization, and vectorization could improve the models.
