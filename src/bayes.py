@@ -15,8 +15,8 @@ clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
 X = df['description']
-# y = np.array(df['target'])
-y = np.array(df['F'])
+y = np.array(df['target'])
+# y = np.array(df['F'])
 
 
 X_train, X_test, y_train, y_test = train_test_split(X,
@@ -93,5 +93,5 @@ def categorical(model):
 if __name__ == "__main__":
     # binary(bayes)
     # categorical(bayes)
-    print_important_words()
-    print_anti_important_words()
+    print_important_words(binary=False)
+    print_anti_important_words(binary=False)

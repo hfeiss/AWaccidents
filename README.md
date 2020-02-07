@@ -136,6 +136,8 @@ Sklearn grid searching was used to find the best hyperparameters. Models were te
 
 ### Naive Bayes
 
+Below, mock descriptions were fed into the naive bayes model with the resulting predictions.
+
 #### Medical
     There was a diabetic on our trip. He forgot his insulin. He ended up in DKA, so we pulled off of the the riveLuckily we had cell service, so we called 911. He got rushed the ER, but the docs said hed be okay even though he had been near death earlier that day. Another person on the trip was doing a bunch of drugs like xanax, accutane, tramado and propecia. What a combo! They ended up falling in the river.
 
@@ -143,67 +145,78 @@ Sklearn grid searching was used to find the best hyperparameters. Models were te
 |----------------------:	|---------	|--------	|----------	|
 | Predicted Probability 	| 99.9%   	| 0.0%   	| 0.0%     	|
 #### Injury
+    It was the end of the day, and everyone was tired. The raft guide decided to drop into the last hole sideways, anddumptrucked everyone into the river. There wasnt much rapid left atthapoint but most people found a rock or two to hit. Sarah bruisedheleg. Sam hit his head. I got my foot trapped in the webbing ofthraft. Everyone was okay, but a few of us had to get stitches.
 
+|                       	| Medical 	| Injury 	| Fatality 	|
+|----------------------:	|---------	|--------	|----------	|
+| Predicted Probability 	| 0.1%    	| 0.1%   	| 99.8%    	|
 #### Fatality
     It could have been a good day of kayaking. The water levels were very high, but everyone was stoked. On the first rapid Jack capsized and swam into a strainer. Meanwhile, Jill got pinned in a sieve. Both spent about 10 minutes underwater before we could get to them. We performed CPR, but they we both blue. We called the sherrif, the ambuance came, and we cried a bunch.
 |                       	| Medical 	| Injury 	| Fatality 	|
 |----------------------:	|---------	|--------	|----------	|
 | Predicted Probability 	| 0.25%   	| 0.15%  	| 99.6%    	|
 
-## Non-text regression
+Finally, for each category of incidnet, the top 100 words that made each category more and less likely were generated. Below is a currated subset of those lists.
+#### Words that made Medical more likley: 
+    kayaker overdose, new, head, alcohol, xanax, accutane, tramadol, fall, rope
+
+#### Words that made Fatality more likely:
+    rock, dam, drown, pin, get help, search, rescue, time, large flow
+
+#### Words that made Injury more likely:
+    man, pin, foot, strainer, group, kayaker, march
+
+#### Words that made Fatality less likely:
+    competent group, thank, support, train, feel emotion, professional sar, respond
+
+#### Words that made Injury less likely:
+    farmer wetsuit, near drowning, new york, large kayak
 
 ## Logistic Regression
+
+A simple logistic was performed on the non-text features. This model performed better than the text analysis. After removing features without predictive strength, the coefecients and their p-values are listed below. The varience inflaction factors are all 1.3 or below.
+
+|          Predictor 	| Coef  	| p-value 	|
+|-------------------:	|-------	|---------	|
+| River Level        	| 0.27  	| 0.050   	|
+| River Difficulty   	| 0.45  	| 0.003   	|
+| Paddler Experience 	| -0.34 	| 0.034   	|
+
 
 |          Model 	        | Precision 	| Recall 	| Accuracy 	|
 |---------------:	        |-----------	|--------	|----------	|
 | Logistic Classification 	| 92%       	| 100%   	| 92%      	|
-| NB, AB Stacked 	        | 88%       	| 92%    	| 84%      	|
 
 ## Stacked
 
+Adding the Naive Bayes prediction as a feature in the logistic model, oddly, decreased performance.
+
 |          Model 	        | Precision 	| Recall 	| Accuracy 	|
 |---------------:	        |-----------	|--------	|----------	|
-| NB, AB Stacked 	        | 88%       	| 92%    	| 84%      	|
+| NB, LC Stacked 	        | 88%       	| 92%    	| 84%      	|
 
 # Conclusions
-dont do drugs
-age
-commercial
-kayaking
 
-competent group
+Combining the information from clustering, topic modeling, nautral language processing, and logistic modeling, a few conclusions can be made. However, mostly the data supports existing knowledge in the whitewater community.
 
-#### Good words
-'large kayak' 'large flow''john wetsuit' feel emotion, spot stop, feel pressure, respond 'competent group',
-
- 'thank thank', 'thank tell', 'thank support', 'cruikshank woman', 'thank shayne', 'thankful train', 'thank share', 
-
-#### Bad words
-'new', 'rock', 'rope', 'victim', 'kayaker', 'help', 'time', 'swim',
-'fall', 'pin', 'foot','strainer', 'accident', 'chute enter'
-'body', 'county', 'search', 'drown', 'rock', 'time', 'kayaker', 'be', 'accident march kayaker overdose, dam
-
-# Future
-
+* Comptent group - more than any other, this phrase decreased the liklihood of a prediction for death. Always make sure that your whole groupe is skilled enough and prepared for the river.
+* Rivers tend to become more lethal as the water level increases
+* Rivers tend to become more lethal as their difficulty increases
+* As paddler experience increases, the fatality liklihood decreases
+* The following do not effect the probability of fatality given an accident:
+    * age (once above 10 years old)
+    * type of watercraft
+    * commercial vs. private trip
+* accidents with victims younger than 10 are much likely to be fatal
 
 ![](/images/level_diff_death_2.png)
 ![](/images/exper_age_death.png)
 
-
-![](/images/screenshots/lochsa.jpg)
-![](/images/screenshots/grid_vector.png)
-![](/images/screenshots/log_mod.png)
-![](/images/bagging_features_horiz.png)
-![](/images/elbow_km.png)
-![](/images/scree.png)
-![](/images/silh_km.png)
+# Further
+* Further modifiication of the tokenization, lemmatization, and vectorization could improve the models.
+* More models could be tried, such as MLP
 
 
-water level positively correlated with death
-difficulty: no correlation
-age: very correlated with death
-kayaking: negatively correlated with death
-commercial: possible correlation (positive), but may be due to increased reporting
-experience: no correlation
+![The author enjoying a high water lap on the Lochsa, 2018](/images/screenshots/lochsa.jpg)
 
-![]()
+Stay safe out there!

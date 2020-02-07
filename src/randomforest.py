@@ -61,9 +61,9 @@ rf = RandomForestClassifier(n_estimators=1000,
                             max_samples=None)
 
 
-def binary():
-    rf.fit(vector(X_train), y_train)
-    predict = rf.predict(vector(X_test))
+def binary(model):
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
     acc = accuracy_score(y_test, predict)
     rec = recall_score(y_test, predict)
     pre = precision_score(y_test, predict)
@@ -72,10 +72,10 @@ def binary():
     print(f'Precision: {pre}')
 
 
-def categorical():
+def categorical(model):
     labels = ['Medical', 'Injury', 'Fatality']
-    rf.fit(vector(X_train), y_train)
-    predict = rf.predict(vector(X_test))
+    model.fit(vector(X_train), y_train)
+    predict = model.predict(vector(X_test))
     results = classification_report(y_test,
                                     predict,
                                     target_names=labels)
@@ -90,5 +90,5 @@ def print_features():
 
 
 if __name__ == "__main__":
-    # binary()
-    categorical()
+    # binary(rf)
+    categorical(rf)
