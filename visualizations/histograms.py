@@ -58,16 +58,16 @@ def histogram(ax, data, saveas, title, colors,
 
 if __name__ == "__main__":
 
-    start = pd.to_datetime(2020, format='%Y')
-    end = pd.to_datetime(1960, format='%Y')
-    data = df[(df['accidentdate'] < start)
-              & (df['accidentdate'] > end)]
+    # start = pd.to_datetime(2020, format='%Y')
+    # end = pd.to_datetime(1960, format='%Y')
+    # data = df[(df['accidentdate'] < start)
+    #           & (df['accidentdate'] > end)]
 
-    data.dropna(inplace=True)
-    labels = ['1960', '1970', '1980', '1990', '2000', '2010', '2020']
-    fig, ax = plt.subplots(figsize=(10, 6))
-    histogram(ax, data, 'dates', 'Accidents Over Time', colors='#047495',
-              labels=labels, bins=15, remove_spines=True)
+    # data.dropna(inplace=True)
+    # labels = ['1960', '1970', '1980', '1990', '2000', '2010', '2020']
+    # fig, ax = plt.subplots(figsize=(10, 6))
+    # histogram(ax, data, 'dates', 'Accidents Over Time', colors='#047495',
+    #           labels=labels, bins=15, remove_spines=True)
 
     # level = df['rellevel']
     # level.dropna(inplace=True)
@@ -114,23 +114,23 @@ if __name__ == "__main__":
     #           tags=['Non Fatal', 'Fatal'])
 
 
-    # age = df['age']
-    # age.dropna(inplace=True)
+    age = df['age'][df['age'] != 0]
+    age.dropna(inplace=True)
     # age_labels = ['0-15', '15-30', '30-45', '45-60', '65-75']
-    # age_death = death['age']
-    # age_death.dropna(inplace=True)
+    age_death = death['age']
+    age_death.dropna(inplace=True)
 
-    # exper = df['experience']
-    # exper.dropna(inplace=True)
-    # exper_labels = ['None', 'Some', 'Experienced', 'Expert']
-    # exper_death = death['experience']
-    # exper_death.dropna(inplace=True)
+    exper = df['experience']
+    exper.dropna(inplace=True)
+    exper_labels = ['None', 'Some', 'Experienced', 'Expert']
+    exper_death = death['experience']
+    exper_death.dropna(inplace=True)
 
-    # fig, ax = plt.subplots(1, 2, figsize=(10, 6))
-    # histogram(ax[0], [exper, exper_death], 'exper_age_death',
-    #           'Accidents vs. Experience Level', colors=['#047495', '#980002'],
-    #           labels=exper_labels, bins=4, remove_spines=True,
-    #           tags=['Non Fatal', 'Fatal'])
-    # histogram(ax[1], [age, age_death], 'exper_age_death',
-    #           'Accidents vs. Victim Age', colors=['#047495', '#980002'],
-    #           remove_spines=True, tags=['Non Fatal', 'Fatal'])
+    fig, ax = plt.subplots(1, 2, figsize=(10, 6))
+    histogram(ax[0], [exper, exper_death], 'exper_age_death',
+              'Accidents vs. Experience Level', colors=['#047495', '#980002'],
+              labels=exper_labels, bins=4, remove_spines=True,
+              tags=['Non Fatal', 'Fatal'])
+    histogram(ax[1], [age, age_death], 'exper_age_death',
+              'Accidents vs. Victim Age', colors=['#047495', '#980002'],
+              remove_spines=True, tags=['Non Fatal', 'Fatal'])

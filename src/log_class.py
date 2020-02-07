@@ -9,13 +9,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 
-paths = Root(1).paths()
+paths = Root(0).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
+df = df[df['age'] != 0]
 df.dropna(inplace=True)
 
-X = df[['rellevel', 'age', 'kayak', 'commercial']].values
+X = df[['rellevel', 'age', 'kayak']].values
 y = df['F'].values
 
 vif = variance_inflation_factor
