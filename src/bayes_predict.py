@@ -28,9 +28,6 @@ def make_vectorizer():
     joblib.dump(vectorizer, models + '/bayes_vector.joblib')
 
 
-vectorizer = joblib.load(models + '/bayes_vector.joblib')
-
-
 def vector(data):
     return vectorizer.transform(data)
 
@@ -40,7 +37,7 @@ def make_bayes():
     bayes = MultinomialNB()
     bayes.fit(vector(X), y)
 
-    joblib.dump(bayes, '/Users/hfeiss/dsi/capstone-2/models/bayes.joblib')
+    joblib.dump(bayes, models + '/bayes.joblib')
 
 
 death = ['It could have been a good day of kayaking. The water levels '

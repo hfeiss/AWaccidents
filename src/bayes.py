@@ -1,42 +1,10 @@
 import numpy as np
-import pandas as pd
-from pprint import pprint
-from filepaths import Root
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-from tokenator import tokenize_and_lemmatize
+from model_scorer import binary, categorical, get_features
 
 
-paths = Root(0).paths()
-clean = paths.data.clean.path
-
-df = pd.read_pickle(clean + '/clean.pkl')
-X = df['description']
-y = np.array(df['target'])
-# y = np.array(df['F'])
-
-
-X_train, X_test, y_train, y_test = train_test_split(X,
-                                                    y,
-                                                    shuffle=True,
-                                                    random_state=42
-                                                    )
-
-vectorizer = CountVectorizer(ngram_range=(1, 2),
-                             max_df=0.55,
-                             max_features=100000,
-                             token_pattern=None,
-                             tokenizer=tokenize_and_lemmatize)
-
-vectorizer.fit(X_train)
-features = vectorizer.get_feature_names()
-
-
-def vector(data):
-    return vectorizer.transform(data)
+bayes = MultinomialNB()
 
 
 def print_important_words(binary=True):
@@ -65,33 +33,13 @@ def print_anti_important_words(binary=True):
         print('\n')
 
 
-bayes = MultinomialNB()
-bayes.fit(vector(X_train), y_train)
-
-
-def binary(model):
-    model.fit(vector(X_train), y_train)
-    predict = model.predict(vector(X_test))
-    acc = accuracy_score(y_test, predict)
-    rec = recall_score(y_test, predict)
-    pre = precision_score(y_test, predict)
-    print(f'Accuracy:  {acc}')
-    print(f'Recall:    {rec}')
-    print(f'Precision: {pre}')
-
-
-def categorical(model):
-    labels = ['Medical', 'Injury', 'Fatality']
-    model.fit(vector(X_train), y_train)
-    predict = model.predict(vector(X_test))
-    results = classification_report(y_test,
-                                    predict,
-                                    target_names=labels)
-    pprint(results)
-
-
 if __name__ == "__main__":
-    # binary(bayes)
-    # categorical(bayes)
+    binary(bayes)
+    features = get_features()
+    print_important_words(binary=True)
+    print_anti_important_words(binary=True)
+    
+    categorical(bayes)
+    features = get_features()
     print_important_words(binary=False)
     print_anti_important_words(binary=False)
