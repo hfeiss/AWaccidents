@@ -33,8 +33,8 @@ def print_features():
 
 if __name__ == "__main__":
     # binary(rf)
-    features = get_features()
-    print_features()
+    # features = get_features()
+    # print_features()
 
     categorical(rf)
     features = get_features()
