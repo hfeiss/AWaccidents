@@ -108,23 +108,23 @@ The description column is tokenized, lemmatized, and vectorized before analysis.
 ## Categorical
 River level (Low, Medium, High, and Flood), river difficulty (I, II, III, IV, V), and victim skill (Inexperienced, Some experience, Experienced, Expert) are mapped linearly to integers.
  
-Type of watercraft wareas mapped to kayak (1) or not.
+Type of watercraft is mapped to kayak (1) or not.
  
 Trip type are mapped to commercial (1) or not.
  
-Given an unreasonable number of 0 year olds with contradictory description entries, ages equal to 0 were dropped.
+Given an unreasonable number of 0 year olds with contradictory description entries, ages equal to 0 are dropped.
  
 # Models
-Sklearn grid searching is used to find the best hyperparameters. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Not Fatal. For simplicity and interpretability, only the binary classification results are shown.
+Sklearn grid searching is used to find the best hyperparameters. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
  
 <center>
 
 |          Model    | Precision     | Recall    | Accuracy  |
 |---------------:   |-----------    |--------   |---------- |
-| Random Forest     | 77%           | 98%       | 81%       |
 | AdaBoost          | 86%           | 92%       | 86%       |
 | Bagging           | 87%           | 92%       | 87%       |
 | Naive Bayes       | 76%           | 95%       | 79%       |
+| Random Forest     | 77%           | 98%       | 81%       |
 | Logistic Classification   | 92%           | 100%      | 92%       |
 | NB, LC Stacked            | 88%           | 92%       | 84%       |
 
@@ -148,7 +148,7 @@ Below are the most important words for predicting the outcome of an accident. It
 Below, mock descriptions were fed into the naive bayes model with the resulting predictions.
  
 #### Medical
-   There was a diabetic on our trip. He forgot his insulin. He ended up in DKA, so we pulled off of the the riveLuckily we had cell service, so we called 911. He got rushed to the ER, but the docs said he'd be okay even though he had been near death earlier that day. Another person on the trip was doing a bunch of drugs like xanax, accutane, tramadol and propecia. What a combo! They ended up falling in the river.
+   > There was a diabetic on our trip. He forgot his insulin. He ended up in DKA, so we pulled off of the the riveLuckily we had cell service, so we called 911. He got rushed to the ER, but the docs said he'd be okay even though he had been near death earlier that day. Another person on the trip was doing a bunch of drugs like xanax, accutane, tramadol and propecia. What a combo! They ended up falling in the river.
  
 <center>
 
@@ -159,7 +159,7 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 </center>
 
 #### Injury
-   It was the end of the day, and everyone was tired. The raft guide decided to drop into the last hole sideways, and dump trucked everyone into the river. There wasn't much rapid left at the point but most people found a rock or two to hit. Sarah bruised her leg. Sam hit his head. I got my foot trapped in the webbing of raft. Everyone was okay, but a few of us had to get stitches.
+   > It was the end of the day, and everyone was tired. The raft guide decided to drop into the last hole sideways, and dump trucked everyone into the river. There wasn't much rapid left at the point but most people found a rock or two to hit. Sarah bruised her leg. Sam hit his head. I got my foot trapped in the webbing of raft. Everyone was okay, but a few of us had to get stitches.
 
 <center>
 
@@ -170,7 +170,7 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 </center>
 
 #### Fatality
-   It could have been a good day of kayaking. The water levels were very high, but everyone was stoked. On the first rapid Jack capsized and swam into a strainer. Meanwhile, Jill got pinned in a sieve. Both spent about 10 minutes underwater before we could get to them. We performed CPR, but they we both blue. We called the sheriff, the ambulance came, and we cried a bunch.
+   > It could have been a good day of kayaking. The water levels were very high, but everyone was stoked. On the first rapid Jack capsized and swam into a strainer. Meanwhile, Jill got pinned in a sieve. Both spent about 10 minutes underwater before we could get to them. We performed CPR, but they we both blue. We called the sheriff, the ambulance came, and we cried a bunch.
 
 <center>
 
@@ -244,4 +244,4 @@ Combining the information from clustering, topic modeling, natural language proc
 * Stay safe out there!
  
  
-![The author enjoying a high water lap on the Lochsa, 2018](/images/screenshots/lochsa.jpg)
+![alt text](/images/screenshots/lochsa.jpg "The author enjoying a high water lap on the Lochsa, 2018")
