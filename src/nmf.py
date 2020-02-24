@@ -19,10 +19,6 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 
-def vector(data):
-    return vectorizer.transform(data)
-
-
 nmf = NMF(n_components=20,
           init=None,
           solver='cd',
@@ -41,11 +37,10 @@ if __name__ == "__main__":
     vectorizer.fit(X)
     print('Done Fitting Vectorizer')
     features = vectorizer.get_feature_names()
-
-    probs = nmf.fit_transform(vector(X))
+    probs = nmf.fit_transform(vectorizer.transform(X))
     print('Done fitting NMF')
-    joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
-    probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
+    # joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
+    # probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
     probs = np.array(probs)
 
     features = np.array(vectorizer.get_feature_names())

@@ -1,6 +1,11 @@
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from model_scorer import *
+from nlp_scorer import binary, categorical
+import nlp_holdout_scorer as holdout
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from tokenator import tokenize_and_lemmatize
+import joblib
+from filepaths import Root
 
 
 rf = RandomForestClassifier(n_estimators=1000,
@@ -23,19 +28,33 @@ rf = RandomForestClassifier(n_estimators=1000,
                             ccp_alpha=0.0,
                             max_samples=None)
 
+vectorizer = CountVectorizer(ngram_range=(1, 2),
+                             max_df=0.55,
+                             max_features=100000,
+                             token_pattern=None,
+                             tokenizer=tokenize_and_lemmatize)
 
-def print_features():
+
+def print_features(n=15):
+
+    features = vectorizer.get_feature_names()
     importances = rf.feature_importances_
-    short_list = importances.argsort()[-1:-16:-1]
+    short_list = importances.argsort()[-1:-(n + 1):-1]
     for feat in short_list:
         print(features[feat])
 
 
 if __name__ == "__main__":
-    # binary(rf)
-    # features = get_features()
-    # print_features()
 
-    categorical(rf)
-    features = get_features()
+    # rf = joblib.load(models + 'rf.joblib')
+    binary(rf, vectorizer)
+    # joblib.dump(rf, models + 'rf.joblib')
+
+    # rf = joblib.load(models + 'rf.joblib')
+    categorical(rf, vectorizer)
+    # joblib.dump(rf, models + 'rf.joblib')
+    
+    holdout.binary(rf, vectorizer)
+    holdout.categorical(rf, vectorizer)
+
     print_features()

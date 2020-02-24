@@ -9,11 +9,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
 
-paths = Root(1).paths()
+paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
 models = paths.models.path
 
-df = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/data/clean/clean.pkl')
+df = pd.read_pickle(clean + 'clean.pkl')
 
 X = df['description']
 y = np.array(df['target'])
