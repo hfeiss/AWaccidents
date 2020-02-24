@@ -1,6 +1,14 @@
 from sklearn.ensemble import BaggingClassifier
-from model_scorer import binary, categorical
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from nlp_scorer import binary, categorical
+from tokenator import tokenize_and_lemmatize
+import nlp_holdout_scorer as holdout
+import joblib
+from filepaths import Root
 
+
+paths = Root(__file__, depth=1).paths()
+models = paths.models.path
 
 bc = BaggingClassifier(base_estimator=None,
                        n_estimators=10,
@@ -14,7 +22,19 @@ bc = BaggingClassifier(base_estimator=None,
                        random_state=42,
                        verbose=1)
 
+vectorizer = CountVectorizer(ngram_range=(1, 2),
+                             max_df=0.55,
+                             max_features=100000,
+                             token_pattern=None,
+                             tokenizer=tokenize_and_lemmatize)
 
 if __name__ == "__main__":
-    binary(bc)
-    categorical(bc)
+
+    binary(bc, vectorizer)
+    categorical(bc, vectorizer)
+    
+    # joblib.dump(bc, models + 'bagging.joblib')
+    # bc = joblib.load(models + 'bagging.joblib')
+    
+    holdout.binary(bc, vectorizer)
+    holdout.categorical(bc, vectorizer)
