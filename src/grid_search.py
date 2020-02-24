@@ -11,12 +11,12 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import BaggingClassifier
 from sklearn.pipeline import Pipeline
 
-paths = Root(1).paths()
-clean = paths.data.clean.path
+paths = Root(__file__, depth=1).paths()
+train = paths.data.train.path
 
-df = pd.read_pickle(clean + '/clean.pkl')
+df = pd.read_pickle(train + '/train.pkl')
 
-X = df['description'].str.join(' ')
+X = df['description']
 y = np.array(df['target'])
 
 pipeline = Pipeline([('vect', CountVectorizer(token_pattern=None,
@@ -41,7 +41,7 @@ parameters = {
 grid_search = GridSearchCV(pipeline,
                            parameters,
                            n_jobs=-1,
-                           verbose=1)
+                           verbose=4)
 
 
 def run_grid_search(parameters):
