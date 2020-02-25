@@ -6,8 +6,10 @@ from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from tokenator import tokenize_and_lemmatize
 
+
 paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
+models = paths.models.path
 
 df = pd.read_pickle(clean + 'clean.pkl')
 X = df['description']
@@ -18,8 +20,8 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
-
-nmf = NMF(n_components=20,
+num_topics = 20
+nmf = NMF(n_components=num_topics,
           init=None,
           solver='cd',
           beta_loss='frobenius',
@@ -35,10 +37,9 @@ nmf = NMF(n_components=20,
 if __name__ == "__main__":
 
     vectorizer.fit(X)
-    print('Done Fitting Vectorizer')
     features = vectorizer.get_feature_names()
+    
     probs = nmf.fit_transform(vectorizer.transform(X))
-    print('Done fitting NMF')
     # joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
     # probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
     probs = np.array(probs)
@@ -46,13 +47,15 @@ if __name__ == "__main__":
     features = np.array(vectorizer.get_feature_names())
     sorted_topics = nmf.components_.argsort(axis=1)[:, ::-1][:, :20]
 
-    top_doc_idx = probs.argsort(axis=0)[-1, :]
+    top_doc_idx = probs.argsort(axis=1)[-1:-201:-1, :]
+    joblib.dump(top_doc_idx, models + 'doc_idx.joblib')
 
+    print(top_doc_idx.shape)
     for i, topic in enumerate(sorted_topics):
         print(f'Topic: {i} with closest article {top_doc_idx[i]}')
         print(features[topic])
 
-    # for i, doc in enumerate(top_doc_idx):
-    #     print(f'Topic {i} top doc')
-    #     print(X[doc])
-    #     print(doc)
+    for i in range(num_topics):
+        print(f'Topic {i} top docs')
+        # print(X[doc])
+        print(top_doc_idx[:, i])

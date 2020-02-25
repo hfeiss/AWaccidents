@@ -1,0 +1,87 @@
+Topic: 0 with closest article 1592
+['10 15' '15' '10' '15 10' 'state 10' 'city 10' 'city' 'state'
+ '15 analysis' '15 state' '1993 10' '1993' '15 descri' 'run' 'l trans'
+ 'trans' 'descri ion' 'analysis' 'descri' '1995']
+Topic: 1 with closest article 1026
+['run' 'rope' 'drop' 'group' 'eddy' 'hole' 'know' 'go' 'paddler' 'pull'
+ 'try' 'foot' 'come' 'think' 'swim' 'downstream' 'minute' 'boater' 'help'
+ 'head']
+Topic: 2 with closest article 1272
+['pin strainer' 'strainer' 'pin' 'cheat' '  ' 'susquehanna york' 'potomac'
+ 'okay' 'grass' 'susquehanna' 'stillaguamish' 'york' 'tubing' 'cfs pin'
+ 'wy' '2009' 'bridge' 'bridge pin' '350 cfs' 'brugnato']
+Topic: 3 with closest article 346
+['search' 'county' 'man' 'sheriff' 'body' 'miss' 'find' 'kayaker' 'strong'
+ 'county sheriff' 'office' 'sunday' 'kayak' 'police' 'department' 'fire'
+ 'sheriff office' 'saturday' 'area' 'drown']
+Topic: 4 with closest article 1030
+['dam' 'hydraulic' 'head dam' 'low head' 'low' 'catch' 'head'
+ 'dam hydraulic' 'catch low' 'natural' 'natural hydraulic' 'catch natural'
+ 'backwash' 'warn' 'man' 'dam catch' 'sign' 'run dam' 'drown' 'street dam']
+Topic: 5 with closest article 8
+['lsdexce' 'lsdexce ion' 'ion' 'ion lsdexce' 'dark lsdexce' 'dark'
+ 'ion 46' '47 lsdexce' 'ion 52' 'ion 49' '49 lsdexce' 'ion 48' 'ion 47'
+ '48 lsdexce' '46 lsdexce' '50 dark' 'ion 50' 'val' 'toc' 'ion toc']
+Topic: 6 with closest article 813
+['10' 'stop 25' '25 10' '10 10' '25' 'city' 'city 10' 'stop' 'state 10'
+ 'state' '1999' '1999 10' '10 analysis' '10 state' 'walbridge'
+ 'analysis walbridge' 'day' '1998' 'run' '25 stop']
+Topic: 7 with closest article 17
+['watauga' 'watauga gorge' 'gorge' 'gorge clog' 'clog' 'leon' 'leon cook'
+ 'jordan watauga' 'dave jordan' 'r' 'hayes watauga' 'bruce hayes'
+ 'seifer watauga' 'fred seifer' 'seifer' 'bruce' 'hayes' 'dave' 'jordan'
+ 'cook']
+Topic: 8 with closest article 208
+['gauley' 'gauley upper' 'upper' 'summersville' 'initiation'
+ 'upper initiation' 'summersville dam' 'upper summersville' 'mason branch'
+ 'dam mason' 'iron' 'mason' 'iron ring' 'sieve' 'upper gauley' 'branch'
+ 'hartley' 'dan coaplen' 'ring' 'west virginia']
+Topic: 9 with closest article 1210
+['arkansas' 'chaffee' 'chaffee county' 'guide' 'colorado' 'county'
+ 'salida' 'pine creek' 'commercial' 'brown canyon' 'pine' 'die'
+ 'buena vista' 'buena' 'vista' 'trip' 'brown' 'cpr' 'man' 'canyon']
+Topic: 10 with closest article 1338
+['salmon' 'fork' 'middle fork' 'middle' 'creek' 'idaho' 'boundary creek'
+ 'boundary' 'fork salmon' 'fitzpatrick' 'boise' 'dagger fall' 'dagger'
+ 'creek dagger' 'cache bar' 'fall cache' 'cache' 'montana' 'fall' 'slavin']
+Topic: 11 with closest article 1970
+['canoe' 'man' 'wear' 'capsize' 'delaware' 'pfd' 'life' 'canoe capsize'
+ 'boy' 'wear life' 'victim' 'creek' 'life vest' 'vest' 'canoeist' 'shore'
+ 'tree' 'drown' 'pfd wear' 'police']
+Topic: 12 with closest article 263
+['ocoee' 'ocoee middle' 'middle' 'middle see' 'grumpy' 'ocoee dam'
+ 'middle grumpy' 'middle ocoee' 'dam powerhouse' 'walter' 'powerhouse'
+ 'see' 'guide' 'power house' 'hick' 'tennessee' '45 45' 'norris' 'archie'
+ 'rope']
+Topic: 13 with closest article 1481
+['rogue' 'bar' 'blossom bar' 'blossom' 'curry county' 'curry' 'foster bar'
+ 'grave creek' 'martindale' 'foster' 'picket' 'picket fence' 'agness'
+ 'galice' 'creek galice' 'galice foster' 'bishop' 'fence' 'bar agness'
+ 'grave']
+Topic: 14 with closest article 1851
+['chattooga' '76 bridge' '76' 'chattooga section' 'route 76' 'tugaloo'
+ 'tugaloo lake' 'bridge tugaloo' 'lake ramp' 'section' 'section route'
+ 'crack' 'ramp' 'chatooga' 'route' 'lake' 'usfs chattooga' 'bridge' 'usfs'
+ 'woodall']
+Topic: 15 with closest article 1168
+['park' 'national' 'national park' 'canyon' 'colorado' 'park service'
+ 'service' 'grand' 'grand canyon' 'trip' 'ranger' 'green' 'dinosaur'
+ 'monument' 'canyon national' 'utah' 'national monument'
+ 'dinosaur national' 'group' 'party']
+Topic: 16 with closest article 2389
+['0001' '0001 repeat' 'repeat' '107' 'niagara' '\xa0 ' 'repeat 0001'
+ '2019' '0001 18' 'figge' 'mike' 'pro' 'niagara fall' '33' 'kayak'
+ '0001 white' '90' 'clarinda' 'pro 300' 'smiley']
+Topic: 17 with closest article 1070
+['youghiogheny' 'youghiogheny upper' 'lose find' 'upper lose' 'upper'
+ 'youghiogheny loop' 'lose' 'dimple' 'coaplen' 'loop' 'youghiogheny low'
+ 'find' 'loop cucumber' 'cucumber' 'loop entrance' 'henry' 'low'
+ 'entrance' 'ohiopyle' 'fall lose']
+Topic: 18 with closest article 44
+['would' '14' '34' 'important' 'relative' '16' '17' '34 34' 'white' '20'
+ '33' 'hide' '18' 'img' 'asset' 'content' 'overflow' 'share' 'word'
+ 'clear']
+Topic: 19 with closest article 175
+['cr' 'weitas' 'weitas cr' 'fk' 'n fk' 'clearwater' 'n' 'cr weitas'
+ 'clearwater n' 'fk weitas' 'big sandy' 'sandy cr' 'sandy' 'payette'
+ 'cottonwood' 'michael' 'mi' '15 unavailable' 'camp milepost' 'jones cr']
