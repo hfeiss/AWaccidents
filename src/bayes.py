@@ -1,11 +1,12 @@
+import joblib
 import numpy as np
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from filepaths import Root
+import nlp_holdout_scorer as holdout
 from nlp_scorer import binary, categorical
 from tokenator import tokenize_and_lemmatize
-import nlp_holdout_scorer as holdout
-import joblib
-from filepaths import Root
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 paths = Root(__file__, depth=1).paths()

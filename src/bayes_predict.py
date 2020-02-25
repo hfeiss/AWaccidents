@@ -1,14 +1,14 @@
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
-from filepaths import paths
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
+from filepaths import Root
 from tokenator import tokenize_and_lemmatize
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
 
 
-paths = paths(0)
+paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
 models = paths.models.path
 

@@ -1,11 +1,11 @@
-from sklearn.ensemble import BaggingClassifier
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from nlp_scorer import binary, categorical
-from tokenator import tokenize_and_lemmatize
-import nlp_holdout_scorer as holdout
 import joblib
 from filepaths import Root
-
+import nlp_holdout_scorer as holdout
+from nlp_scorer import binary, categorical
+from tokenator import tokenize_and_lemmatize
+from sklearn.ensemble import BaggingClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
 paths = Root(__file__, depth=1).paths()
 models = paths.models.path
@@ -31,8 +31,10 @@ vectorizer = CountVectorizer(ngram_range=(1, 2),
 if __name__ == "__main__":
 
     binary(bc, vectorizer)
+    # joblib.dump(bc, models + 'bagging.joblib')
+    # bc = joblib.load(models + 'bagging.joblib')
+
     categorical(bc, vectorizer)
-    
     # joblib.dump(bc, models + 'bagging.joblib')
     # bc = joblib.load(models + 'bagging.joblib')
     

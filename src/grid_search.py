@@ -1,15 +1,17 @@
 import numpy as np
 import pandas as pd
-from pprint import pprint
 from time import time
+from pprint import pprint
 from filepaths import Root
-from tokenator import tokenize_and_lemmatize
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import GridSearchCV
-from sklearn.ensemble import BaggingClassifier
 from sklearn.pipeline import Pipeline
+from tokenator import tokenize_and_lemmatize
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.ensemble import BaggingClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 paths = Root(__file__, depth=1).paths()
 train = paths.data.train.path

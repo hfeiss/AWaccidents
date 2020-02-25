@@ -47,7 +47,7 @@ if __name__ == "__main__":
     features = np.array(vectorizer.get_feature_names())
     sorted_topics = nmf.components_.argsort(axis=1)[:, ::-1][:, :20]
 
-    top_doc_idx = probs.argsort(axis=1)[-1:-201:-1, :]
+    top_doc_idx = np.argsort(probs, axis=0)[-1:-201:-1, :]
     joblib.dump(top_doc_idx, models + 'doc_idx.joblib')
 
     print(top_doc_idx.shape)

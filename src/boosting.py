@@ -1,13 +1,13 @@
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from filepaths import Root
+import nlp_holdout_scorer as holdout
 from nlp_scorer import binary, categorical
 from tokenator import tokenize_and_lemmatize
-import nlp_holdout_scorer as holdout
-import joblib
-from filepaths import Root
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 ada = AdaBoostClassifier(n_estimators=50)
 
