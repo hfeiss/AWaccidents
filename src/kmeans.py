@@ -37,16 +37,17 @@ def sil_score(model, n=12):
     K = [k for k in range(2, n + 1)]
     scores = []
     for k in K:
-        model(n_clusters=k).fit(X)
-        score = silhouette_score(X, model.labels_)
+        labels = model(n_clusters=k).fit_predict(X)
+        score = silhouette_score(X, labels)
         scores.append(score)
         print(scores)
 
 
 if __name__ == "__main__":
 
-    model = KMeans
-    sil_score(model, 20)
+    # model = KMeans
+    # sil_score(model, 20)
+    model = KMeans(n_clusters=20).fit(X)
     print_top_words(model)
 
     # joblib.dump(kmeans, '/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')

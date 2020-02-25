@@ -23,7 +23,7 @@ def vector(data):
     return vectorizer.transform(data)
 
 
-lda = LatentDirichletAllocation(n_components=10,
+lda = LatentDirichletAllocation(n_components=20,
                                 doc_topic_prior=None,
                                 topic_word_prior=None,
                                 learning_method='batch',

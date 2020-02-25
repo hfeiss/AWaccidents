@@ -52,10 +52,8 @@ if __name__ == "__main__":
 
     print(top_doc_idx.shape)
     for i, topic in enumerate(sorted_topics):
-        print(f'Topic: {i} with closest article {top_doc_idx[i]}')
         print(features[topic])
 
     for i in range(num_topics):
         print(f'Topic {i} top docs')
-        # print(X[doc])
         print(top_doc_idx[:, i])

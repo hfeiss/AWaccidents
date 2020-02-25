@@ -3,7 +3,7 @@ from filepaths import Root
 from spacy.lang.en import English
 
 
-paths = Root().paths()
+paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
 
 pd.set_option('display.max_columns', 100)
@@ -32,9 +32,19 @@ my_stops = ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
             'large', 'march', 'tira', 'niyhwk', 'tcenter', 'posr', 'jim',
             'georgia', 'lucas', 'posr', 'mark', 'get', 'rock', 'be', 'kayker',
             'time', 'ndn', 'thumbtitle', 'thumbnail', 'sliderthumbnailoverlay',
-            'neacato', '07', 'witness', 'stockticker', '4', '5', '6', '7']
+            'neacato', '07', 'witness', 'stockticker', '4', '5', '6', '7',
+            'jpg', '300w', 'neue', 'lucida', 'header', 'segoe', 'byline',
+            'at4', '75em', '400', '1rem', 'and', 'let', 'near', 'new',
+            'colorful', 'medium', 'shade', 'story', 'news', '0806', '350598',
+            'wset', 'james', 'article', 'qformat', 'shade', 'provide', 'month', 
+            'date', 'spacerun', 'fareast', 'attachment', 'origin', 'clip',
+            'black', 'cap', '5pt', 'language', 'aolmail', 'decoration', 'webkit',
+            'block', 'inline', '100', 'h1', '20px', '16px', '1em', 'title', 'auto',
+            '5px', 'transform', '102', 'transparent', 'light', 'lsdexce', '10', '14',
+            '20', '15', '234', 'ion', '16', '17', '35']
 
-seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_']
+seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_',
+              '{', '}', 'px', 'pt', 'mso']
 
 htmls = ['\\', '\r', '\n', '\t']
 
