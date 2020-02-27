@@ -21,26 +21,25 @@ vectorizer = CountVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 
-def print_important_words(binary=True):
+def print_important_words(bayes, features, binary=True):
     if binary:
         labels = ['Not Fatal', 'Fatal']
     else:
         labels = ['Medical', 'Injury', 'Death']
-    coefs = bayes.coef_
-    for i, outcome in enumerate(coefs):
+    for i, outcome in enumerate(bayes.coef_):
         coefs_sorted = np.argsort(outcome)[-1:-16:-1]
+        print(coefs_sorted.shape)
         print(f'Top words for {labels[i]}:')
         print([features[coef] for coef in coefs_sorted])
         print('\n')
 
 
-def print_anti_important_words(binary=True):
+def print_anti_important_words(bayes, features, binary=True):
     if binary:
         labels = ['Not Fatal', 'Fatal']
     else:
         labels = ['Medical', 'Injury', 'Death']
-    coefs = bayes.coef_
-    for i, outcome in enumerate(coefs):
+    for i, outcome in enumerate(bayes.coef_):
         coefs_sorted = np.argsort(outcome)[0:16]
         print(f'Top anti-words for {labels[i]}:')
         print([features[coef] for coef in coefs_sorted])
@@ -52,15 +51,15 @@ if __name__ == "__main__":
     # joblib.dump(bayes, models + 'bayes.joblib')
     # bayes = joblib.load(bayes + 'bayes.joblib')
     features = vectorizer.get_feature_names()
-    print_important_words(binary=True)
-    print_anti_important_words(binary=True)
+    print_important_words(bayes, features, binary=True)
+    print_anti_important_words(bayes, features, binary=True)
     
     categorical(bayes, vectorizer)
     # joblib.dump(bayes, models + 'bayes.joblib')
     # bayes = joblib.load(bayes + 'bayes.joblib')
     features = vectorizer.get_feature_names()
-    print_important_words(binary=False)
-    print_anti_important_words(binary=False)
+    print_important_words(bayes, features, binary=False)
+    print_anti_important_words(bayes, features, binary=False)
 
     # holdout.binary(bayes, vectorizer)
     # holdout.categorical(bayes, vectorizer)

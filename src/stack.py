@@ -12,7 +12,7 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-paths = Root(0).paths()
+paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
 models = paths.models.path
 

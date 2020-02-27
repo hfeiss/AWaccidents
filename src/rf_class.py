@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from filepaths import Root
 from statsmodels.tools import add_constant
+from sklearn.ensemble import RandomForestClassifier
 from statsmodels.discrete.discrete_model import Logit
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.preprocessing import StandardScaler
@@ -25,6 +26,26 @@ ss = StandardScaler()
 columns = ['rellevel', 'difficulty', 'experience', 'F']
 names = ['const', 'rellevel', 'difficulty', 'experience']
 
+rf = RandomForestClassifier(n_estimators=1000,
+                            criterion='gini',
+                            max_depth=None,
+                            min_samples_split=2,
+                            min_samples_leaf=1,
+                            min_weight_fraction_leaf=0.0,
+                            max_features='auto',
+                            max_leaf_nodes=None,
+                            min_impurity_decrease=0.0,
+                            min_impurity_split=None,
+                            bootstrap=True,
+                            oob_score=True,
+                            n_jobs=-1,
+                            random_state=None,
+                            verbose=1,
+                            warm_start=False,
+                            class_weight=None,
+                            ccp_alpha=0.0,
+                            max_samples=None)
+
 def get_X_y(df):
 
     df = df[columns]
@@ -46,10 +67,7 @@ def score(df):
     for i in range(X.shape[1]):
         print(vif(X, i))
 
-    X = add_constant(X)
-
-    model = Logit(y, X).fit()
-    print(model.summary(xname=names))
+    model = rf.fit(X, y)
 
     kfold = KFold(n_splits=5)
 
@@ -58,7 +76,6 @@ def score(df):
     recalls = []
 
     for train_index, test_index in kfold.split(X):
-        model = LogisticRegression(solver="lbfgs")
         model.fit(X[train_index], y[train_index])
         y_predict = model.predict(X[test_index])
         y_true = y[test_index]
@@ -71,15 +88,12 @@ def score(df):
     print("Recall:", np.average(recalls))
 
 
-def holdout_scorer(train_df, holdout_df):
+def score_holdout(train_df, holdout_df):
 
     train_X, train_y = get_X_y(train_df)
     holdout_X, holdout_y = get_X_y(holdout_df)
 
-    train_X = add_constant(train_X)
-    holdout_X = add_constant(holdout_X)
-
-    model = LogisticRegression(solver="lbfgs")
+    model = rf
     model.fit(train_X, train_y)
     predict = model.predict(holdout_X)
 
@@ -93,5 +107,5 @@ def holdout_scorer(train_df, holdout_df):
 
 if __name__ == "__main__":
 
-    score(train_df)
-    holdout_scorer(train_df, holdout_df)
+    # score(train_df)
+    score_holdout(train_df, holdout_df)

@@ -86,4 +86,200 @@ Topic: 19 with closest article 175
  'clearwater n' 'fk weitas' 'big sandy' 'sandy cr' 'sandy' 'payette'
  'cottonwood' 'michael' 'mi' '15 unavailable' 'camp milepost' 'jones cr']
 
- [0.013414614788681974, 0.017967829237755504, 0.01848708050776976, 0.01927495664321693, 0.021512638461565113, 0.02112104772840713, 0.0193733815270113, 0.02391759499011461, 0.020670111044788383, 0.02162932155120849, 0.018494964647186665, 0.021354560181072655, 0.021927425871433592, 0.02332851631807845, 0.025191871908277028, 0.023297426456566725, 0.02074873419600198, 0.024444209215818927, 0.02614661639960551]
+ [0.013414614788681974, 0.017967829237755504, 0.01848708050776976, 0.01927495664321693, 0.021512638461565113, 0.02112104772840713, 0.0193733815270113, 0.02391759499011461, 0.020670111044788383, 0.02162932155120849, 0.018494964647186665, 0.021354560181072655, 0.021927425871433592, 0.02332851631807845, 0.025191871908277028, 0.02329742645656672
+ 
+
+4: national, park, national park, canyon, colorado, park service, gauley, service, trip, grand, grand canyon, ranger, man, summersville, hartley, die, cataract canyon, accident, monument, canyon national
+5: delaware, canoe, jervis, port jervis, port, lambertville, hancock port, delaware hancock, hancock, wear, upper delaware, park service, national, shohola, park, pfd, man, scudders, victim, service
+6: dam, head dam, low head, hydraulic, low, head, catch, dam hydraulic, catch low, man, canoe, run, kayaker, kayak, strong, drown, go, 10, pull, backwash
+7: lsdexce, lsdexce ion, ion, ion lsdexce, dark lsdexce, dark, 50 dark, ion 46, ion 47, ion 48, ion 52, 49 lsdexce, 48 lsdexce, 47 lsdexce, 46 lsdexce, ion 49, ion 50, ion toc, toc, head lsdexce
+8: run, guide, group, kayaker, fall, foot, creek, kayak, swim, fork, trip, mr, paddler, pin, high, day, drop, go, pull, man
+9: fk, n fk, n, cr, weitas, weitas cr, clearwater, yuba, run, payette, american, salmon fk, cr weitas, clearwater n, fk weitas, fork, unknown, mi, payette n, salmon
+10: rogue, bar, blossom bar, blossom, sheriff, bishop, curry county, curry, gold, foster bar, creek, foster, grave creek, county, galice, galice foster, creek galice, agness, bar agness, grave
+11: pin strainer, strainer, pin, cheat, grass,   , potomac, stillaguamish, tubing, foot week, football, foot wave, foot way, foot wear, foot weather, foot wedge, foot wednesday, foot wet, footage, foot wide
+12: ocoee, ocoee middle, middle, ocoee dam, grumpy, middle ocoee, middle see, dam powerhouse, powerhouse, 45 45, middle middle, guide, norton, middle grumpy, 45, tennessee, hick, see, rope, dam
+13: county, man, sheriff, office, sheriff office, 0001, drown, county sheriff, die, woman, arkansas, park, accident, old, fall, body, accord, colorado, deputy, strong
+14: upper, gauley upper, gauley, upper lose, youghiogheny upper, lose find, youghiogheny, upper initiation, coaplen, initiation, lose, dan coaplen, find, henry, mccormick, dan, chandler, david, tumblehome, 2nd drop
+15: 10 15, 15, 10, 15 10, state 10, city 10, city, state, run, 15 analysis, 15 state, 1993 10, 1993, 15 descri, analysis, trans, l trans, descri ion, descri, victim
+16: 10, stop 25, 10 10, 25 10, city 10, 25, stop, city, state 10, run, state, 1999, 1999 10, 10 analysis, 1998, day, drop, 10 state, group, 1998 10
+17: canoe, search, man, county, police, body, find, miss, wear, capsize, strong, creek, life, drown, friend, fire, kayak, kayaker, watauga, old
+Top anti-words for Not Fatal:
+['helpful generous', 'hannon', 'hannah ray', 'hannah', 'hang torso', 'hang shredder', 'hang long', 'hang kayak', 'hannon tygart', 'hang float', 'hang edge', 'handle vegweb', 'handle strike', 'handle ftlt', 'handle afraid', 'handful people']
+
+0: strainer, pin strainer, pin, gorge, creek, cr, fall, okay, test, bridge, low, org, tygart, youghiogheny, xanax, 2009, drown, propecia, online, tygart gorge
+Top words for Not Fatal:
+['drown', 'creek', '14', 'fall', 'would', 'kayak', 'flip', 'swim', '10', 'flush', 'run', 'man', 'bridge', 'flush drown', 'body']
+
+Top anti-words for Not Fatal:
+['  ', 'jseelig@highlandstoday nantahala', 'jseelig@highlandstoday', 'js paddler', 'js', 'jqvzrx6 yng', 'jqvzrx6', 'joy torso', 'joy slagle', 'joy skirt', 'jul 11th', 'joy seat', 'joy pull', 'joy pin', 'joy leg', 'joy knee']
+
+
+1: green, fork, scout, green gorge, sieve, canoe, group, kayaker, green green, gorge, creek, man, strainer, narrow, pin, tree, green narrow, boy, paddler, coetzee
+Top words for Not Fatal:
+['green', 'scout', 'canoe', 'group', 'man', 'drown', 'kayaker', 'die', 'fork', 'boy', 'pin', 'run', 'gorge', 'strainer', 'creek']
+
+2: chattooga, chatooga, section, 76 bridge, 76, chattooga section, route 76, chatooga section, crack, tugaloo, tugaloo lake, bridge tugaloo, lake ramp, section route, section iv, ramp, route, usfs chattooga, section iii, usfs
+Top anti-words for Not Fatal:
+['  ', 'head shift', 'hazard loop', 'hazard january', 'hazard', 'have novice', 'harm potential', 'harm', 'happen murphy', 'happen ago', 'hand surface', 'hand information', 'halt chattooga', 'head surface', 'guide group', 'guest commercial']
+
+Top words for Not Fatal:
+['crack', 'victim', 'canoe', '10', 'usfs', 'usfs chattooga', 'body', 'drown', '19', 'foot', 'ga', 'run', 'pfd', 'day', 'ford']
+
+Top anti-words for Not Fatal:
+['™ st1', 'ke lincoln', 'ke local', 'ke muscle', 'ke need', 'ke offer', 'ke peter', 'ke pound', 'ke practice', 'turn immerse', 'ke safe', 'turn immediatly', 'ke shallow', 'ke shout', 'ke swim', 'ke tell']
+
+
+Top words for Not Fatal:
+['pin', 'paul', 'chris', 'hole', 'strong', 'cpr', 'attem', 'dave', 'accident', 'body', 'creek', 'free', 'friend', 'kayaker', '10']
+
+
+Top anti-words for Not Fatal:
+['detect', 'teen life', 'riverthere', 'consider standard', 'consider technical', 'rivermgt wvww', 'rivermgt', '304 558', '304 256', 'major partner', 'tell person', 'consistent trip', 'major trip', 'risk rescuer', 'constant', 'temple']
+
+
+Top words for Not Fatal:
+['man', 'gauley', 'colorado', 'grand', 'search', 'grand canyon', 'strong', 'mile', 'kayak', 'group', 'guide', 'ranger', 'cataract', 'cataract canyon', 'cfs']
+
+
+Top anti-words for Not Fatal:
+['july 26th', 'chaotic', 'chaotic scene', 'morning instruct', 'cherry', 'cherry island', 'monitor progress', 'monitor', 'volunteer save', 'monday clean', 'moderate hour', 'city area', 'city philadelphia', 'miss probable', 'clean', 'morning realize']
+
+
+Top words for Not Fatal:
+['man', 'pfd', 'drown', 'national', 'body', '10', 'official', 'area', 'lambertville', 'friend', 'service', 'search', 'park service', 'shohola', 'ii']
+
+
+Top anti-words for Not Fatal:
+['™ helmetless', 'person cross', 'deadly situation', 'person critical', 'deal anymore', 'deal grover', 'person call', 'perry westborough', 'perry treat', 'perry safety', 'perry pop', 'perry mother', 'perry exhaustion', 'perry 19', 'perry 18', 'death fac80kj']
+
+
+Top words for Not Fatal:
+['man', 'run', '10', 'strong', 'canoe', 'kayak', 'kayaker', '10 15', 'body', '15', 'find', 'friend', 'paddler', 'go', 'dam hydraulic']
+
+
+Top anti-words for Not Fatal:
+['$', 'h3 0001', 'h3 white', 'h5', 'h5 5pbw', 'h5 5pcp', 'src file', 'hadn', 'hadn hear', 'hadn rope', 'squiggly topographic', 'half calculation', 'half instinct', 'half man', 'half mile', 'half silver']
+
+
+Top words for Not Fatal:
+['woodward', '333333', 'chief', '24', 'police', 'word', 'search', 'grand', 'wallkill', '10 333333', 'asset', '0001 24', '24 white', 'guide', '119']
+
+
+Top anti-words for Not Fatal:
+['duke bradford', 'treat late', 'olympic np', 'treat ortho', 'treat possible', 'olympic peninsula', 'choke float', 'omniture', 'choir statement', 'omniture bg', 'oms', 'choice way', 'choice villager', 'oms blue', 'choice try', 'treat stabilize']
+
+
+Top words for Not Fatal:
+['guide', 'creek', 'group', 'fall', 'body', 'mr', 'fork', 'kayaker', 'trip', 'foot', 'swim', 'paddler', 'kayak', 'high', 'man']
+
+
+Top anti-words for Not Fatal:
+['potomac n', 'fk judy', 'mixmaster', 'fk low', 'fk redside', 'fk rossaco', 'fk ruffer', 'fk weitas', 'fk yellow', 'central ruffer', 'central', 'mid', 'michael c', 'michael', 'mi run', 'mi n']
+
+
+Top words for Not Fatal:
+['run', 'fork', 'page', 'swim', 'sieve', 'american', 'cfs', 'south fork', 'south', 'payette', 'swim sieve', 'fall', 'drop', 'cr unknown', 'cottonwood cr']
+
+
+Top anti-words for Not Fatal:
+['stretch sit', 'fall overboard', 'sheriff sam', 'sheryl', 'sheryl barker', 'jensen', 'javascri newwindow', 'talk dog', 'talk', 'cove police', 'intensive', 'mate manage', 'describe german', 'agness pin', 'collision', 'mate run']
+
+
+Top words for Not Fatal:
+['blossom', 'blossom bar', 'bishop', 'life', 'woman', 'deputy', 'curry', 'office', 'beach', 'jacket', 'life jacket', 'curry county', 'chetco', 'blight', 'gold beach']
+
+
+Top anti-words for Not Fatal:
+['  ', '   6000cfs', '6000cfs', '6000cfs pin', 'cheat', 'cheat pin', 'grass', 'grass pin', 'potomac', 'potomac pin', 'stillaguamish', 'stillaguamish pin', 'strainer stillaguamish', 'tubing', 'tubing pin']
+
+
+Top words for Not Fatal:
+['tubing pin', 'tubing', 'strainer stillaguamish', 'stillaguamish pin', 'stillaguamish', 'potomac pin', 'potomac', 'grass pin', 'grass', 'cheat pin', 'cheat', '6000cfs pin', '6000cfs', '   6000cfs', '  ']
+
+
+Top anti-words for Not Fatal:
+['j mccormick', 'grant', 'grant canoe', 'grant obviously', 'safe adventure', 'saddle begin', 'grateful alive', 'saddle', 'gratitude', 'gratitude action', 'great', 'great stretch', 'green narrow', 'grief jenkins', 'grip', 'graduate american']
+
+
+Top words for Not Fatal:
+['45', '45 45', '14', 'hick', 'ccwalbridge@cs', '10', 'man', 'drown', 'rope', 'woman', '14 45', 'guide', '20', 'mcgruder', 'death']
+
+
+Top anti-words for Not Fatal:
+['tennis shoe', 'kayak submerge', 'ruby valley', 'rubber white', 'rss td', '21 yoa', 'rss icon', 'park co', 'word wear', 'kayak tie', 'kayak tom', 'row tell', '21 roseburg', 'bellevue autopsy', 'call incident', 'route teton']
+
+
+Top words for Not Fatal:
+['0001', 'body', 'fall', 'woman', 'strong', 'arkansas', 'search', 'creek', 'victim', 'kayak', 'park', 'kayaker', '10', 'float', 'people']
+
+
+Top anti-words for Not Fatal:
+['ledge', 'iron', 'iron ring', 'david reinhardt', 'l', 'l iron', 'reinhardt', 'ledge l', 'ring', 'upper ledge', 'reinhardt gauley', 'pizuti youghiogheny', 'pizuti', 'f', 'david pizuti', 'upper f']
+
+
+Top anti-words for Fatal:
+['2nd', 'reynolds gauley', 'reynolds', 'reinhardt gauley', 'reinhardt', 'rap sweet', 'rap', 'pizuti youghiogheny', 'rich', 'pizuti', 'mccormick', 'marshall walker', 'marshall', 'lose find', 'lose 2nd', 'lose']
+
+
+Top words for Not Fatal:
+['lose', 'upper lose', 'youghiogheny upper', 'youghiogheny', 'find', 'lose find', 'initiation', 'upper initiation', 'coaplen', 'dan', 'dan coaplen', 'coaplen gauley', 'don', 'coaplen youghiogheny', 'david']
+
+
+Top words for Fatal:
+['youghiogheny upper', 'youghiogheny', 'drop', 'f', 'f fall', 'fall', 'fall lose', 'find', 'heinzerling', 'henry', 'henry herrmann', 'herrmann', 'herrmann youghiogheny', 'hylkema', 'hylkema gauley']
+
+
+Top anti-words for Not Fatal:
+['lead 10', 'uphill feel', 'want portage', 'uphill', 'extreme jaroslav', 'want ready', 'bag starry', 'demand run', 'want shift', 'route bank', 'friend want', 'try breath', 'mountain warm', 'mountain road', 'warm campsite', 'route extreme']
+
+
+Top anti-words for Fatal:
+['  ', 'pin capsize', 'pin canoe', 'pin bridge', 'pin blockage', 'pin arkansas', 'pin apparently', 'pin 10', 'pin', 'pilot probably', 'pilot locate', 'pilot have', 'pilot doug', 'pilot control', 'pilot choice', 'pilot']
+
+
+Top words for Not Fatal:
+['city', 'city 10', 'fall', 'dam', 'group', 'bridge', 'creek', 'drop', 'canoe', 'high', 'foot', 'victim', 'fork', 'pin', 'paddler']
+
+
+Top words for Fatal:
+['° 10', 'end accident', 'encounter underscore', 'encounter v', 'encourage', 'encourage 10', 'encourage casual', 'encourage work', 'encouragement', 'encouragement backup', 'encouragement strand', 'end', 'end 200', 'end adventurous', 'end road']
+
+
+Top anti-words for Not Fatal:
+['brevard nathan', '24 2010', '10 semi', 'recover owen', 'search begin', 'search boy', 'event accidental', 'call relatively', '10 shock', 'walczak 10', 'character ride', 'incident rest', '10 silsbee', 'morning boy', '10 situation', 'accident brevard']
+
+
+Top words for Not Fatal:
+['stop 25', '25', 'stop', '25 10', 'group', 'drop', 'swim', 'eddy', 'victim', 'foot', 'downstream', 'canoe', 'kayaker', '1999', 'low']
+
+
+Top anti-words for Not Fatal:
+['™ bridge', 'okay asher', 'okay 4474', 'okay 05', 'body tacoma', 'ohio kayak', 'ohio division', 'oh woio', 'oh god', 'oh flat', 'official woman', 'okay baltimore', 'official tear', 'bodycont 10', 'official morgan', 'official issue']
+
+
+Top words for Not Fatal:
+['canoe', 'search', 'miss', 'creek', 'police', 'strong', 'friend', 'kayaker', 'kayak', '10', 'fall', 'capsize', 'old', 'state', 'bridge']
+
+
+
+'guide' 'trip' 'die' 'man' 'woman' 'drown' 'commercial' 'cpr' 'canyon'
+ 'accident' 'victim' 'rafter' 'county' 'company' 'old' 'death'
+ 'flush drown' 'fall' 'flush' 'dead'
+
+ ['rope' 'go' 'try' 'pull' 'eddy' 'know' 'think' 'come' 'foot' 'help'
+ 'head' 'look' 'feel' 'hand' 'free' 'minute' 'log' 'way' 'tree' 'group']
+
+ ['dam' 'hydraulic' 'head dam' 'low head' 'low' 'catch' 'head'
+ 'dam hydraulic' 'catch low' 'natural' 'catch natural' 'natural hydraulic'
+ 'backwash' 'warn' 'man' 'dam catch' 'street dam' 'run dam' 'sign'
+ 'go dam']
+
+['guide' 'trip' 'die' 'man' 'woman' 'drown' 'commercial' 'cpr' 'canyon'
+ 'accident' 'victim' 'rafter' 'county' 'company' 'old' 'death'
+ 'flush drown' 'fall' 'flush' 'dead']
+
+ ['canoe' 'man' 'wear' 'capsize' 'life' 'pfd' 'wear life' 'canoe capsize'
+ 'boy' 'life vest' 'vest' 'canoeist' 'victim' 'police' 'drown' 'shore'
+ 'life jacket' 'jacket' 'old' 'pfd wear']
+
+ 

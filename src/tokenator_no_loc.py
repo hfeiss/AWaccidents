@@ -40,7 +40,15 @@ my_stops = ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
             'date', 'spacerun', 'fareast', 'attachment', 'origin', 'clip',
             'black', 'cap', '5pt', 'language', 'aolmail', 'decoration', 'webkit',
             'block', 'inline', '100', 'h1', '20px', '16px', '1em', 'title', 'auto',
-            '5px', 'transform', '102', 'transparent', 'light', 'lsdexce']
+            '5px', 'transform', '102', 'transparent', 'light', 'susquehanna',
+            'potomac', 'york', 'stillaguamish', 'brugnato', 'lsdexce', 'watauga',
+            'gauley', 'summersville', 'virginia', 'arkansas', 'chaffee', 'salida',
+            'buena', 'vista', 'salmon', 'colorado', 'idaho', 'montana', 'fork',
+            'boise', 'delaware', 'ocoee', 'tennessee', 'rogue', 'blossom', 'foster',
+            'galice', 'picket', 'grave', 'chattooga', 'tugaloo', 'park', 'national',
+            'grand', 'ranger', 'monument', 'utah', 'dinosaur', 'youghiogheny',
+            'ohiopyle', 'loop', 'weitas', 'clearwater', 'payette', 'cottonwood',
+            'jones']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_',
               '{', '}', 'px', 'pt']

@@ -3,8 +3,9 @@ import pandas as pd
 import joblib
 from filepaths import Root
 from sklearn.decomposition import NMF
+# from tokenator import tokenize_and_lemmatize
+from tokenator_no_loc import tokenize_and_lemmatize
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from tokenator import tokenize_and_lemmatize
 
 
 paths = Root(__file__, 1).paths()
@@ -20,7 +21,7 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
-num_topics = 20
+num_topics = 18
 nmf = NMF(n_components=num_topics,
           init=None,
           solver='cd',
