@@ -9,26 +9,21 @@ These reports provide a learning opportunity to the paddling community, and faci
  
 The goal of this repository is to identify factors that can turn a near miss into a fatality, hopefully reducing tragedies and statistics alike.
  
-<!-- # Vocabulary
-Foot Entrapment
-
-![](images/screenshots/foot_entrapment.jpg)
- 
-Pin / Wrap
-
-![](images/screenshots/pin.jpg) -->
- 
  
 # Data
  
 ## American Whitewater Accident Database
  
-The data is a combination of user submitted forms and web-scrapped articles. As such, it is supremely messy.
+The database is created from a combination of user submitted forms and web-scrapped articles. As such, it is supremely messy.
+
 ![](/images/screenshots/messy.png)
  
 ## Features
  
-After deleting personal information, all text features are combined into the `description` column. In addition to the written narrative, this analysis focuses on:
+After deleting personal information, all text features (river, section, location, waterlevel, and cause) are combined into the `description` column.
+
+In addition to the written narrative, this analysis focuses on:
+
 * State (location)
 * River level
 * River difficulty
@@ -40,110 +35,88 @@ After deleting personal information, all text features are combined into the `de
    * Fatality
    * Medical (near miss)
    * Injury (near miss)
+
+The ordinal features: river level (Low, Medium, High, and Flood), river difficulty (I, II, III, IV, V), and victim skill (Inexperienced, Some experience, Experienced, Expert) are mapped linearly to integers.
+
+Type of watercraft is mapped to kayak (1) or not.
+
+Trip type is mapped to commercial (1) or not.
+
+Accident outcome is mapped to fatal (1) or not.
  
- 
+Given an unreasonable number of 0 year olds with contradictory description entries, ages equal to 0 are dropped.
+
+Text from the river, section, location, waterlevel, and cause features are added into the description column.
+
 # EDA
-## `description`
+## Pre-processing
  
 Because the descriptions of accidents are aggregated from both external websites and user submitted forms, the documents have very inconsistent structure.
  
-All documents have some level of `html` embedded in them, and some are actually in `json`. The first step in the text analysis is to convert each document into one long string. The strings are then tokenized with a purpose-built function. [Spacy's](https://spacy.io) english stop words are used as a base to start. Because of inconsistent description tense, the documents are lemmatized into their root words before being vectorized into a tf-idf matrix.
+All documents have some level of `html` embedded in them, and some are actually in `json`. The first step in the text analysis is to convert each document into one long string. The strings are then tokenized with a purpose-built script. [Spacy's](https://spacy.io) english stop words are used as a base to start. Because of inconsistent description tense, the documents are lemmatized into their root words before being vectorized into either a term fequency or tf-idf matrix.
  
-### K-means
-Hard clustering of the tf-idf matrix is used to find underlying structure.
- 
-![](/images/screenshots/topics_w_html.png)
- 
-Typically, some clusters identify more `html` words to add to the custom tokenization script.
- 
-![](/images/screenshots/drugs.png)
- 
-After many iterations, the clustering still identifies more stop words, but salient topics emerge.
- 
-![](/images/screenshots/good_topics.png)
- 
-   1) some stopwords, accidents clustered on drugs
-   3) man-made hazards
-   4) east coast boating
-   5) Idaho rivers
-   7) more stopwords
- 
-### PCA
- 
-Primary component analysis proves to be unilluminating. Less than 0.1% of the variance is explained in the first 8 components.
- 
-Below, the first two components are plotted with each accident labeled as a fatality, injury, or a medical emergency.
- 
-![](images/pca_targets_idf.png)
- 
-### LDA
- 
-Latent Dirichlet Analysis also fails to reveal new information.
- 
+Once vectorized, the matrix is clustered with the k-means algorithm. The underlying structure reveals documents with high  percentages of html words. The top words for those html clusters are added to the stopwords, and the process is repeated until salient, clean clusters emerge.
+
+## Latent Diriclet Allocation
+
+LDA does not illuminate any underlying structure.
+
 ![](/images/screenshots/lda.png)
- 
-### Description Length
- 
-As the descriptions become longer, a higher proportion of the accidents are fatal.
- 
+
+## Principal Component Analysis
+
+Similar to LDA, PCA fails to provide new information. Indeed, less than 0.1% of the variance is explained in the first 8 components.
+
+Below, the first two components are plotted with each accident labeled as a fatality, injury, or a medical emergency.
+
+![](images/pca_targets_idf.png)
+
+## Description Length
+
+As expected, as the descriptions of accidents become longer, a higher proportion of accidents are fatal.
+
 ![](/images/description_len_death.png)
- 
-## Non-text Features
- 
+
+## Geographic Distribution
+
 The number of accidents is likely proportional to the amount of whitewater recreation in a given state.
- 
+
 ![](/images/screenshots/map.png)
- 
-The raw number of accidents has increased over time, but this is unadjusted for population and sport popularity.
- 
+
+## Temporal Distribution
+
 ![](/images/dates.png)
- 
- 
-# Pipeline
-## Text
-Text from the river, section, location, waterlevel, and cause features are added into the description column.
- 
-The description column is tokenized, lemmatized, and vectorized before analysis.
- 
-## Categorical
-River level (Low, Medium, High, and Flood), river difficulty (I, II, III, IV, V), and victim skill (Inexperienced, Some experience, Experienced, Expert) are mapped linearly to integers.
- 
-Type of watercraft is mapped to kayak (1) or not.
- 
-Trip type are mapped to commercial (1) or not.
- 
-Given an unreasonable number of 0 year olds with contradictory description entries, ages equal to 0 are dropped.
- 
-# Models
-Sklearn grid searching is used to find the best hyperparameters. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
- 
-<center>
 
-|          Model    | Precision     | Recall    | Accuracy  |
-|---------------:   |-----------    |--------   |---------- |
-| AdaBoost          | 86%           | 92%       | 86%       |
-| Bagging           | 87%           | 92%       | 87%       |
-| Naive Bayes       | 76%           | 95%       | 79%       |
-| Random Forest     | 77%           | 98%       | 81%       |
-| Logistic Classification   | 92%           | 100%      | 92%       |
-| NB, LC Stacked            | 88%           | 92%       | 84%       |
+# Nautral Language Processing
 
-</center>
- 
 ## Text Classification
-Tf-idf and tf matrices are compared.  Models are adjusted with k-folds cross validation and final performance is judged on a holdout data set.
 
+Sklearn grid searching is used to find the best hyperparameters with k-folds cross validation and final performance is judged on a holdout data set. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
 
-
-### Boosting
-![](/images/boosting_n_score.png)
- 
- 
 ### Bagging
+
 Below are the most important words for predicting the outcome of an accident. It is worth noting that the model does not assert a positive or negative correlation, just predictive importance.
+
 ![](/images/bagging_features_horiz.png)
- 
+
 ### Naive Bayes
+
+After fitting a Naive Bayes model to the training data, for each category of incident, the top 100 words that made each category more and less likely are generated. Below is a curated subset of those lists.
+
+#### Words that made Medical more likely:
+    kayaker overdose, new, head, alcohol, xanax, tramadol, fall, rope
+
+#### Words that made Injury more likely:
+    man, pin, foot, strainer, group, kayaker, march
+
+#### Words that made Fatality more likely:
+    rock, dam, drown, pin, get help, search, rescue, time, large flow
+
+#### Words that made Fatality less likely:
+    competent group, thank, support, train, feel emotion, professional sar, respond
+ 
+#### Words that made Injury less likely:
+    farmer wetsuit, near drowning, new york, large kayak
  
 Below, mock descriptions were fed into the naive bayes model with the resulting predictions.
  
@@ -180,21 +153,11 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 
 </center>
 
-Finally, for each category of incident, the top 100 words that made each category more and less likely were generated. Below is a curated subset of those lists.
-#### Words that made Medical more likely:
-    kayaker overdose, new, head, alcohol, xanax, tramadol, fall, rope
-
-#### Words that made Injury more likely:
-    man, pin, foot, strainer, group, kayaker, march
-
-#### Words that made Fatality more likely:
-    rock, dam, drown, pin, get help, search, rescue, time, large flow
-
-#### Words that made Fatality less likely:
-    competent group, thank, support, train, feel emotion, professional sar, respond
+# Numerical Feature Analysis
+Sklearn grid searching is used to find the best hyperparameters with k-folds cross validation and final performance is judged on a holdout data set. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
  
-#### Words that made Injury less likely:
-    farmer wetsuit, near drowning, new york, large kayak
+## Boosting
+![](/images/boosting_n_score.png)
  
 ## Logistic Regression
  
@@ -209,11 +172,23 @@ A simple logistic was performed on the non-text features. This model performed b
 | Paddler Experience    | -0.34     | 0.034     |
 
 </center>
- 
-## Stacked
- 
-Adding the Naive Bayes prediction as a feature in the logistic model, oddly, decreased performance.
- 
+
+
+## Stacked Model
+
+Adding the Naive Bayes prediction as a feature in the logistic model, oddly, decreases performance.
+
+# Model Performance
+
+|          Model    | Precision     | Recall    | Accuracy  |
+|---------------:   |-----------    |--------   |---------- |
+| AdaBoost          | 86%           | 92%       | 86%       |
+| Bagging           | 87%           | 92%       | 87%       |
+| Naive Bayes       | 76%           | 95%       | 79%       |
+| Random Forest     | 77%           | 98%       | 81%       |
+| Logistic Classification   | 92%           | 100%      | 92%       |
+| NB, LC Stacked            | 88%           | 92%       | 84%       |
+
  
 # Conclusions
  
@@ -237,6 +212,8 @@ Combining the information from clustering, topic modeling, natural language proc
 * Age (above 10 years old), type of watercraft, and being on a commercial trip do not change the prediction of a fatality
 
 * 84% of the reported accidents where the victim is less than 18 years old are fatal
+
+* Be weary of the "first major rapid" on any run
  
 # Further
 * Further modification of the tokenization, lemmatization, and vectorization could improve the models.

@@ -39,12 +39,12 @@ def histogram(ax, data, saveas, title, colors,
         ax.spines['left'].set_visible(False)
 
     if tags:
-        # for bottom legend
+        # for 2 axs bottom legend
         plt.legend(bbox_to_anchor=(-1, -.15, 1.92, 0), ncol=2,
                    mode='expand', loc='center',
                    borderaxespad=0., fontsize=12)
 
-        # for other bottom legend
+        # for 1 axs bottom legend
         # plt.legend(bbox_to_anchor=(0, -.15, 1, 0), ncol=2,
         #            mode='expand', loc='center',
         #            borderaxespad=0., fontsize=12)
@@ -57,6 +57,10 @@ def histogram(ax, data, saveas, title, colors,
 
 
 if __name__ == "__main__":
+
+    # blue: #047495
+    # orange: #fb7d07
+    # red: #980002
 
     # start = pd.to_datetime(2020, format='%Y')
     # end = pd.to_datetime(1960, format='%Y')
@@ -83,11 +87,11 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots(1, 2, figsize=(10, 6))
     histogram(ax[0], [level, level_death], 'level_diff_death_2',
-              'Accidents vs. Water Level', colors=['#047495', '#fb7d07'],
+              'Accidents vs. Water Level', colors=['#047495', '#980002'],
               labels=lev_labels, bins=4, remove_spines=True,
               tags=['Non Fatal', 'Fatal'])
     histogram(ax[1], [diff, diff_death], 'level_diff_death_2',
-              'Accidents vs. River Difficulty', colors=['#047495', '#fb7d07'],
+              'Accidents vs. River Difficulty', colors=['#047495', '#980002'],
               labels=diff_labels, bins=5, remove_spines=True,
               tags=['Non Fatal', 'Fatal'])
 
@@ -128,9 +132,9 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots(1, 2, figsize=(10, 6))
     histogram(ax[0], [exper, exper_death], 'exper_age_death',
-              'Accidents vs. Experience Level', colors=['#047495', '#fb7d07'],
+              'Accidents vs. Experience Level', colors=['#047495', '#980002'],
               labels=exper_labels, bins=4, remove_spines=True,
               tags=['Non Fatal', 'Fatal'])
     histogram(ax[1], [age, age_death], 'exper_age_death',
-              'Accidents vs. Victim Age', colors=['#047495', '#fb7d07'],
+              'Accidents vs. Victim Age', colors=['#047495', '#980002'],
               remove_spines=True, tags=['Non Fatal', 'Fatal'])
