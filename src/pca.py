@@ -25,21 +25,13 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 
-def vector(data):
-    return vectorizer.transform(data)
-
-
 def center_X():
-    vectorizer.fit(X)
 
-    features = vectorizer.get_feature_names()
-
-    X_vector = vector(X).todense()
+    X_vector = vectorizer.fit_transform(X).todense()
 
     ss = preprocessing.StandardScaler()
-    X_centered = ss.fit_transform(X_vector)
 
-    return X_centered
+    return ss.fit_transform(X_vector)
 
 
 def scree_plot(pca, X_pca, n_components_to_plot=8, title=None):

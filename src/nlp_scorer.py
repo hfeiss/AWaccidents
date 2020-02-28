@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 from pprint import pprint
@@ -24,7 +23,7 @@ def split_data(X, y):
 
 
 def binary(model, vectorizer):
-   
+
     X_train, X_test, y_train, y_test = split_data(X, y_binary)
     vectorizer.fit(X_train)
     model.fit(vectorizer.transform(X_train), y_train)
@@ -38,7 +37,7 @@ def binary(model, vectorizer):
 
 
 def categorical(model, vectorizer):
- 
+
     X_train, X_test, y_train, y_test = split_data(X, y_class)
     vectorizer.fit(X_train)
     labels = ['Medical', 'Injury', 'Fatality']

@@ -16,7 +16,7 @@ df = pd.read_pickle(clean + 'clean.pkl')
 X = df['description']
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
-                             max_df=0.55,
+                             max_df=0.9,
                              max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     vectorizer.fit(X)
     features = vectorizer.get_feature_names()
-    
+
     probs = nmf.fit_transform(vectorizer.transform(X))
     # joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')
     # probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/nmf.joblib')

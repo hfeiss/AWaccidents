@@ -69,27 +69,27 @@ if __name__ == "__main__":
     # histogram(ax, data, 'dates', 'Accidents Over Time', colors='#047495',
     #           labels=labels, bins=15, remove_spines=True)
 
-    # level = df['rellevel']
-    # level.dropna(inplace=True)
-    # lev_labels = ['Low', 'Medium', 'High', 'Flood Stage']
-    # level_death = death['rellevel']
-    # level_death.dropna(inplace=True)
+    level = df['rellevel']
+    level.dropna(inplace=True)
+    lev_labels = ['Low', 'Medium', 'High', 'Flood Stage']
+    level_death = death['rellevel']
+    level_death.dropna(inplace=True)
 
-    # diff = df['difficulty']
-    # diff.dropna(inplace=True)
-    # diff_labels = ['I', 'II', 'III', 'IV', 'V']
-    # diff_death = death['difficulty']
-    # diff_death.dropna(inplace=True)
+    diff = df['difficulty']
+    diff.dropna(inplace=True)
+    diff_labels = ['I', 'II', 'III', 'IV', 'V']
+    diff_death = death['difficulty']
+    diff_death.dropna(inplace=True)
 
-    # fig, ax = plt.subplots(1, 2, figsize=(10, 6))
-    # histogram(ax[0], [level, level_death], 'level_diff_death_2',
-    #           'Accidents vs. Water Level', colors=['#047495', '#980002'],
-    #           labels=lev_labels, bins=4, remove_spines=True,
-    #           tags=['Non Fatal', 'Fatal'])
-    # histogram(ax[1], [diff, diff_death], 'level_diff_death_2',
-    #           'Accidents vs. River Difficulty', colors=['#047495', '#980002'],
-    #           labels=diff_labels, bins=5, remove_spines=True,
-    #           tags=['Non Fatal', 'Fatal'])
+    fig, ax = plt.subplots(1, 2, figsize=(10, 6))
+    histogram(ax[0], [level, level_death], 'level_diff_death_2',
+              'Accidents vs. Water Level', colors=['#047495', '#fb7d07'],
+              labels=lev_labels, bins=4, remove_spines=True,
+              tags=['Non Fatal', 'Fatal'])
+    histogram(ax[1], [diff, diff_death], 'level_diff_death_2',
+              'Accidents vs. River Difficulty', colors=['#047495', '#fb7d07'],
+              labels=diff_labels, bins=5, remove_spines=True,
+              tags=['Non Fatal', 'Fatal'])
 
 
     # lemmas = pd.read_pickle('/Users/hfeiss/dsi/capstone-2/'
@@ -128,9 +128,9 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots(1, 2, figsize=(10, 6))
     histogram(ax[0], [exper, exper_death], 'exper_age_death',
-              'Accidents vs. Experience Level', colors=['#047495', '#980002'],
+              'Accidents vs. Experience Level', colors=['#047495', '#fb7d07'],
               labels=exper_labels, bins=4, remove_spines=True,
               tags=['Non Fatal', 'Fatal'])
     histogram(ax[1], [age, age_death], 'exper_age_death',
-              'Accidents vs. Victim Age', colors=['#047495', '#980002'],
+              'Accidents vs. Victim Age', colors=['#047495', '#fb7d07'],
               remove_spines=True, tags=['Non Fatal', 'Fatal'])

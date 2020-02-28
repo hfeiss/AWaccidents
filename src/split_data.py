@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 
 paths = Root(__file__, 1).paths()
-clean =  paths.data.clean.path
+clean = paths.data.clean.path
 holdout = paths.data.holdout.path
 train = paths.data.train.path
 

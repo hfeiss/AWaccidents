@@ -4,7 +4,7 @@ from filepaths import Root
 from spacy.lang.en import English
 
 
-paths = Root(1).paths()
+paths = Root(__file__, 1).paths()
 raw = paths.data.raw.path
 clean = paths.data.clean.path
 

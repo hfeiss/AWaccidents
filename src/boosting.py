@@ -27,6 +27,6 @@ if __name__ == "__main__":
     categorical(ada, vectorizer)
     # joblib.dump(ada, models + 'ada.joblib')
     # ada = joblib.load(models + 'ada.joblib')
-    
+
     holdout.binary(ada, vectorizer)
     holdout.categorical(ada, vectorizer)

@@ -46,6 +46,7 @@ rf = RandomForestClassifier(n_estimators=1000,
                             ccp_alpha=0.0,
                             max_samples=None)
 
+
 def get_X_y(df):
 
     df = df[columns]
@@ -104,6 +105,7 @@ def score_holdout(train_df, holdout_df):
     print(f'Accuracy:  {acc}')
     print(f'Recall:    {rec}')
     print(f'Precision: {pre}')
+
 
 if __name__ == "__main__":
 

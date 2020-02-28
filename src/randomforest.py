@@ -1,12 +1,16 @@
-import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from nlp_scorer import binary, categorical
-import nlp_holdout_scorer as holdout
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from tokenator import tokenize_and_lemmatize
 import joblib
+import numpy as np
 from filepaths import Root
+import nlp_holdout_scorer as holdout
+from nlp_scorer import binary, categorical
+from tokenator import tokenize_and_lemmatize
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
+
+paths = Root(__file__, depth=1).paths()
+models = paths.models.path
 
 rf = RandomForestClassifier(n_estimators=1000,
                             criterion='gini',
@@ -30,7 +34,7 @@ rf = RandomForestClassifier(n_estimators=1000,
 
 vectorizer = CountVectorizer(ngram_range=(1, 2),
                              max_df=0.55,
-                             max_features=100000,
+                             max_features=1000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
@@ -53,7 +57,7 @@ if __name__ == "__main__":
     # rf = joblib.load(models + 'rf.joblib')
     categorical(rf, vectorizer)
     # joblib.dump(rf, models + 'rf.joblib')
-    
+
     holdout.binary(rf, vectorizer)
     holdout.categorical(rf, vectorizer)
 

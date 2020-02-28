@@ -37,6 +37,6 @@ if __name__ == "__main__":
     categorical(bc, vectorizer)
     # joblib.dump(bc, models + 'bagging.joblib')
     # bc = joblib.load(models + 'bagging.joblib')
-    
+
     holdout.binary(bc, vectorizer)
     holdout.categorical(bc, vectorizer)

@@ -6,7 +6,6 @@ from nlp_scorer import binary, categorical
 from tokenator import tokenize_and_lemmatize
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 paths = Root(__file__, depth=1).paths()
@@ -47,13 +46,14 @@ def print_anti_important_words(bayes, features, binary=True):
 
 
 if __name__ == "__main__":
+
     binary(bayes, vectorizer)
     # joblib.dump(bayes, models + 'bayes.joblib')
     # bayes = joblib.load(bayes + 'bayes.joblib')
     features = vectorizer.get_feature_names()
     print_important_words(bayes, features, binary=True)
     print_anti_important_words(bayes, features, binary=True)
-    
+
     categorical(bayes, vectorizer)
     # joblib.dump(bayes, models + 'bayes.joblib')
     # bayes = joblib.load(bayes + 'bayes.joblib')
@@ -61,5 +61,5 @@ if __name__ == "__main__":
     print_important_words(bayes, features, binary=False)
     print_anti_important_words(bayes, features, binary=False)
 
-    # holdout.binary(bayes, vectorizer)
-    # holdout.categorical(bayes, vectorizer)
+    holdout.binary(bayes, vectorizer)
+    holdout.categorical(bayes, vectorizer)

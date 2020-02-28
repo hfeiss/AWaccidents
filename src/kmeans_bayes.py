@@ -9,11 +9,11 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 from bayes import print_important_words, print_anti_important_words
 
+
 paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
-
 data = df['description']
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
@@ -23,8 +23,8 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 X = vectorizer.fit_transform(data)
-
 features = vectorizer.get_feature_names()
+
 
 def print_top_words(model):
     top_centroids = model.cluster_centers_.argsort()[:, -1:-21:-1]

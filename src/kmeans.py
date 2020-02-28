@@ -10,9 +10,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 paths = Root(__file__, 1).paths()
 clean = paths.data.clean.path
+models = paths.models.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
-
 data = df['description']
 
 vectorizer = TfidfVectorizer(ngram_range=(1, 2),
@@ -22,7 +22,6 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              tokenizer=tokenize_and_lemmatize)
 
 X = vectorizer.fit_transform(data)
-
 features = vectorizer.get_feature_names()
 
 
@@ -45,11 +44,10 @@ def sil_score(model, n=12):
 
 if __name__ == "__main__":
 
-    # model = KMeans
+    kmeans = joblib.load(models + 'kmeans.joblib')
+    # kmeans = KMeans(n_clusters=20).fit(X)
+
     # sil_score(model, 20)
-    model = KMeans(n_clusters=20).fit(X)
-    print_top_words(model)
+    print_top_words(kmeans)
 
-    # joblib.dump(kmeans, '/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
-    # kmeans = joblib.load('/Users/hfeiss/dsi/capstone-2/models/kmeans.joblib')
-
+    joblib.dump(kmeans, models + 'kmeans.joblib')

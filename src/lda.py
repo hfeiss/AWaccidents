@@ -3,8 +3,9 @@ import pandas as pd
 import joblib
 from filepaths import Root
 from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from tokenator import tokenize_and_lemmatize
+
 
 paths = Root(1).paths()
 clean = paths.data.clean.path
@@ -17,10 +18,6 @@ vectorizer = CountVectorizer(ngram_range=(1, 2),
                              max_features=100000,
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
-
-
-def vector(data):
-    return vectorizer.transform(data)
 
 
 lda = LatentDirichletAllocation(n_components=20,
@@ -46,7 +43,7 @@ if __name__ == "__main__":
     vectorizer.fit(X)
     features = vectorizer.get_feature_names()
 
-    probs = lda.fit_transform(vector(X))
+    probs = lda.fit_transform(vectorizer.transform(X))
     joblib.dump(probs, '/Users/hfeiss/dsi/capstone-2/models/lda.joblib')
     probs = joblib.load('/Users/hfeiss/dsi/capstone-2/models/lda.joblib')
     probs = np.array(probs)

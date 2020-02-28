@@ -87,8 +87,10 @@ Topic: 19 with closest article 175
  'cottonwood' 'michael' 'mi' '15 unavailable' 'camp milepost' 'jones cr']
 
  [0.013414614788681974, 0.017967829237755504, 0.01848708050776976, 0.01927495664321693, 0.021512638461565113, 0.02112104772840713, 0.0193733815270113, 0.02391759499011461, 0.020670111044788383, 0.02162932155120849, 0.018494964647186665, 0.021354560181072655, 0.021927425871433592, 0.02332851631807845, 0.025191871908277028, 0.02329742645656672
- 
 
+0: strainer, pin strainer, pin, gorge, creek, cr, fall, okay, test, bridge, low, org, tygart, youghiogheny, xanax, 2009, drown, propecia, online, tygart gorge
+1: green, fork, scout, green gorge, sieve, canoe, group, kayaker, green green, gorge, creek, man, strainer, narrow, pin, tree, green narrow, boy, paddler, coetzee
+2: chattooga, chatooga, section, 76 bridge, 76, chattooga section, route 76, chatooga section, crack, tugaloo, tugaloo lake, bridge tugaloo, lake ramp, section route, section iv, ramp, route, usfs chattooga, section iii, usfs
 4: national, park, national park, canyon, colorado, park service, gauley, service, trip, grand, grand canyon, ranger, man, summersville, hartley, die, cataract canyon, accident, monument, canyon national
 5: delaware, canoe, jervis, port jervis, port, lambertville, hancock port, delaware hancock, hancock, wear, upper delaware, park service, national, shohola, park, pfd, man, scudders, victim, service
 6: dam, head dam, low head, hydraulic, low, head, catch, dam hydraulic, catch low, man, canoe, run, kayaker, kayak, strong, drown, go, 10, pull, backwash
@@ -106,7 +108,6 @@ Topic: 19 with closest article 175
 Top anti-words for Not Fatal:
 ['helpful generous', 'hannon', 'hannah ray', 'hannah', 'hang torso', 'hang shredder', 'hang long', 'hang kayak', 'hannon tygart', 'hang float', 'hang edge', 'handle vegweb', 'handle strike', 'handle ftlt', 'handle afraid', 'handful people']
 
-0: strainer, pin strainer, pin, gorge, creek, cr, fall, okay, test, bridge, low, org, tygart, youghiogheny, xanax, 2009, drown, propecia, online, tygart gorge
 Top words for Not Fatal:
 ['drown', 'creek', '14', 'fall', 'would', 'kayak', 'flip', 'swim', '10', 'flush', 'run', 'man', 'bridge', 'flush drown', 'body']
 
@@ -114,11 +115,9 @@ Top anti-words for Not Fatal:
 ['  ', 'jseelig@highlandstoday nantahala', 'jseelig@highlandstoday', 'js paddler', 'js', 'jqvzrx6 yng', 'jqvzrx6', 'joy torso', 'joy slagle', 'joy skirt', 'jul 11th', 'joy seat', 'joy pull', 'joy pin', 'joy leg', 'joy knee']
 
 
-1: green, fork, scout, green gorge, sieve, canoe, group, kayaker, green green, gorge, creek, man, strainer, narrow, pin, tree, green narrow, boy, paddler, coetzee
 Top words for Not Fatal:
 ['green', 'scout', 'canoe', 'group', 'man', 'drown', 'kayaker', 'die', 'fork', 'boy', 'pin', 'run', 'gorge', 'strainer', 'creek']
 
-2: chattooga, chatooga, section, 76 bridge, 76, chattooga section, route 76, chatooga section, crack, tugaloo, tugaloo lake, bridge tugaloo, lake ramp, section route, section iv, ramp, route, usfs chattooga, section iii, usfs
 Top anti-words for Not Fatal:
 ['  ', 'head shift', 'hazard loop', 'hazard january', 'hazard', 'have novice', 'harm potential', 'harm', 'happen murphy', 'happen ago', 'hand surface', 'hand information', 'halt chattooga', 'head surface', 'guide group', 'guest commercial']
 
@@ -262,9 +261,6 @@ Top words for Not Fatal:
 
 
 
-'guide' 'trip' 'die' 'man' 'woman' 'drown' 'commercial' 'cpr' 'canyon'
- 'accident' 'victim' 'rafter' 'county' 'company' 'old' 'death'
- 'flush drown' 'fall' 'flush' 'dead'
 
  ['rope' 'go' 'try' 'pull' 'eddy' 'know' 'think' 'come' 'foot' 'help'
  'head' 'look' 'feel' 'hand' 'free' 'minute' 'log' 'way' 'tree' 'group']

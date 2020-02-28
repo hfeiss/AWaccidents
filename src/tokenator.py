@@ -36,11 +36,12 @@ my_stops = ['>', '<', 'p', '/p', 's', 'o', 't', ', ', 'd', '444444',
             'jpg', '300w', 'neue', 'lucida', 'header', 'segoe', 'byline',
             'at4', '75em', '400', '1rem', 'and', 'let', 'near', 'new',
             'colorful', 'medium', 'shade', 'story', 'news', '0806', '350598',
-            'wset', 'james', 'article', 'qformat', 'shade', 'provide', 'month', 
+            'wset', 'james', 'article', 'qformat', 'shade', 'provide', 'month',
             'date', 'spacerun', 'fareast', 'attachment', 'origin', 'clip',
-            'black', 'cap', '5pt', 'language', 'aolmail', 'decoration', 'webkit',
-            'block', 'inline', '100', 'h1', '20px', '16px', '1em', 'title', 'auto',
-            '5px', 'transform', '102', 'transparent', 'light', 'lsdexce']
+            'black', 'cap', '5pt', 'language', 'aolmail', 'decoration',
+            'block', 'inline', '100', 'h1', '20px', '16px', '1em', 'title',
+            '5px', 'transform', '102', 'transparent', 'light', 'lsdexce'
+            'webkit', 'auto']
 
 seperators = ['.', ';', ':', '/', '&', '=', '(', ')', '-', ',', '>', '<', '_',
               '{', '}', 'px', 'pt']

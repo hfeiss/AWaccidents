@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 from pprint import pprint
@@ -28,11 +27,11 @@ holdout_y_binary = np.array(holdout_df['F'])
 def binary(model, vectorizer):
 
     X = vectorizer.fit_transform(train_X)
-    
+
     model.fit(X, train_y_binary)
 
     predict = model.predict(vectorizer.transform(holdout_X))
-    
+
     acc = accuracy_score(holdout_y_binary, predict)
     rec = recall_score(holdout_y_binary, predict)
     pre = precision_score(holdout_y_binary, predict)
@@ -43,9 +42,9 @@ def binary(model, vectorizer):
 
 
 def categorical(model, vectorizer):
-    
+
     X = vectorizer.fit_transform(train_X)
-    
+
     model.fit(X, train_y_class)
 
     predict = model.predict(vectorizer.transform(holdout_X))

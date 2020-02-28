@@ -25,6 +25,7 @@ ss = StandardScaler()
 columns = ['rellevel', 'difficulty', 'experience', 'F']
 names = ['const', 'rellevel', 'difficulty', 'experience']
 
+
 def get_X_y(df):
 
     df = df[columns]
@@ -90,6 +91,7 @@ def holdout_scorer(train_df, holdout_df):
     print(f'Accuracy:  {acc}')
     print(f'Recall:    {rec}')
     print(f'Precision: {pre}')
+
 
 if __name__ == "__main__":
 
