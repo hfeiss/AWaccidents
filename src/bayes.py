@@ -27,7 +27,6 @@ def print_important_words(bayes, features, binary=True):
         labels = ['Medical', 'Injury', 'Death']
     for i, outcome in enumerate(bayes.coef_):
         coefs_sorted = np.argsort(outcome)[-1:-16:-1]
-        print(coefs_sorted.shape)
         print(f'Top words for {labels[i]}:')
         print([features[coef] for coef in coefs_sorted])
         print('\n')
