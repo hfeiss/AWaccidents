@@ -3,20 +3,25 @@ import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
 from filepaths import Root
-src = Root(0).paths().src.path
 import sys
+src = Root(__file__, 1).paths().src.path
 sys.path.append(src)
-from model_scorer import *
+from nlp_scorer import *
+from tokenator import tokenize_and_lemmatize
 
 
 ada = AdaBoostClassifier(n_estimators=50)
 
-binary(ada)
-X_test, X_train, y_test, y_train = split_data(X, y_binary)
+vectorizer = TfidfVectorizer(ngram_range=(1, 2),
+                             max_df=0.55,
+                             max_features=100000,
+                             token_pattern=None,
+                             tokenizer=tokenize_and_lemmatize)
 
-# categorical(ada)
-# X_test, X_train, y_test, y_train = split_data(X, y_class)
+binary(ada, vectorizer)
+X_test, X_train, y_test, y_train = split_data(X, y_binary)
 
 
 importances = np.mean([tree.feature_importances_ for tree in ada.estimators_],
@@ -26,14 +31,10 @@ important_idx = importances.argsort()[-1:-16:-1]
 important_val = importances[important_idx]
 important_wrd = []
 
-features = get_features()
+features = vectorizer.get_feature_names()
 
 for feat in important_idx:
     important_wrd.append(features[feat])
-
-
-def print_important():
-    print(important_wrd)
 
 
 def plot_important_features():
@@ -91,9 +92,9 @@ def errors_vs_n():
     for n in range(1, 111, 10):
         print(n)
         ada = AdaBoostClassifier(n_estimators=n)
-        ada.fit(vector(X_train), y_train)
-        train = ada.score(vector(X_train), y_train)
-        test = ada.score(vector(X_test), y_test)
+        ada.fit(vectorizer.fit_transform(X_train), y_train)
+        train = ada.score(vectorizer.transform(X_train), y_train)
+        test = ada.score(vectorizer.transform(X_test), y_test)
         train_scores.append(train)
         test_scores.append(test)
     print(test_scores)
@@ -101,7 +102,7 @@ def errors_vs_n():
 
 
 if __name__ == "__main__":
-    print_important()
-    plot_important_features()
-    horiz_plot()
-    errors_vs_n()
+    print(important_wrd)
+    # plot_important_features()
+    # horiz_plot()
+    # errors_vs_n()

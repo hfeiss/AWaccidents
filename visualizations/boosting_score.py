@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt
 import numpy as np
 from filepaths import Root
+import matplotlib.pyplot as plt
 
 
-paths = Root(0).paths()
+paths = Root(__file__, 1).paths()
 images = paths.images.path
 
 test_scores = [0.6635220125786163,

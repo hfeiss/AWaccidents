@@ -1,21 +1,19 @@
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
 import matplotlib.pyplot as plt
-from filepaths import Root
+from sklearn.ensemble import BaggingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
-paths = Root(0).paths()
+from filepaths import Root
+import sys
+paths = Root(__file__, 0).paths()
 images = paths.images.path
 clean = paths.data.clean.path
 src = paths.src.path
-import sys
 sys.path.append(src)
 from tokenator import tokenize_and_lemmatize
 
-
-paths = Root(0).paths()
-images = paths.images.path
 
 df = pd.read_pickle(clean + '/clean.pkl')
 
@@ -33,14 +31,6 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2),
                              token_pattern=None,
                              tokenizer=tokenize_and_lemmatize)
 
-
-vectorizer.fit(X_train)
-
-
-def vector(data):
-    return vectorizer.transform(data)
-
-
 features = vectorizer.get_feature_names()
 
 bc = BaggingClassifier(base_estimator=None,
@@ -55,9 +45,11 @@ bc = BaggingClassifier(base_estimator=None,
                        random_state=42,
                        verbose=1)
 
-bc.fit(vector(X_train), y_train)
+bc.fit(vectorizer.fit_transform(X), y_train)
+
 importances = np.mean([tree.feature_importances_ for tree in bc.estimators_],
                       axis=0)
+
 std = np.std([tree.feature_importances_ for tree in bc.estimators_], axis=0)
 
 important_idx = importances.argsort()[-1:-16:-1]
@@ -67,10 +59,6 @@ important_wrd = []
 
 for feat in important_idx:
     important_wrd.append(features[feat])
-
-
-def print_important():
-    print(important_wrd)
 
 
 def plot_important_features():
@@ -123,7 +111,7 @@ def horiz_plot():
 
 
 if __name__ == "__main__":
-    print_important()
+    print(important_wrd)
     # plot_important_features()
     horiz_plot()
-    joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')
+    # joblib.dump(bc, '/Users/hfeiss/dsi/capstone-2/models/bagging.joblib')

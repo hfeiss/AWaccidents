@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
 import numpy as np
 from filepaths import Root
+import matplotlib.pyplot as plt
 
 
 paths = Root(0).paths()
