@@ -61,7 +61,7 @@ Once vectorized, the matrix is clustered with the k-means algorithm. The underly
 
 LDA does not illuminate any underlying structure.
 
-![](/images/screenshots/lda.png)
+[![](/images/screenshots/lda.png)](http://hfeiss.info/lda)
 
 ## Principal Component Analysis
 
@@ -91,7 +91,7 @@ The number of accidents is likely proportional to the amount of whitewater recre
 
 ## Text Classification
 
-Sklearn grid searching is used to find the best hyperparameters with k-folds cross validation and final performance is judged on a holdout data set. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
+Sklearn grid searching is used to find the best hyperparameters with k-folds cross validation. Final performance is judged on a holdout data set. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
 
 ### Bagging
 
@@ -103,11 +103,11 @@ Below are the most important words for predicting the outcome of an accident. It
 
 After fitting a Naive Bayes model to the training data, for each category of incident, the top 100 words that made each category more and less likely are generated. Below is a curated subset of those lists.
 
-#### Words that made Medical more likely:
-    kayaker overdose, new, head, alcohol, xanax, tramadol, fall, rope
-
 #### Words that made Injury more likely:
     man, pin, foot, strainer, group, kayaker, march
+
+#### Words that made Injury less likely:
+    farmer wetsuit, near drowning, new york, large kayak
 
 #### Words that made Fatality more likely:
     rock, dam, drown, pin, get help, search, rescue, time, large flow
@@ -115,30 +115,16 @@ After fitting a Naive Bayes model to the training data, for each category of inc
 #### Words that made Fatality less likely:
     competent group, thank, support, train, feel emotion, professional sar, respond
  
-#### Words that made Injury less likely:
-    farmer wetsuit, near drowning, new york, large kayak
- 
 Below, mock descriptions were fed into the naive bayes model with the resulting predictions.
- 
-#### Medical
-   > There was a diabetic on our trip. He forgot his insulin. He ended up in DKA, so we pulled off of the the riveLuckily we had cell service, so we called 911. He got rushed to the ER, but the docs said he'd be okay even though he had been near death earlier that day. Another person on the trip was doing a bunch of drugs like xanax, accutane, tramadol and propecia. What a combo! They ended up falling in the river.
- 
-<center>
-
-|                           | Medical   | Injury    | Fatality  |
-|----------------------:    |---------  |--------   |---------- |
-| Predicted Probability     | 99.9%     | 0.0%      | 0.0%      |
-
-</center>
 
 #### Injury
    > It was the end of the day, and everyone was tired. The raft guide decided to drop into the last hole sideways, and dump trucked everyone into the river. There wasn't much rapid left at the point but most people found a rock or two to hit. Sarah bruised her leg. Sam hit his head. I got my foot trapped in the webbing of raft. Everyone was okay, but a few of us had to get stitches.
 
 <center>
 
-|                           | Medical   | Injury    | Fatality  |
-|----------------------:    |---------  |--------   |---------- |
-| Predicted Probability     | 0.1%      | 0.1%      | 99.8%     |
+|                        | Injury    | Fatality  |
+|----------------------: |--------   |---------- |
+| Predicted Probability  | 0.1%      | 99.8%     |
 
 </center>
 
@@ -147,9 +133,9 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 
 <center>
 
-|                           | Medical   | Injury    | Fatality  |
-|----------------------:    |---------  |--------   |---------- |
-| Predicted Probability     | 0.25%     | 0.15%     | 99.6%     |
+|                        | Injury    | Fatality  |
+|----------------------: |--------   |---------- |
+| Predicted Probability  | 0.15%     | 99.6%     |
 
 </center>
 
