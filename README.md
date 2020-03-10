@@ -140,7 +140,7 @@ Below, mock descriptions were fed into the naive bayes model with the resulting 
 </center>
 
 # Numerical Feature Analysis
-Sklearn grid searching is used to find the best hyperparameters with k-folds cross validation and final performance is judged on a holdout data set. Models are tested on classification into three groups (Fatality, Injury, Medical) as well as Fatal or Near Miss. For simplicity and interpretability, only the binary classification results are shown.
+As with the text analysis, grid searching and k-folds cross validation is used to find the best hyperparameters. Final performance is judged on a holdout data set, and only binary classification results are shown.
  
 ## Boosting
 ![](/images/boosting_n_score.png)
@@ -183,7 +183,7 @@ Combining the information from clustering, topic modeling, natural language proc
 ![](/images/level_diff_death_2.png)
 ![](/images/exper_age_death.png)
 
-* Competent group - more than any other, this phrase decreased the likelihood of a prediction for death. Always make sure that your whole group is skilled enough and prepared for the river.
+* Competent group - more than any other, this phrase decreased the likelihood of a prediction for death.
 
 * Wetsuits reduce the liklihood of injury
 
